@@ -1,41 +1,75 @@
-import 'package:flutter_web/material.dart';
-import 'package:portfolio/ui/home.dart';
-
-import 'package:portfolio/utils/screen/screen_utils.dart';
+import 'package:flutter/material.dart';
+import '/provider/app_provider.dart';
+import '/provider/drawer_provider.dart';
+import '/provider/scroll_provider.dart';
+import '/sections/main/main_section.dart';
+import 'package:provider/provider.dart';
+import 'package:url_strategy/url_strategy.dart';
+import '/configs/core_theme.dart' as theme;
 
 void main() {
-  runApp(MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  setPathUrlStrategy();
+  runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  MyAppState createState() => MyAppState();
+}
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          brightness: Brightness.light,
-          primaryColorBrightness: Brightness.light,
-          accentColorBrightness: Brightness.light
+class MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AppProvider()),
+        ChangeNotifierProvider(create: (_) => DrawerProvider()),
+        ChangeNotifierProvider(create: (_) => ScrollProvider()),
+      ],
+      child: Consumer<AppProvider>(
+        builder: (context, value, _) => MaterialChild(
+          provider: value,
+        ),
       ),
-      home: MyAppChild(),
     );
   }
 }
 
-class MyAppChild extends StatefulWidget {
+class MaterialChild extends StatefulWidget {
+  final AppProvider provider;
+  const MaterialChild({Key? key, required this.provider}) : super(key: key);
 
   @override
-  _MyAppChildState createState() => _MyAppChildState();
+  State<MaterialChild> createState() => _MaterialChildState();
 }
 
-class _MyAppChildState extends State<MyAppChild> {
+class _MaterialChildState extends State<MaterialChild> {
+  void initAppTheme() {
+    final appProviders = AppProvider.state(context);
+    appProviders.init();
+  }
+
+  @override
+  void initState() {
+    initAppTheme();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    // instantiating ScreenUtil singleton instance, as this will be used throughout
-    // the app to get screen size and other stuff
-    ScreenUtil.instance = ScreenUtil.getInstance()..init(context);
-    return HomePage();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Nery',
+      theme: theme.themeLight,
+      darkTheme: theme.themeDark,
+      themeMode: widget.provider.themeMode,
+      initialRoute: "/",
+      routes: {
+        "/": (context) => const MainPage(),
+      },
+    );
   }
 }
