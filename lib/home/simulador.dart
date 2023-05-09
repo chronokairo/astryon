@@ -4,8 +4,9 @@ class SimuladorConsorcioWidget extends StatefulWidget {
   const SimuladorConsorcioWidget({super.key});
 
   @override
-  _SimuladorConsorcioWidgetState createState() =>
-      _SimuladorConsorcioWidgetState();
+  State<SimuladorConsorcioWidget> createState() {
+      return _SimuladorConsorcioWidgetState();
+      }
 }
 
 class _SimuladorConsorcioWidgetState extends State<SimuladorConsorcioWidget> {

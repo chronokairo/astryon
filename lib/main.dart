@@ -1,16 +1,17 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
+import 'package:priorizza/home/documento.dart';
 import 'package:priorizza/home/folha_ponto.dart';
 import 'package:priorizza/home/login.dart';
 import 'package:priorizza/home/simulador.dart';
-import 'package:priorizza/paginas/assembleias.dart';
-import 'package:priorizza/paginas/blog.dart';
-import 'package:priorizza/paginas/contato.dart';
-import 'package:priorizza/paginas/quem_somos.dart';
-import 'package:priorizza/paginas/seja_parceiro.dart';
+import 'package:priorizza/home/userinfo.dart';
 import 'package:provider/provider.dart';
 
-import 'paginas/consorcios.dart';
+import 'home/atendimento.dart';
+import 'home/contemplacao.dart';
+import 'home/notification.dart';
+import 'home/pagamentos.dart';
+import 'home/simulacao_lance.dart';
 
 void main() {
   runApp(const MyApp());
@@ -69,30 +70,35 @@ class _MyHomePageState extends State<MyHomePage> {
     Widget page;
     switch (selectedIndex) {
       case 0:
-        page = const GeneratorPage();
+        page = const ContaConsorcioScreen(
+          email: 'contato@priorizza.app',
+          nome: 'Luan',
+          parcelas: [],
+          saldo: 25.000,
+        );
         break;
       case 1:
-        page = const Consorcios();
+        page = const PagamentosScreen();
         break;
       case 2:
-        page = const QuemSomos();
+        page = const NotificationsScreen();
         break;
       case 3:
-        page = const Contato();
+        page = const ContemplationScreen();
         break;
       case 4:
-        page = const Assembleias();
+        page = const AtendimentoClienteScreen();
         break;
       case 5:
-        page = const SejaParceiro();
+        page = const SimulacaoLancesScreen();
         break;
       case 6:
-        page = const Blog();
+        page = DocumentsScreen();
         break;
-        case 7:
+      case 7:
         page = const PontoWidget();
         break;
-        case 8:
+      case 8:
         page = const SimuladorConsorcioWidget();
         break;
       default:
@@ -108,32 +114,32 @@ class _MyHomePageState extends State<MyHomePage> {
                 extended: constraints.maxWidth >= 600,
                 destinations: const [
                   NavigationRailDestination(
-                    icon: Icon(Icons.home),
-                    label: Text('Home'),
+                    icon: Icon(Icons.account_circle),
+                    label: Text('Gerenciamento de Conta'),
                   ),
                   NavigationRailDestination(
-                    icon: Icon(Icons.monetization_on),
-                    label: Text('Consórcios'),
+                    icon: Icon(Icons.payment),
+                    label: Text('Pagamentos'),
                   ),
                   NavigationRailDestination(
-                    icon: Icon(Icons.info),
-                    label: Text('Quem Somos?'),
+                    icon: Icon(Icons.notifications),
+                    label: Text('Notificações'),
                   ),
                   NavigationRailDestination(
-                    icon: Icon(Icons.person),
-                    label: Text('Contato'),
+                    icon: Icon(Icons.search),
+                    label: Text('Consulta de contemplação'),
                   ),
                   NavigationRailDestination(
-                    icon: Icon(Icons.groups),
-                    label: Text('Assembleias'),
+                    icon: Icon(Icons.chat),
+                    label: Text('Atendimento ao cliente'),
                   ),
                   NavigationRailDestination(
-                    icon: Icon(Icons.handshake),
-                    label: Text('Seja nosso parceiro'),
+                    icon: Icon(Icons.compare_arrows),
+                    label: Text('Simulações de lances'),
                   ),
                   NavigationRailDestination(
-                    icon: Icon(Icons.newspaper),
-                    label: Text('Blog'),
+                    icon: Icon(Icons.description),
+                    label: Text('Acesso a documentos'),
                   ),
                   NavigationRailDestination(
                     icon: Icon(Icons.schedule),

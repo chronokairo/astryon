@@ -4,9 +4,12 @@ class PontoWidget extends StatefulWidget {
   const PontoWidget({super.key});
 
   @override
-  _PontoWidgetState createState() => _PontoWidgetState();
-}
+ 
 
+State<PontoWidget> createState() {
+    return _PontoWidgetState();
+  }
+}
 class _PontoWidgetState extends State<PontoWidget> {
   String entrada = '';
   String saida = '';

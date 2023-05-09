@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
-
 import 'login.dart';
 
 class SejaParceiro extends StatefulWidget {
@@ -18,7 +17,7 @@ class _SejaParceiroState extends State<SejaParceiro>
     super.build(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Quem Somos?"),
+        title: const Text("Seja Parceiro"),
         titleSpacing: 00.0,
         centerTitle: true,
         toolbarHeight: 60.2,

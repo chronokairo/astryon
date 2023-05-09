@@ -4,7 +4,11 @@ class Consorcios extends StatefulWidget {
   const Consorcios({super.key});
 
   @override
-  _ConsorciosPageState createState() => _ConsorciosPageState();
+  
+
+ State<Consorcios> createState() {
+      return _ConsorciosPageState();
+      }
 }
 
 class _ConsorciosPageState extends State<Consorcios>
