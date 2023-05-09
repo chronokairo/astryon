@@ -1,7 +1,8 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
-import 'package:priorizza/home/home.dart';
+import 'package:priorizza/home/folha_ponto.dart';
 import 'package:priorizza/home/login.dart';
+import 'package:priorizza/home/simulador.dart';
 import 'package:priorizza/paginas/assembleias.dart';
 import 'package:priorizza/paginas/blog.dart';
 import 'package:priorizza/paginas/contato.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Priorizza',
         theme: ThemeData(
-          brightness: Brightness.light,
+          brightness: Brightness.dark,
         ),
         home: const MyHomePage(),
       ),
@@ -88,6 +89,12 @@ class _MyHomePageState extends State<MyHomePage> {
       case 6:
         page = const Blog();
         break;
+        case 7:
+        page = const PontoWidget();
+        break;
+        case 8:
+        page = const SimuladorConsorcioWidget();
+        break;
       default:
         throw UnimplementedError('no widget for $selectedIndex');
     }
@@ -127,6 +134,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   NavigationRailDestination(
                     icon: Icon(Icons.newspaper),
                     label: Text('Blog'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.schedule),
+                    label: Text('Ponto'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.calculate),
+                    label: Text('Simulador'),
                   ),
                 ],
                 selectedIndex: selectedIndex,
@@ -195,48 +210,15 @@ class BigCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(20),
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const TelaDeLogin()),
-            );
-          },
-          child: const Text('Sou cliente'),
-        ),
+      child: ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const TelaDeLogin()),
+          );
+        },
+        child: const Text('Sou cliente'),
       ),
-    );
-  }
-}
-
-class FavoritesPage extends StatelessWidget {
-  const FavoritesPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    var appState = context.watch<MyAppState>();
-
-    if (appState.favorites.isEmpty) {
-      return const Center(
-        child: Text('No favorites yet.'),
-      );
-    }
-
-    return ListView(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(20),
-          child: Text('You have '
-              '${appState.favorites.length} favorites:'),
-        ),
-        for (var pair in appState.favorites)
-          ListTile(
-            leading: const Icon(Icons.favorite),
-            title: Text(pair.asLowerCase),
-          ),
-      ],
     );
   }
 }
