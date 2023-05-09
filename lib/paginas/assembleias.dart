@@ -31,14 +31,12 @@ class _AssembleiasState extends State<Assembleias>
 		elevation: 0.00,
 		
 	), //AppBar
-	body: GridView.count(
-        crossAxisCount: 1,
-        children: [
-          HtmlWidget(
-            '<iframe src="https://consorcioroma.com.br/assembleias/"></iframe>',
-            factoryBuilder: () => MyWidgetFactory(),
-          ),
-        ],
+	body: Center(
+        child: HtmlWidget(
+              '<iframe src="https://consorcioroma.com.br/assembleias"></iframe>',
+              factoryBuilder: () => MyWidgetFactory(),
+            ),
+        
       ),//Center
 	//Scaffold
 //Removing Debug Banner
