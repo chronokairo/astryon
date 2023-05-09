@@ -41,7 +41,6 @@ class NotificationsScreen extends StatelessWidget {
     required bool isRead,
   }) {
     return Card(
-      color: isRead ? Colors.white : Colors.grey[200],
       child: ListTile(
         title: Text(title),
         subtitle: Text(description),

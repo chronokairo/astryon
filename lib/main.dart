@@ -71,10 +71,10 @@ class _MyHomePageState extends State<MyHomePage> {
     switch (selectedIndex) {
       case 0:
         page = const ContaConsorcioScreen(
-          email: 'contato@priorizza.app',
-          nome: 'Luan',
+          email: 'luan.nery@priorizza.app',
+          nome: 'Luan Nery',
           parcelas: [],
-          saldo: 25.000,
+          saldo: 25000,
         );
         break;
       case 1:
