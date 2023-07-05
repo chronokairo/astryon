@@ -13,8 +13,8 @@ class _SimuladorConsorcioWidgetState extends State<SimuladorConsorcioWidget> {
   final _formKey = GlobalKey<FormState>();
 
   double _valorTotal = 0.0;
-  double _taxaAdministracao = 0.0;
-  int _numMeses = 0;
+  double _taxaAdministracao = 18.0;
+  int _numMeses = 70;
   double _valorParcela = 0.0;
 
   @override

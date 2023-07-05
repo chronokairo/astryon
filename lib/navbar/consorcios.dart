@@ -31,10 +31,13 @@ class _ConsorciosPageState extends State<Consorcios>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color(0xFFD8B45E),
         flexibleSpace: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TabBar(
+              
+              
               controller: _tabController,
               tabs: const [
                 Tab(
@@ -51,7 +54,9 @@ class _ConsorciosPageState extends State<Consorcios>
           ],
         ),
       ),
+      
       body: TabBarView(
+        
         controller: _tabController,
         children: [
           _buildTabContent('Imóveis',

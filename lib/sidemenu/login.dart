@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:priorizza/home/recuperar_senha.dart';
+import 'package:priorizza/sidemenu/recuperar_senha.dart';
 
 class TelaDeLogin extends StatefulWidget {
   const TelaDeLogin({Key? key}) : super(key: key);
