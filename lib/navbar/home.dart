@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+ import 'package:font_awesome_flutter/font_awesome_flutter.dart';     
+
 import '../sidemenu/atendimento.dart';
+
+import '../sidemenu/consorcios.dart';
 
 class Inicio extends StatefulWidget {
   const Inicio({super.key});
@@ -22,67 +26,52 @@ class _InicioState extends State<Inicio> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+                automaticallyImplyLeading: false, // Remover o botão de voltar
+
          iconTheme: IconThemeData(
     color:  Color(0xFFD8B45E), // Define a cor desejada para o ícone
   ),      
 backgroundColor: Colors.transparent,
         elevation: 0,  title: Text(
-    'PRIORIZZA',
+    'Consórcio Priorizza',
     textAlign: TextAlign.center,
     style: TextStyle(
       color: Color(0xFFD8B45E),
     ),
   ),
   actions: [
-    
     TextButton(
+  onPressed: () {Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Inicio()),
+            );
+  },
+  child: Text('Início',style: TextStyle(
+      color: Color(0xFFD8B45E),
+    ),
+    ),
+),
+TextButton(
+  onPressed: () {Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Consorcios()),
+            );
+  },
+  child: Text('Assembleias',style: TextStyle(
+      color: Color(0xFFD8B45E),
+    ),
+    ),
+),
+TextButton(
   onPressed: () {
     launch('https://blog.priorizza.app');
   },
   child: Text('Blog',style: TextStyle(
       color: Color(0xFFD8B45E),
-    ),),
-),
-    TextButton(
-      onPressed: () {
-        // Lógica para lidar com o clique no botão "Boleto"
-      },
-      child: Text('2ª via Boleto',style: TextStyle(
-      color: Color(0xFFD8B45E),
-    ),),
     ),
-    TextButton(
-  onPressed: () {},
-  child: PopupMenuButton(
-    child: Text('Menu',style: TextStyle(
-      color: Color(0xFFD8B45E),
-    ),),
-    itemBuilder: (BuildContext context) => [
-      PopupMenuItem(
-        child: Text('Cliente'),
-        value: 'cliente',
-      ),
-      PopupMenuItem(
-        child: Text('A Priorizza'),
-        value: 'a_priorizza',
-      ),
-      PopupMenuItem(
-        child: Text('O Consórcio'),
-        value: 'o_consorcio',
-      ),
-      PopupMenuItem(
-        child: Text('Central de ajuda'),
-        value: 'central_ajuda',
-      ),
-    ],
-  ),
-)
-
-   
-    
-  ],
-        
-          
+    ),
+),   
+  ],            
         ),
       
       body: 
@@ -90,15 +79,7 @@ backgroundColor: Colors.transparent,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(
-          width: double.infinity,
-          height: 300,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/banner.png'), // Substitua pelo caminho da sua imagem
-              fit: BoxFit.cover,
-            ),),
-          ),
+           
         
           
           Container(
@@ -112,7 +93,7 @@ backgroundColor: Colors.transparent,
         child: GestureDetector(
           onTap: () {
             // Adicione a ação desejada aqui
-            print('Simule seu consórcio de imóveis');
+            print('Simule seu consórcio de Imóveis');
           },
           child: Card(
             shape: RoundedRectangleBorder(
@@ -123,10 +104,10 @@ backgroundColor: Colors.transparent,
               children: [
                 Icon(
                   Icons.home,color: Color(0xFFD8B45E),
-                  size: 40,
+                  size: 100,
                 ),
                 Text(
-                  'Consórcio de imóveis',
+                  'Consórcio de Imóveis',
                   textAlign: TextAlign.center,
                 ),
                 ElevatedButton(
@@ -150,7 +131,7 @@ backgroundColor: Colors.transparent,
         child: GestureDetector(
           onTap: () {
             // Adicione a ação desejada aqui
-            print('Simule seu consórcio de veículos');
+            print('Simule seu consórcio de Carros');
           },
           child: Card(
             shape: RoundedRectangleBorder(
@@ -161,10 +142,10 @@ backgroundColor: Colors.transparent,
               children: [
                 Icon(
                   Icons.directions_car,color:  Color(0xFFD8B45E),
-                  size: 40,
+                  size: 100,
                 ),
                 Text(
-                  'Consórcio de carros',
+                  'Consórcio de Carros',
                   textAlign: TextAlign.center,
                 ),
                 ElevatedButton(
@@ -187,7 +168,44 @@ backgroundColor: Colors.transparent,
         child: GestureDetector(
           onTap: () {
             // Adicione a ação desejada aqui
-            print('Simule seu consórcio de imóveis');
+            print('Simule seu consórcio de Motos');
+          },
+          child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Icon(
+                  Icons.motorcycle,color:  Color(0xFFD8B45E),
+                  size: 100,
+                ),
+                Text(
+                  'Consórcio de Motos',
+                  textAlign: TextAlign.center,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    // Adicione a ação desejada aqui
+                    print('Simule seu consórcio');
+                  },
+                  style: ElevatedButton.styleFrom(
+    primary:  Color(0xFFD8B45E), // Defina a cor desejada aqui
+  ),
+                  child: Text('Simule seu consórcio'),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+      Container(
+        width: 268.333,
+        child: GestureDetector(
+          onTap: () {
+            // Adicione a ação desejada aqui
+            print('Simule seu consórcio de pesados');
           },
           child: Card(
             shape: RoundedRectangleBorder(
@@ -198,10 +216,47 @@ backgroundColor: Colors.transparent,
               children: [
                 Icon(
                   Icons.local_shipping,color: Color(0xFFD8B45E),
-                  size: 40,
+                  size: 100,
                 ),
                 Text(
                   'Consórcio de Pesados',
+                  textAlign: TextAlign.center,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    // Adicione a ação desejada aqui
+                    print('Simule seu consórcio');
+                  },
+                  style: ElevatedButton.styleFrom(
+    primary:  Color(0xFFD8B45E), // Defina a cor desejada aqui
+  ),
+                  child: Text('Simule seu consórcio'),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+      Container(
+        width: 268.333,
+        child: GestureDetector(
+          onTap: () {
+            // Adicione a ação desejada aqui
+            print('Simule seu consórcio de Serviços');
+          },
+          child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Icon(
+                  Icons.flight,color:  Color(0xFFD8B45E),
+                  size: 100,
+                ),
+                Text(
+                  'Consórcio de Serviços',
                   textAlign: TextAlign.center,
                 ),
                 ElevatedButton(
@@ -245,18 +300,87 @@ QuestionAnswerTile(
             answer:
                 'Para obter mais informações sobre consórcios, entre em contato conosco através dos seguintes canais:\n\nTelefone: (92) 98508-0304\nE-mail: contato@priorizza.app\nBlog: blog.priorizza.app',
           ),
+          Container(
+      color: Color(0xFFD8B45E),
+      padding: EdgeInsets.symmetric(vertical: 24),
+      child: Column(
+        children: [
+          Container(
+            height: 300,
+            width: 300,
+            child: Image.asset('assets/logo.png'), // Substitua pelo caminho da imagem do logo
+          ),
+          SizedBox(height: 12),
+          Text(
+            'Antonio Victor Pimentel Pires LTDA',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 14,
+            ),
+          ),
+          Text(
+            'CNPJ: 41.414.474/0001-67',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 14,
+            ),
+          ),
+          Text(
+            'Autorizado pelo Banco Central Nº 3/00/223/88',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 14,
+            ),
+          ),
+          Text(
+            'Data: 15/08/88',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 14,
+            ),
+          ),
+          SizedBox(height: 12),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                icon: Icon(Icons.facebook),
+                color: Colors.white,
+                onPressed: () {
+                  // Ação desejada para o Facebook
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.chat),
+                color: Colors.white,
+                onPressed: () {
+                  // Ação desejada para o Instagram
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.chat),
+                color: Colors.white,
+                onPressed: () {
+                  // Ação desejada para o Twitter
+                },
+              ),
+            ],
+          ),
+        ],
+      ),
+    ),
 
           // Adicione mais perguntas e respostas aqui...
         ],
         ),
       ),
+      
       floatingActionButton: FloatingActionButton(
           onPressed: () {
             launchWhatsApp();
           },
-            backgroundColor: Color(0xFFD8B45E), // Defina a cor de fundo como âmbar
-
-          child: Icon(Icons.chat),
+            child: FaIcon(FontAwesomeIcons.whatsapp),
+                      backgroundColor: Colors.green.shade800,
         ),
       
     );

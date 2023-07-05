@@ -39,7 +39,8 @@ dependencies:
   flutter_widget_from_html_core: 
   fwfh_webview: 
   url_launcher:
-
+  font_awesome_flutter:
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

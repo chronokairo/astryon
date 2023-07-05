@@ -1,57 +1,105 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import '../sidemenu/consorcios.dart';
+import '../navbar/home.dart';
 class Servicos extends StatelessWidget {
-  const Servicos({super.key});
+  const Servicos({Key? key});
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: EdgeInsets.zero,
-      children: <Widget>[
-        const ListTile(
-          title: Text('Parcelas'),
+    return Scaffold(
+      appBar: AppBar(
+         iconTheme: IconThemeData(
+    color:  Color(0xFFD8B45E), // Define a cor desejada para o ícone
+  ),      
+backgroundColor: Colors.transparent,
+        elevation: 0,  title: Text(
+    'PRIORIZZA',
+    textAlign: TextAlign.center,
+    style: TextStyle(
+      color: Color(0xFFD8B45E),
+    ),
+  ),
+  actions: [
+    TextButton(
+  onPressed: () {Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Inicio()),
+            );
+  },
+  child: Text('Início',style: TextStyle(
+      color: Color(0xFFD8B45E),
+    ),
+    ),
+),
+TextButton(
+  onPressed: () {Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Consorcios()),
+            );
+  },
+  child: Text('Assembleias',style: TextStyle(
+      color: Color(0xFFD8B45E),
+    ),
+    ),
+),
+TextButton(
+  onPressed: () {
+    launch('https://blog.priorizza.app');
+  },
+  child: Text('Blog',style: TextStyle(
+      color: Color(0xFFD8B45E),
+    ),
+    ),
+),   
+  ],            
         ),
-        ListTile(
-          leading: const Icon(
-            Icons.account_balance_wallet,
+      
+      body: ListView(
+        padding: EdgeInsets.zero,
+        children: <Widget>[
+          ListTile(
+            title: Text('Parcelas'),
           ),
-          title: const Text('Boletos'),
-          onTap: () => {},
-        ),
-        ListTile(
-          leading: const Icon(
-            Icons.restore,
+          ListTile(
+            leading: Icon(
+              Icons.receipt_long,
+            ),
+            title: Text('Boletos'),
+            onTap: () => {},
           ),
-          title: const Text('Antecipar parcelas'),
-          onTap: () => {},
-        ),
-        
-        const ListTile(
-          title:  Text('Assembleias'),
-        ),
-        ListTile(
-          leading: const Icon(
-            Icons.query_stats,
+          ListTile(
+            leading: Icon(
+              Icons.arrow_forward,
+            ),
+            title: Text('Antecipar parcelas'),
+            onTap: () => {},
           ),
-          title: const Text('Ofertas de lance'),
-          onTap: () => {},
-        ),
-        const ListTile(
-          
-          title:  Text('Dados Cadastrais'),
-        
-        ),
-        ListTile(
-          leading: const Icon(Icons.location_city),
-          title: const Text('Dados cadastrais'),
-          onTap: () => {},
-        ),
-        ListTile(
-          leading: const Icon(Icons.assignment_turned_in),
-          title: const Text('Alterar senha'),
-          onTap: () => {},
-        ),
-        
-      ],
+          ListTile(
+            title: Text('Assembleias'),
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.attach_money,
+            ),
+            title: Text('Ofertas de lance'),
+            onTap: () => {},
+          ),
+          ListTile(
+            title: Text('Dados Cadastrais'),
+          ),
+          ListTile(
+            leading: Icon(Icons.person),
+            title: Text('Dados cadastrais'),
+            onTap: () => {},
+          ),
+          ListTile(
+            leading: Icon(Icons.lock),
+            title: Text('Alterar senha'),
+            onTap: () => {},
+          ),
+        ],
+      ),
     );
   }
 }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:priorizza/navbar/servicos.dart';
+import 'package:priorizza/navbar/services.dart';
 import '../sidemenu/notification.dart';
 import 'consultas.dart';
+
 import 'home.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -16,7 +17,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _indiceAtual = 1;
   final List<Widget> _telas = [
-    const Consultas(),
+    const MyHomePage(),
      const Inicio(),
     const Servicos(),
      

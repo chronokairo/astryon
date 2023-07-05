@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AtendimentoClienteScreen extends StatelessWidget {
   const AtendimentoClienteScreen({super.key});
@@ -7,9 +8,37 @@ class AtendimentoClienteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFD8B45E),
-        title: const Text('Atendimento ao Cliente'),
-      ),
+        iconTheme: IconThemeData(
+    color:  Color(0xFFD8B45E), // Define a cor desejada para o ícone
+  ),      
+backgroundColor: Colors.transparent,
+        elevation: 0,  title: Text(
+    'PRIORIZZA',
+    textAlign: TextAlign.center,
+    style: TextStyle(
+      color: Color(0xFFD8B45E),
+    ),
+  ),
+  actions: [
+    TextButton(
+  onPressed: () {
+    launch('https://www.priorizza.app');
+  },
+  child: Text('Início',style: TextStyle(
+      color: Color(0xFFD8B45E),
+    ),
+    ),
+),
+TextButton(
+  onPressed: () {
+    launch('https://blog.priorizza.app');
+  },
+  child: Text('Blog',style: TextStyle(
+      color: Color(0xFFD8B45E),
+    ),
+    ),
+),   
+  ], ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
