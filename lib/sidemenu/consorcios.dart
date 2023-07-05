@@ -4,11 +4,9 @@ class Consorcios extends StatefulWidget {
   const Consorcios({super.key});
 
   @override
-  
-
- State<Consorcios> createState() {
-      return _ConsorciosPageState();
-      }
+  State<Consorcios> createState() {
+    return _ConsorciosPageState();
+  }
 }
 
 class _ConsorciosPageState extends State<Consorcios>
@@ -36,8 +34,6 @@ class _ConsorciosPageState extends State<Consorcios>
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TabBar(
-              
-              
               controller: _tabController,
               tabs: const [
                 Tab(
@@ -54,9 +50,7 @@ class _ConsorciosPageState extends State<Consorcios>
           ],
         ),
       ),
-      
       body: TabBarView(
-        
         controller: _tabController,
         children: [
           _buildTabContent('Imóveis',

@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:priorizza/navbar/blog.dart';
-import 'package:priorizza/navbar/consorcios.dart';
-import 'package:priorizza/navbar/contato.dart';
-import 'package:priorizza/sidemenu/sidemenu2.dart';
-
-import '../sidemenu/atendimento.dart';
+import 'package:priorizza/navbar/servicos.dart';
 import '../sidemenu/notification.dart';
+import 'consultas.dart';
+import 'home.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,13 +14,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _indiceAtual = 2;
+  int _indiceAtual = 1;
   final List<Widget> _telas = [
-    const Consorcios(),
-    const AtendimentoClienteScreen (),
-    const Blog(),
-    const NotificationsScreen(),
-     const Contato(),
+    const Consultas(),
+     const Inicio(),
+    const Servicos(),
+     
   ];
 
   @override
@@ -37,13 +33,10 @@ class _HomeScreenState extends State<HomeScreen> {
         currentIndex: _indiceAtual,
         onTap: onTabTapped,
         items: const [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.monetization_on), label: ("Consórcios")),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.chat), label: ("SAC")),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ("Home")),
-          BottomNavigationBarItem(icon: Icon(Icons.notifications), label: ("Notificações")) ,
-          BottomNavigationBarItem(icon: Icon(Icons.menu), label: ("Menu")),
+          BottomNavigationBarItem(icon: Icon(Icons.how_to_reg), label: ("Consultas")),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: ("Início")),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: ("Serviços")) ,
+          
         ],
       ),
     );

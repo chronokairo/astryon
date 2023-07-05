@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:priorizza/navbar/navbar.dart';
-
 void main() {
   runApp(const LoginScreen());
 }

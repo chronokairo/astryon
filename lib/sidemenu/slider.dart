@@ -1,16 +1,13 @@
-import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
+import 'package:priorizza/sidemenu/consorcios.dart';
 import 'package:priorizza/sidemenu/contemplacao.dart';
-import 'package:priorizza/slider/notification.dart';
-import 'package:provider/provider.dart';
+import 'package:priorizza/navbar/consultas.dart';
 
 import 'atendimento.dart';
 import 'documento.dart';
 import 'folha_ponto.dart';
-import 'login.dart';
 import 'simulacao_lance.dart';
 import 'simulador.dart';
-import '../main.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key});
@@ -28,7 +25,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
     switch (selectedIndex) {
       case 0:
-        page = const NotificationsScreen();
+        page = 
+         const Consorcios();
         break;
       case 1:
         page = const SimuladorConsorcioWidget();
@@ -48,6 +46,8 @@ class _MyHomePageState extends State<MyHomePage> {
       case 6:
         page = const PontoWidget();
         break;
+        
+        
 
       default:
         throw UnimplementedError('no widget for $selectedIndex');
@@ -64,8 +64,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   extended: constraints.maxWidth >= 600,
                   destinations: const [
                     NavigationRailDestination(
-                      icon: Icon(Icons.notifications),
-                      label: Text('Notificações'),
+                      icon: Icon(Icons.money),
+                      label: Text('Consórcios'),
                     ),
                     NavigationRailDestination(
                       icon: Icon(Icons.calculate),
@@ -91,6 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       icon: Icon(Icons.schedule),
                       label: Text('Ponto'),
                     ),
+                   
                   ],
                   selectedIndex: selectedIndex,
                   onDestinationSelected: (value) {
@@ -110,64 +111,5 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       );
     });
-  }
-}
-
-class GeneratorPage extends StatelessWidget {
-  const GeneratorPage({Key? key});
-
-  @override
-  Widget build(BuildContext context) {
-    var appState = context.watch<MyAppState>();
-    var pair = appState.current;
-
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          BigCard(pair: pair),
-          const SizedBox(height: 10),
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const SizedBox(width: 10),
-              ElevatedButton.icon(
-                onPressed: () {
-                  appState.toggleFavorite();
-                },
-                icon: const Icon(
-                  Icons.shopping_cart,
-                ),
-                label: const Text('Simular e Comprar'),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class BigCard extends StatelessWidget {
-  const BigCard({
-    Key? key,
-    required this.pair,
-  });
-
-  final WordPair pair;
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: ElevatedButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const TelaDeLogin()),
-          );
-        },
-        child: const Text('Sou cliente'),
-      ),
-    );
   }
 }
