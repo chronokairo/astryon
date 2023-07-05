@@ -92,7 +92,7 @@ backgroundColor: Colors.transparent,
           children: [
             Container(
           width: double.infinity,
-          height: 200,
+          height: 300,
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/banner.png'), // Substitua pelo caminho da sua imagem
@@ -144,12 +144,13 @@ backgroundColor: Colors.transparent,
           ),
         ),
       ),
+      
       Container(
         width: 268.333,
         child: GestureDetector(
           onTap: () {
             // Adicione a ação desejada aqui
-            print('Simule seu consórcio de motos');
+            print('Simule seu consórcio de veículos');
           },
           child: Card(
             shape: RoundedRectangleBorder(
@@ -159,11 +160,11 @@ backgroundColor: Colors.transparent,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Icon(
-                  Icons.home, color: Color(0xFFD8B45E),
+                  Icons.directions_car,color:  Color(0xFFD8B45E),
                   size: 40,
                 ),
                 Text(
-                  'Consórcio de motos',
+                  'Consórcio de carros',
                   textAlign: TextAlign.center,
                 ),
                 ElevatedButton(
@@ -186,7 +187,7 @@ backgroundColor: Colors.transparent,
         child: GestureDetector(
           onTap: () {
             // Adicione a ação desejada aqui
-            print('Simule seu consórcio de carros');
+            print('Simule seu consórcio de imóveis');
           },
           child: Card(
             shape: RoundedRectangleBorder(
@@ -196,11 +197,11 @@ backgroundColor: Colors.transparent,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Icon(
-                  Icons.directions_car,color:  Color(0xFFD8B45E),
+                  Icons.local_shipping,color: Color(0xFFD8B45E),
                   size: 40,
                 ),
                 Text(
-                  'Consórcio de carros',
+                  'Consórcio de Pesados',
                   textAlign: TextAlign.center,
                 ),
                 ElevatedButton(
