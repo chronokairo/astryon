@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 import '../sidemenu/atendimento.dart';
 
 class Inicio extends StatefulWidget {
@@ -22,107 +22,212 @@ class _InicioState extends State<Inicio> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading:  Row(
-            children: [
-              Spacer(),
-              Image.asset(
-                'assets/logo.png', // caminho para o arquivo de imagem do logo
-                width: 50, // largura desejada do logo
-                height: 100, // altura desejada do logo
-              ),
-            ],
+         iconTheme: IconThemeData(
+    color:  Color(0xFFD8B45E), // Define a cor desejada para o ícone
+  ),      
+backgroundColor: Colors.transparent,
+        elevation: 0,  title: Text(
+    'PRIORIZZA',
+    textAlign: TextAlign.center,
+    style: TextStyle(
+      color: Color(0xFFD8B45E),
+    ),
+  ),
+  actions: [
+    
+    TextButton(
+  onPressed: () {
+    launch('https://blog.priorizza.app');
+  },
+  child: Text('Blog',style: TextStyle(
+      color: Color(0xFFD8B45E),
+    ),),
+),
+    TextButton(
+      onPressed: () {
+        // Lógica para lidar com o clique no botão "Boleto"
+      },
+      child: Text('2ª via Boleto',style: TextStyle(
+      color: Color(0xFFD8B45E),
+    ),),
+    ),
+    TextButton(
+  onPressed: () {},
+  child: PopupMenuButton(
+    child: Text('Menu',style: TextStyle(
+      color: Color(0xFFD8B45E),
+    ),),
+    itemBuilder: (BuildContext context) => [
+      PopupMenuItem(
+        child: Text('Cliente'),
+        value: 'cliente',
+      ),
+      PopupMenuItem(
+        child: Text('A Priorizza'),
+        value: 'a_priorizza',
+      ),
+      PopupMenuItem(
+        child: Text('O Consórcio'),
+        value: 'o_consorcio',
+      ),
+      PopupMenuItem(
+        child: Text('Central de ajuda'),
+        value: 'central_ajuda',
+      ),
+    ],
+  ),
+)
+
+   
+    
+  ],
+        
+          
+        ),
+      
+      body: 
+      SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(
+          width: double.infinity,
+          height: 200,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/banner.png'), // Substitua pelo caminho da sua imagem
+              fit: BoxFit.cover,
+            ),),
           ),
         
-        backgroundColor: const Color(0xFFD8B45E),
-      ),
-      drawer: Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-           const UserAccountsDrawerHeader(
-        decoration: BoxDecoration(color: const Color(0xFFD8B45E)),
-        accountName: Text(
-          "Uma vida priorizzando você!!",
-          style: TextStyle(
-            
+          
+          Container(
+  width: double.infinity,
+  height: 300,
+  child: ListView(
+    scrollDirection: Axis.horizontal,
+    children: [
+      Container(
+        width: 268.333,
+        child: GestureDetector(
+          onTap: () {
+            // Adicione a ação desejada aqui
+            print('Simule seu consórcio de imóveis');
+          },
+          child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Icon(
+                  Icons.home,color: Color(0xFFD8B45E),
+                  size: 40,
+                ),
+                Text(
+                  'Consórcio de imóveis',
+                  textAlign: TextAlign.center,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    // Adicione a ação desejada aqui
+                    print('Simule seu consórcio');
+                  },
+                  style: ElevatedButton.styleFrom(
+    primary:  Color(0xFFD8B45E), // Defina a cor desejada aqui
+  ),
+                  child: Text('Simule seu consórcio'),
+                ),
+              ],
+            ),
           ),
         ),
-        accountEmail: Text(
-          "contato@priorizza.app",
-          style: TextStyle(
-            
+      ),
+      Container(
+        width: 268.333,
+        child: GestureDetector(
+          onTap: () {
+            // Adicione a ação desejada aqui
+            print('Simule seu consórcio de motos');
+          },
+          child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Icon(
+                  Icons.home, color: Color(0xFFD8B45E),
+                  size: 40,
+                ),
+                Text(
+                  'Consórcio de motos',
+                  textAlign: TextAlign.center,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    // Adicione a ação desejada aqui
+                    print('Simule seu consórcio');
+                  },
+                  style: ElevatedButton.styleFrom(
+    primary:  Color(0xFFD8B45E), // Defina a cor desejada aqui
+  ),
+                  child: Text('Simule seu consórcio'),
+                ),
+              ],
+            ),
           ),
         ),
-        currentAccountPicture: FlutterLogo(),
       ),
-          ListTile(
-            leading: const Icon(Icons.description),
-            title: const Text('Detalhes da cota'),
-            onTap: () => {},
-          ),
-          ListTile(
-            leading: const Icon(
-              Icons.account_balance_wallet,
+      Container(
+        width: 268.333,
+        child: GestureDetector(
+          onTap: () {
+            // Adicione a ação desejada aqui
+            print('Simule seu consórcio de carros');
+          },
+          child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
             ),
-            title: const Text('Boletos'),
-            onTap: () => {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.groups),
-            title: const Text('Assembleias'),
-            onTap: () => {},
-          ),
-          ListTile(
-            leading: const Icon(
-              Icons.query_stats,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Icon(
+                  Icons.directions_car,color:  Color(0xFFD8B45E),
+                  size: 40,
+                ),
+                Text(
+                  'Consórcio de carros',
+                  textAlign: TextAlign.center,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    // Adicione a ação desejada aqui
+                    print('Simule seu consórcio');
+                  },
+                  style: ElevatedButton.styleFrom(
+    primary:  Color(0xFFD8B45E), // Defina a cor desejada aqui
+  ),
+                  child: Text('Simule seu consórcio'),
+                ),
+              ],
             ),
-            title: const Text('Ofertas de lance'),
-            onTap: () => {},
           ),
-          ListTile(
-            leading: const Icon(Icons.settings),
-            title: const Text('Serviços'),
-            onTap: () => {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.location_city),
-            title: const Text('Filiais'),
-            onTap: () => {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.assignment_turned_in),
-            title: const Text('Minhas solicitações'),
-            onTap: () => {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.restore),
-            title: const Text('Devolução de valores'),
-            onTap: () => {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.chat_bubble),
-            title: const Text('Canais de atendimento'),
-            onTap: () => {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const AtendimentoClienteScreen()))
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.exit_to_app),
-            title: const Text('Sair'),
-            onTap: () => {Navigator.of(context).pop()},
-          ),
-        ],
+        ),
       ),
-    ),
-      body: ListView(
-        children: [
-          QuestionAnswerTile(
+    ],
+    
+  ),
+  
+),
+QuestionAnswerTile(
             question: 'O que é um consórcio?',
             answer:
                 'Um consórcio é uma modalidade de compra em grupo, onde os participantes contribuem mensalmente para formar uma poupança coletiva destinada à compra de um bem, como um carro ou uma casa.',
+                
           ),
           QuestionAnswerTile(
             question: 'Quais são as vantagens do consórcio?',
@@ -139,12 +244,39 @@ class _InicioState extends State<Inicio> {
             answer:
                 'Para obter mais informações sobre consórcios, entre em contato conosco através dos seguintes canais:\n\nTelefone: (92) 98508-0304\nE-mail: contato@priorizza.app\nBlog: blog.priorizza.app',
           ),
+
           // Adicione mais perguntas e respostas aqui...
         ],
+        ),
       ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            launchWhatsApp();
+          },
+            backgroundColor: Color(0xFFD8B45E), // Defina a cor de fundo como âmbar
+
+          child: Icon(Icons.chat),
+        ),
+      
     );
   }
+  void launchWhatsApp() async {
+    String phoneNumber = '+5592985080304'; // Número de telefone do destinatário
+    String message = 'Olá, eu gostaria de saber mais!!'; // Mensagem a ser enviada
+    String whatsappUrl = 'https://wa.me/$phoneNumber?text=${Uri.encodeFull(message)}';
+
+    if (await canLaunch(whatsappUrl)) {
+      await launch(whatsappUrl);
+    } else {
+      throw 'Não foi possível abrir o WhatsApp.';
+    }
+  }
+  
 }
+
+ 
+
+
 
 class QuestionAnswerTile extends StatelessWidget {
   final String question;
