@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:priorizza/navbar/navbar.dart';
+import 'package:priorizza/loginwith.dart';
+import 'package:priorizza/sidemenu/slider.dart';
+
+
+
 void main() {
   runApp(const LoginScreen());
 }
@@ -27,7 +32,7 @@ class LoginScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const HomeScreen()),
+                    MaterialPageRoute(builder: (context) => const LoginWith()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
@@ -50,7 +55,7 @@ class LoginScreen extends StatelessWidget {
                  onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const HomeScreen()),
+                    MaterialPageRoute(builder: (context) => const MyHomePage()),
                   );
                 },
                 child: const Text(

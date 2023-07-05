@@ -22,10 +22,17 @@ class _InicioState extends State<Inicio> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          'Consórcio Priorizza',
-        ),
+        leading:  Row(
+            children: [
+              Spacer(),
+              Image.asset(
+                'assets/logo.png', // caminho para o arquivo de imagem do logo
+                width: 50, // largura desejada do logo
+                height: 100, // altura desejada do logo
+              ),
+            ],
+          ),
+        
         backgroundColor: const Color(0xFFD8B45E),
       ),
       drawer: Drawer(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:priorizza/sidemenu/consorcios.dart';
 import 'package:priorizza/sidemenu/contemplacao.dart';
 import 'package:priorizza/navbar/consultas.dart';
+import 'package:priorizza/navbar/home.dart';
 
 import 'atendimento.dart';
 import 'documento.dart';
@@ -26,7 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
     switch (selectedIndex) {
       case 0:
         page = 
-         const Consorcios();
+         const Inicio();
         break;
       case 1:
         page = const SimuladorConsorcioWidget();
@@ -56,16 +57,21 @@ class _MyHomePageState extends State<MyHomePage> {
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
         body: Container(
-          color: Colors.amber, // Defina a cor âmbar desejada aqui
           child: Row(
             children: [
               SafeArea(
                 child: NavigationRail(
+                    selectedLabelTextStyle: TextStyle(
+      color: Color(0xFFD8B45E), // Cor do texto selecionado
+    ),
+                    
+                    backgroundColor: Colors.white,
+            selectedIconTheme: IconThemeData(color: Color(0xFFD8B45E),  ),
                   extended: constraints.maxWidth >= 600,
                   destinations: const [
                     NavigationRailDestination(
-                      icon: Icon(Icons.money),
-                      label: Text('Consórcios'),
+                      icon: Icon(Icons.home),
+                      label: Text('Início'),
                     ),
                     NavigationRailDestination(
                       icon: Icon(Icons.calculate),
