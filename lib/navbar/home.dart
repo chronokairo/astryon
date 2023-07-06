@@ -27,7 +27,6 @@ class _InicioState extends State<Inicio> {
     return Scaffold(
       appBar: AppBar(
                 automaticallyImplyLeading: false, // Remover o botão de voltar
-
          iconTheme: IconThemeData(
     color:  Color(0xFFD8B45E), // Define a cor desejada para o ícone
   ),      
@@ -380,7 +379,7 @@ QuestionAnswerTile(
             launchWhatsApp();
           },
             child: FaIcon(FontAwesomeIcons.whatsapp),
-                      backgroundColor: Colors.green.shade800,
+                      backgroundColor: Color(0xFF25D366),
         ),
       
     );

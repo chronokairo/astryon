@@ -1,26 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:priorizza/navbar/services.dart';
 import '../sidemenu/notification.dart';
 import 'consultas.dart';
+import '../calendario/imovel.dart';
+import '../calendario/auto.dart';
+import '../calendario/pesado.dart';
+
 
 import 'home.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class CalendarioAssembleia extends StatefulWidget {
+  const CalendarioAssembleia({super.key});
 
   @override
-  State<HomeScreen> createState() {
-    return _HomeScreenState();
+  State<CalendarioAssembleia> createState() {
+    return _CalendarioAssembleiaState();
   }
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _CalendarioAssembleiaState extends State<CalendarioAssembleia> {
   int _indiceAtual = 1;
   final List<Widget> _telas = [
-    const MyHomePage(),
-     const Inicio(),
-    const Servicos(),
-     
+      Imovel(),
+      Auto(),
+      Pesado(),    
   ];
 
   @override
@@ -34,9 +36,9 @@ class _HomeScreenState extends State<HomeScreen> {
         currentIndex: _indiceAtual,
         onTap: onTabTapped,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.how_to_reg), label: ("Consultas")),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ("Início")),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: ("Serviços")) ,
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: ("Imóveis")),
+          BottomNavigationBarItem(icon: Icon(Icons.directions_car), label: ("Autos")),
+          BottomNavigationBarItem(icon: Icon(Icons.local_shipping), label: ("Pesados")),
           
         ],
       ),

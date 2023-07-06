@@ -4,9 +4,7 @@ import 'package:priorizza/sidemenu/contemplacao.dart';
 import 'package:priorizza/navbar/consultas.dart';
 import 'package:priorizza/navbar/home.dart';
 
-import 'atendimento.dart';
-import 'calendario_assembleia.dart';
-
+import 'package:priorizza/sidemenu/atendimento.dart';
 import 'package:priorizza/sidemenu/documento.dart';
 import 'package:priorizza/sidemenu/folha_ponto.dart';
 import 'package:priorizza/sidemenu/simulacao_lance.dart';
@@ -32,10 +30,16 @@ class _MyHomePageState extends State<MyHomePage> {
          const Inicio();
         break;
       case 1:
-        page = const CalendarioAssembleia();
+        page = const SimuladorConsorcioWidget();
         break;
       case 2:
+        page = const ContemplationScreen();
+        break;
+      case 3:
         page = const AtendimentoClienteScreen();
+        break;
+      case 4:
+        page = const SimulacaoLancesScreen();
         break;
     
         
@@ -65,13 +69,46 @@ class _MyHomePageState extends State<MyHomePage> {
                       label: Text('Página Inicial'),
                     ),
                     NavigationRailDestination(
+                      icon: Icon(Icons.description),
+                      label: Text('Extrato da Cota'),
+                    ),
+                    NavigationRailDestination(
+                      icon: Icon(Icons.bar_chart),
+                      label: Text('Demonstrativo do Grupo'),
+                    ),
+                    NavigationRailDestination(
                       icon: Icon(Icons.event),
                       label: Text('Calendário de Assembleias'),
+                    ),
+                    NavigationRailDestination(
+                      icon: Icon(Icons.file_copy),
+                      label: Text('Informe Anual de Rendimentos'),
                     ),
                     NavigationRailDestination(
                       icon: Icon(Icons.chat),
                       label: Text('Canais de Atendimento'),
                     ),
+                    NavigationRailDestination(
+                      icon: Icon(Icons.receipt_long),
+                      label: Text('Boletos'),
+                    ),
+                    NavigationRailDestination(
+                      icon: Icon(Icons.arrow_forward),
+                      label: Text('Antecipar parcelas'),
+                    ),
+                    NavigationRailDestination(
+                      icon: Icon(Icons.attach_money),
+                      label: Text('Ofertas de lance'),
+                    ),
+                    NavigationRailDestination(
+                      icon: Icon(Icons.person),
+                      label: Text('Dados cadastrais'),
+                    ),
+                    NavigationRailDestination(
+                      icon: Icon(Icons.lock),
+                      label: Text('Alterar senha'),
+                    ),
+                    
                    
                   ],
                   selectedIndex: selectedIndex,

@@ -2,7 +2,7 @@ import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'first_screen.dart';
+import 'package:priorizza/navbar/consultas.dart';
 
 
 void main() {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       create: (context) => MyAppState(),
       child: const MaterialApp(
         title: 'Consórcio Priorizza',
-        home:  LoginScreen(),
+        home:  MyHomePage(),
         
       ),
     );
