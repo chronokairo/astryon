@@ -16,8 +16,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => MyAppState(),
-      child: const MaterialApp(
+      child:  MaterialApp(
         title: 'Consórcio Priorizza',
+              theme: ThemeData.dark(), // Adicionando o tema padrão do Flutter
+
         home:  MyHomePage(),
         
       ),

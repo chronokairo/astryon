@@ -66,7 +66,7 @@ class Pesado extends StatelessWidget {
           children: [
             GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3, // Define a quantidade de colunas da grade
+                crossAxisCount: 4, // Define a quantidade de colunas da grade
               ),
 
               itemCount: datasResultados.length,
@@ -79,7 +79,7 @@ class Pesado extends StatelessWidget {
             ),
             GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3, // Define a quantidade de colunas da grade
+                crossAxisCount: 4, // Define a quantidade de colunas da grade
               ),
 
               itemCount: datasVencimentoBoletos.length,
@@ -92,7 +92,7 @@ class Pesado extends StatelessWidget {
             ),
             GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3, // Define a quantidade de colunas da grade
+                crossAxisCount: 4, // Define a quantidade de colunas da grade
               ),
 
               itemCount: datasSorteio.length,

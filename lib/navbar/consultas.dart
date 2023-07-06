@@ -55,9 +55,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     selectedLabelTextStyle: TextStyle(
       color: Color(0xFFD8B45E), // Cor do texto selecionado
     ),
+    unselectedLabelTextStyle: TextStyle(
+      color: Colors.white, // Cor do texto selecionado
+    ),
                     
-                    backgroundColor: Colors.white,
             selectedIconTheme: IconThemeData(color: Color(0xFFD8B45E),  ),
+            unselectedIconTheme: IconThemeData(color: Colors.white  ),
                   extended: constraints.maxWidth >= 600,
                   destinations: const [
                     NavigationRailDestination(

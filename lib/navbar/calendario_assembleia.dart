@@ -36,9 +36,9 @@ class _CalendarioAssembleiaState extends State<CalendarioAssembleia> {
         currentIndex: _indiceAtual,
         onTap: onTabTapped,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ("Imóveis")),
-          BottomNavigationBarItem(icon: Icon(Icons.directions_car), label: ("Autos")),
-          BottomNavigationBarItem(icon: Icon(Icons.local_shipping), label: ("Pesados")),
+          BottomNavigationBarItem(icon: Icon(Icons.looks_one), label: ("Semana 1")),
+          BottomNavigationBarItem(icon: Icon(Icons.looks_two), label: ("Semana 2")),
+          BottomNavigationBarItem(icon: Icon(Icons.looks_3), label: ("Semana 3")),
           
         ],
       ),

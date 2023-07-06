@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
  import 'package:font_awesome_flutter/font_awesome_flutter.dart';     
 
-import '../sidemenu/atendimento.dart';
+import 'atendimento.dart';
 
 import '../sidemenu/consorcios.dart';
 
@@ -31,13 +31,7 @@ class _InicioState extends State<Inicio> {
     color:  Color(0xFFD8B45E), // Define a cor desejada para o ícone
   ),      
 backgroundColor: Colors.transparent,
-        elevation: 0,  title: Text(
-    'Consórcio Priorizza',
-    textAlign: TextAlign.center,
-    style: TextStyle(
-      color: Color(0xFFD8B45E),
-    ),
-  ),
+        elevation: 0,  
   actions: [
     TextButton(
   onPressed: () {Navigator.push(
@@ -46,7 +40,7 @@ backgroundColor: Colors.transparent,
             );
   },
   child: Text('Início',style: TextStyle(
-      color: Color(0xFFD8B45E),
+      color: Colors.white,
     ),
     ),
 ),
@@ -57,7 +51,7 @@ TextButton(
             );
   },
   child: Text('Assembleias',style: TextStyle(
-      color: Color(0xFFD8B45E),
+      color: Colors.white,
     ),
     ),
 ),
@@ -66,7 +60,7 @@ TextButton(
     launch('https://blog.priorizza.app');
   },
   child: Text('Blog',style: TextStyle(
-      color: Color(0xFFD8B45E),
+      color: Colors.white,
     ),
     ),
 ),   
@@ -78,6 +72,34 @@ TextButton(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            Image.asset(
+                  'assets/logo.png', // Substitua pelo caminho da imagem do seu logo
+                  width: 400,
+                  height: 200,
+                ),
+             Center(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                
+                
+                Text(
+                  'Torne seus sonhos realidade com a garantia de quem é líder no mercado.',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.normal,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+               
+                
+              ],
+            ),
+          ),
+        ),
+      
            
         
           
@@ -87,118 +109,240 @@ TextButton(
   child: ListView(
     scrollDirection: Axis.horizontal,
     children: [
-      Container(
-        width: 268.333,
-        child: GestureDetector(
-          onTap: () {
-            // Adicione a ação desejada aqui
-            print('Simule seu consórcio de Imóveis');
-          },
-          child: Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Icon(
-                  Icons.home,color: Color(0xFFD8B45E),
-                  size: 100,
-                ),
-                Text(
-                  'Consórcio de Imóveis',
-                  textAlign: TextAlign.center,
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    // Adicione a ação desejada aqui
-                    print('Simule seu consórcio');
-                  },
-                  style: ElevatedButton.styleFrom(
-    primary:  Color(0xFFD8B45E), // Defina a cor desejada aqui
-  ),
-                  child: Text('Simule seu consórcio'),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
       
-      Container(
-        width: 268.333,
-        child: GestureDetector(
-          onTap: () {
-            // Adicione a ação desejada aqui
-            print('Simule seu consórcio de Carros');
-          },
-          child: Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
+     
+
+Container(
+  width: 268.333,
+  child: GestureDetector(
+    onTap: () {
+      // Adicione a ação desejada aqui
+      print('Simule');
+    },
+    child: Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.home,
+              color: Colors.white,
+              size: 80,
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Icon(
-                  Icons.directions_car,color:  Color(0xFFD8B45E),
-                  size: 100,
-                ),
-                Text(
-                  'Consórcio de Carros',
-                  textAlign: TextAlign.center,
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    // Adicione a ação desejada aqui
-                    print('Simule seu consórcio');
-                  },
-                  style: ElevatedButton.styleFrom(
-    primary:  Color(0xFFD8B45E), // Defina a cor desejada aqui
-  ),
-                  child: Text('Simule seu consórcio'),
-                ),
-              ],
+            SizedBox(height: 16),
+            Text(
+              'Consórcio de Imóveis',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
             ),
-          ),
+            SizedBox(height: 8),
+            Text(
+              'A melhor opção para quem quer comprar uma casa!',
+              style: TextStyle(
+                fontSize: 14,
+                color: Colors.white,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                // Adicione a ação desejada aqui
+                print('Simule seu consórcio');
+              },
+              style: ElevatedButton.styleFrom(
+                primary: Color(0xFFD8B45E),
+                minimumSize: Size(double.infinity, 50),
+              ),
+              child: Text('Conheça'),
+            ),
+          ],
         ),
       ),
-      Container(
-        width: 268.333,
-        child: GestureDetector(
-          onTap: () {
-            // Adicione a ação desejada aqui
-            print('Simule seu consórcio de Motos');
-          },
-          child: Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Icon(
-                  Icons.motorcycle,color:  Color(0xFFD8B45E),
-                  size: 100,
-                ),
-                Text(
-                  'Consórcio de Motos',
-                  textAlign: TextAlign.center,
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    // Adicione a ação desejada aqui
-                    print('Simule seu consórcio');
-                  },
-                  style: ElevatedButton.styleFrom(
-    primary:  Color(0xFFD8B45E), // Defina a cor desejada aqui
+    ),
   ),
-                  child: Text('Simule seu consórcio'),
-                ),
-              ],
+),
+Container(
+  width: 268.333,
+  child: GestureDetector(
+    onTap: () {
+      // Adicione a ação desejada aqui
+      print('Simule');
+    },
+    child: Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.directions_car,
+              color: Colors.white,
+              size: 80,
             ),
-          ),
+            SizedBox(height: 16),
+            Text(
+              'Consórcio de Carros',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 8),
+            Text(
+              'A melhor opção para quem quer comprar um carro!',
+              style: TextStyle(
+                fontSize: 14,
+                color: Colors.white,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                // Adicione a ação desejada aqui
+                print('Simule seu consórcio');
+              },
+              style: ElevatedButton.styleFrom(
+                primary: Color(0xFFD8B45E),
+                minimumSize: Size(double.infinity, 50),
+              ),
+              child: Text('Conheça'),
+            ),
+          ],
         ),
       ),
+    ),
+  ),
+),
+Container(
+  width: 268.333,
+  child: GestureDetector(
+    onTap: () {
+      // Adicione a ação desejada aqui
+      print('Simule');
+    },
+    child: Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.motorcycle,
+              color: Colors.white,
+              size: 80,
+            ),
+            SizedBox(height: 16),
+            Text(
+              'Consórcio de Motos',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 8),
+            Text(
+              'A melhor opção para quem quer comprar uma moto!',
+              style: TextStyle(
+                fontSize: 14,
+                color: Colors.white,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                // Adicione a ação desejada aqui
+                print('Simule seu consórcio');
+              },
+              style: ElevatedButton.styleFrom(
+                primary: Color(0xFFD8B45E),
+                minimumSize: Size(double.infinity, 50),
+              ),
+              child: Text('Conheça'),
+            ),
+          ],
+        ),
+      ),
+    ),
+  ),
+),
+Container(
+  width: 268.333,
+  child: GestureDetector(
+    onTap: () {
+      // Adicione a ação desejada aqui
+      print('Simule');
+    },
+    child: Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.local_shipping,
+              color: Colors.white,
+              size: 80,
+            ),
+            SizedBox(height: 16),
+            Text(
+              'Consórcio de Pesados',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 8),
+            Text(
+              'A melhor opção para quem quer comprar um veículo pesado!',
+              style: TextStyle(
+                fontSize: 14,
+                color: Colors.white,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                // Adicione a ação desejada aqui
+                print('Simule seu consórcio');
+              },
+              style: ElevatedButton.styleFrom(
+                primary: Color(0xFFD8B45E),
+                minimumSize: Size(double.infinity, 50),
+              ),
+              child: Text('Conheça'),
+            ),
+          ],
+        ),
+      ),
+    ),
+  ),
+),
+
+
+
       Container(
         width: 268.333,
         child: GestureDetector(
@@ -214,7 +358,9 @@ TextButton(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Icon(
-                  Icons.local_shipping,color: Color(0xFFD8B45E),
+                  Icons.local_shipping,
+                                                  color: Colors.white,
+
                   size: 100,
                 ),
                 Text(
@@ -251,7 +397,9 @@ TextButton(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Icon(
-                  Icons.flight,color:  Color(0xFFD8B45E),
+                  Icons.flight,
+                                color: Colors.white,
+
                   size: 100,
                 ),
                 Text(
@@ -378,7 +526,7 @@ QuestionAnswerTile(
           onPressed: () {
             launchWhatsApp();
           },
-            child: FaIcon(FontAwesomeIcons.whatsapp),
+            child: FaIcon(FontAwesomeIcons.whatsapp,color: Colors.white,),
                       backgroundColor: Color(0xFF25D366),
         ),
       
