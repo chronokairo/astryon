@@ -341,86 +341,6 @@ Container(
   ),
 ),
 
-
-
-      Container(
-        width: 268.333,
-        child: GestureDetector(
-          onTap: () {
-            // Adicione a ação desejada aqui
-            print('Simule seu consórcio de pesados');
-          },
-          child: Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Icon(
-                  Icons.local_shipping,
-                                                  color: Colors.white,
-
-                  size: 100,
-                ),
-                Text(
-                  'Consórcio de Pesados',
-                  textAlign: TextAlign.center,
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    // Adicione a ação desejada aqui
-                    print('Simule seu consórcio');
-                  },
-                  style: ElevatedButton.styleFrom(
-    primary:  Color(0xFFD8B45E), // Defina a cor desejada aqui
-  ),
-                  child: Text('Simule seu consórcio'),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-      Container(
-        width: 268.333,
-        child: GestureDetector(
-          onTap: () {
-            // Adicione a ação desejada aqui
-            print('Simule seu consórcio de Serviços');
-          },
-          child: Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Icon(
-                  Icons.flight,
-                                color: Colors.white,
-
-                  size: 100,
-                ),
-                Text(
-                  'Consórcio de Serviços',
-                  textAlign: TextAlign.center,
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    // Adicione a ação desejada aqui
-                    print('Simule seu consórcio');
-                  },
-                  style: ElevatedButton.styleFrom(
-    primary:  Color(0xFFD8B45E), // Defina a cor desejada aqui
-  ),
-                  child: Text('Simule seu consórcio'),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
     ],
     
   ),
@@ -453,8 +373,8 @@ QuestionAnswerTile(
       child: Column(
         children: [
           Container(
-            height: 300,
-            width: 300,
+            height: 100,
+            width: 400,
             child: Image.asset('assets/logo.png'), // Substitua pelo caminho da imagem do logo
           ),
           SizedBox(height: 12),
@@ -479,38 +399,34 @@ QuestionAnswerTile(
               fontSize: 14,
             ),
           ),
-          Text(
-            'Data: 15/08/88',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 14,
-            ),
-          ),
+          
+          
           SizedBox(height: 12),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                icon: Icon(Icons.facebook),
-                color: Colors.white,
-                onPressed: () {
-                  // Ação desejada para o Facebook
-                },
-              ),
-              IconButton(
-                icon: Icon(Icons.chat),
-                color: Colors.white,
-                onPressed: () {
-                  // Ação desejada para o Instagram
-                },
-              ),
-              IconButton(
-                icon: Icon(Icons.chat),
-                color: Colors.white,
-                onPressed: () {
-                  // Ação desejada para o Twitter
-                },
-              ),
+  icon: Icon(FontAwesomeIcons.facebook),
+  color: Colors.white,
+  onPressed: () {
+    // Ação desejada para o Facebook
+  },
+),
+IconButton(
+  icon: Icon(FontAwesomeIcons.instagram),
+  color: Colors.white,
+  onPressed: () {
+    // Ação desejada para o Instagram
+  },
+),
+IconButton(
+  icon: Icon(FontAwesomeIcons.linkedin),
+  color: Colors.white,
+  onPressed: () {
+    // Ação desejada para o LinkedIn
+  },
+),
+
             ],
           ),
         ],
