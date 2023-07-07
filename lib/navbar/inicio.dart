@@ -3,8 +3,12 @@ import 'package:url_launcher/url_launcher.dart';
  import 'package:font_awesome_flutter/font_awesome_flutter.dart';     
 
 import 'atendimento.dart';
+import 'calendario_assembleia.dart';
+
 
 import '../sidemenu/consorcios.dart';
+import '../teste/stories.dart';
+
 
 class Inicio extends StatefulWidget {
   const Inicio({super.key});
@@ -44,10 +48,22 @@ backgroundColor: Colors.transparent,
     ),
     ),
 ),
+
 TextButton(
   onPressed: () {Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => Consorcios()),
+            );
+  },
+  child: Text('Consórcios',style: TextStyle(
+      color: Colors.white,
+    ),
+    ),
+),
+TextButton(
+  onPressed: () {Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => CalendarioAssembleia()),
             );
   },
   child: Text('Assembleias',style: TextStyle(
@@ -55,6 +71,21 @@ TextButton(
     ),
     ),
 ),
+
+TextButton(
+  onPressed: () {Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => VehicleList()),
+            );
+  },
+  child: Text('Stories',style: TextStyle(
+      color: Colors.white,
+    ),
+    ),
+),
+
+
+
 TextButton(
   onPressed: () {
     launch('https://blog.priorizza.app');
@@ -63,7 +94,18 @@ TextButton(
       color: Colors.white,
     ),
     ),
-),   
+), 
+ElevatedButton(
+              onPressed: () {
+                // Ação desejada para a Área do Cliente
+              },
+              style: ElevatedButton.styleFrom(
+                primary: Color(0xFFD8B45E),
+                onPrimary: Colors.white,
+              ),
+              child: Text('Área do Cliente'),
+            ),
+
   ],            
         ),
       
@@ -135,7 +177,7 @@ Container(
             ),
             SizedBox(height: 16),
             Text(
-              'Consórcio de Imóveis',
+              'Consórcio de Imóvel',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -144,7 +186,7 @@ Container(
             ),
             SizedBox(height: 8),
             Text(
-              'A melhor opção para quem quer comprar uma casa!',
+              'Casa, apartamento e quitação de financiamento em até 200 meses. Crédito de R\$ 50 mil a R\$ 500 mil.',
               style: TextStyle(
                 fontSize: 14,
                 color: Colors.white,
@@ -161,7 +203,7 @@ Container(
                 primary: Color(0xFFD8B45E),
                 minimumSize: Size(double.infinity, 50),
               ),
-              child: Text('Conheça'),
+              child: Text('Veja as vantagens'),
             ),
           ],
         ),
@@ -192,7 +234,7 @@ Container(
             ),
             SizedBox(height: 16),
             Text(
-              'Consórcio de Carros',
+              'Consórcio de Veículo',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -201,7 +243,7 @@ Container(
             ),
             SizedBox(height: 8),
             Text(
-              'A melhor opção para quem quer comprar um carro!',
+              'Carros, motos e náuticos com pagamento em até 70 meses. Crédito de R\$ 25mil a R\$ 70 mil.',
               style: TextStyle(
                 fontSize: 14,
                 color: Colors.white,
@@ -249,7 +291,7 @@ Container(
             ),
             SizedBox(height: 16),
             Text(
-              'Consórcio de Motos',
+              'Consórcio Bike',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -258,7 +300,7 @@ Container(
             ),
             SizedBox(height: 8),
             Text(
-              'A melhor opção para quem quer comprar uma moto!',
+              'De urbana a elétrica, sua nova bike é garantida sem juros e com planos a partir de R\$ 25 mil em até 70 meses.',
               style: TextStyle(
                 fontSize: 14,
                 color: Colors.white,
@@ -275,7 +317,7 @@ Container(
                 primary: Color(0xFFD8B45E),
                 minimumSize: Size(double.infinity, 50),
               ),
-              child: Text('Conheça'),
+              child: Text('Descubra'),
             ),
           ],
         ),
@@ -315,7 +357,7 @@ Container(
             ),
             SizedBox(height: 8),
             Text(
-              'A melhor opção para quem quer comprar um veículo pesado!',
+              'Caminhões, ônibus, tratores com pagamento em até 150 meses. Crédito de R\$ 180 mil a R\$ 300 mil.',
               style: TextStyle(
                 fontSize: 14,
                 color: Colors.white,
@@ -332,7 +374,7 @@ Container(
                 primary: Color(0xFFD8B45E),
                 minimumSize: Size(double.infinity, 50),
               ),
-              child: Text('Conheça'),
+              child: Text('Saiba mais'),
             ),
           ],
         ),

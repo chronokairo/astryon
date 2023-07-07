@@ -6,7 +6,7 @@ import '../calendario/auto.dart';
 import '../calendario/pesado.dart';
 
 
-import 'home.dart';
+import 'inicio.dart';
 
 class CalendarioAssembleia extends StatefulWidget {
   const CalendarioAssembleia({super.key});

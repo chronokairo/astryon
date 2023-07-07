@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:priorizza/sidemenu/consorcios.dart';
 import 'package:priorizza/sidemenu/contemplacao.dart';
 import 'package:priorizza/navbar/consultas.dart';
-import 'package:priorizza/navbar/home.dart';
+import 'package:priorizza/navbar/inicio.dart';
 
 import 'atendimento.dart';
 import 'calendario_assembleia.dart';

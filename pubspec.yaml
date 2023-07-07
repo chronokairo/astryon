@@ -68,6 +68,15 @@ flutter:
   assets:
   - assets/logo.png
   - assets/banner.png
+  - assets/honda.png
+  - assets/honda/2.png
+  - assets/honda/3.png
+  - assets/honda/4.png
+  - assets/honda/5.png
+  - assets/honda/6.png
+  - assets/honda/7.png
+
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
