@@ -33,7 +33,7 @@ class _InicioState extends State<Inicio> {
         padding: EdgeInsets.zero,
         children: <Widget>[
            const UserAccountsDrawerHeader(
-        decoration: BoxDecoration(color: const Color(0xFFD8B45E)),
+        decoration: BoxDecoration(color: Color(0xFFD8B45E)),
         accountName: Text(
           "Uma vida priorizzando você!!",
           style: TextStyle(
@@ -111,7 +111,7 @@ class _InicioState extends State<Inicio> {
       ),
     ),
       body: ListView(
-        children: [
+        children: const [
           QuestionAnswerTile(
             question: 'O que é um consórcio?',
             answer:
@@ -143,7 +143,7 @@ class QuestionAnswerTile extends StatelessWidget {
   final String question;
   final String answer;
 
-  const QuestionAnswerTile({
+  const QuestionAnswerTile({super.key, 
     required this.question,
     required this.answer,
   });

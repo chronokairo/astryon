@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:priorizza/navbar/servicos.dart';
-import '../sidemenu/notification.dart';
 import 'consultas.dart';
 import 'home.dart';
 

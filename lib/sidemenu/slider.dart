@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:priorizza/sidemenu/consorcios.dart';
 import 'package:priorizza/sidemenu/contemplacao.dart';
-import 'package:priorizza/navbar/consultas.dart';
 
 import 'atendimento.dart';
 import 'documento.dart';

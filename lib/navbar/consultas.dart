@@ -37,7 +37,7 @@ class Consultas extends StatelessWidget {
         ),
         ListTile(
           leading: const Icon(Icons.location_city),
-          title:  Text('IR - Informe Anual de Rendimentos'),
+          title:  const Text('IR - Informe Anual de Rendimentos'),
           onTap: () => {},
         ),
         const ListTile(
