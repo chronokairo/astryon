@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:priorizza/navbar/navbar.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+
+class LoginWith extends StatelessWidget {
+  const LoginWith({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +17,11 @@ class HomeScreen extends StatelessWidget {
             children: [
               Image.asset(
                 'assets/logo.png', // Substitua pelo caminho da sua imagem
-                width: 150,
-                height: 150,
+                width: 400,
+                height: 300,
               ),
              
-               const SizedBox(height: 20),
+               const SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: Column(
@@ -27,12 +29,12 @@ class HomeScreen extends StatelessWidget {
                     TextField(
                       decoration: InputDecoration(
                         labelText: 'Login',
-                                                fillColor: Colors.white,
+                        fillColor: Colors.white,
                         filled: true,
 
                       ),
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 10),
                     TextField(
                       obscureText: true,
                       decoration: InputDecoration(
@@ -67,15 +69,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 30),
-
-              const Text(
-                'Faça login com',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.white,
-                ),
-              ),
+              
               const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

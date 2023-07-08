@@ -2,7 +2,7 @@ import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'first_screen.dart';
+import 'package:priorizza/navbar/inicio.dart';
 
 
 void main() {
@@ -16,9 +16,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => MyAppState(),
-      child: const MaterialApp(
+      child:  MaterialApp(
         title: 'Consórcio Priorizza',
-        home:  LoginScreen(),
+              theme: ThemeData.dark(), // Adicionando o tema padrão do Flutter
+
+        home:  Inicio(),
         
       ),
     );

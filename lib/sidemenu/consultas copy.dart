@@ -4,11 +4,11 @@ import 'package:priorizza/sidemenu/contemplacao.dart';
 import 'package:priorizza/navbar/consultas.dart';
 import 'package:priorizza/navbar/home.dart';
 
-import 'atendimento.dart';
-import 'documento.dart';
-import 'folha_ponto.dart';
-import 'simulacao_lance.dart';
-import 'simulador.dart';
+import 'package:priorizza/sidemenu/atendimento.dart';
+import 'package:priorizza/sidemenu/documento.dart';
+import 'package:priorizza/sidemenu/folha_ponto.dart';
+import 'package:priorizza/sidemenu/simulacao_lance.dart';
+import 'package:priorizza/sidemenu/simulador.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key});
@@ -41,12 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
       case 4:
         page = const SimulacaoLancesScreen();
         break;
-      case 5:
-        page = DocumentsScreen();
-        break;
-      case 6:
-        page = const PontoWidget();
-        break;
+    
         
         
 
@@ -71,32 +66,49 @@ class _MyHomePageState extends State<MyHomePage> {
                   destinations: const [
                     NavigationRailDestination(
                       icon: Icon(Icons.home),
-                      label: Text('Início'),
-                    ),
-                    NavigationRailDestination(
-                      icon: Icon(Icons.calculate),
-                      label: Text('Simulador'),
-                    ),
-                    NavigationRailDestination(
-                      icon: Icon(Icons.search),
-                      label: Text('Consulta de contemplação'),
-                    ),
-                    NavigationRailDestination(
-                      icon: Icon(Icons.chat),
-                      label: Text('Atendimento ao cliente'),
-                    ),
-                    NavigationRailDestination(
-                      icon: Icon(Icons.compare_arrows),
-                      label: Text('Simulações de lances'),
+                      label: Text('Página Inicial'),
                     ),
                     NavigationRailDestination(
                       icon: Icon(Icons.description),
-                      label: Text('Acesso a documentos'),
+                      label: Text('Extrato da Cota'),
                     ),
                     NavigationRailDestination(
-                      icon: Icon(Icons.schedule),
-                      label: Text('Ponto'),
+                      icon: Icon(Icons.bar_chart),
+                      label: Text('Demonstrativo do Grupo'),
                     ),
+                    NavigationRailDestination(
+                      icon: Icon(Icons.event),
+                      label: Text('Calendário de Assembleias'),
+                    ),
+                    NavigationRailDestination(
+                      icon: Icon(Icons.file_copy),
+                      label: Text('Informe Anual de Rendimentos'),
+                    ),
+                    NavigationRailDestination(
+                      icon: Icon(Icons.chat),
+                      label: Text('Canais de Atendimento'),
+                    ),
+                    NavigationRailDestination(
+                      icon: Icon(Icons.receipt_long),
+                      label: Text('Boletos'),
+                    ),
+                    NavigationRailDestination(
+                      icon: Icon(Icons.arrow_forward),
+                      label: Text('Antecipar parcelas'),
+                    ),
+                    NavigationRailDestination(
+                      icon: Icon(Icons.attach_money),
+                      label: Text('Ofertas de lance'),
+                    ),
+                    NavigationRailDestination(
+                      icon: Icon(Icons.person),
+                      label: Text('Dados cadastrais'),
+                    ),
+                    NavigationRailDestination(
+                      icon: Icon(Icons.lock),
+                      label: Text('Alterar senha'),
+                    ),
+                    
                    
                   ],
                   selectedIndex: selectedIndex,
