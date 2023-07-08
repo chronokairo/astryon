@@ -66,6 +66,12 @@ class ConsorcioPage extends StatelessWidget {
                 _buildInfoItem('Sequência', '0'),
               ],
             ),
+            const SizedBox(height: 20),
+            _buildCard('Card 1'),
+            const SizedBox(height: 10),
+            _buildCard('Card 2'),
+            const SizedBox(height: 10),
+            _buildCard('Card 3'),
           ],
         ),
       ),
@@ -75,7 +81,10 @@ class ConsorcioPage extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: TextButton(
             onPressed: () {
-              // Ação desejada para expandir
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const BoletosPage()),
+              );
             },
             child: const Text(
               'Expandir',
@@ -112,6 +121,83 @@ class ConsorcioPage extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildCard(String title) {
+    return Card(
+      child: ListTile(
+        title: Text(title),
+        subtitle: const Text('Descrição do card'),
+        trailing: const Icon(Icons.arrow_forward),
+        onTap: () {
+          // Ação desejada ao clicar no card
+        },
+      ),
+    );
+  }
+}
+
+
+class BoletosPage extends StatelessWidget {
+  const BoletosPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Boletos'),
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16.0),
+        children: [
+          const Text(
+            'Boletos Pagos',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 10),
+          BoletosList(pagos: true),
+          const SizedBox(height: 20),
+          const Text(
+            'Boletos a Pagar',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 10),
+          BoletosList(pagos: false),
+        ],
+      ),
+    );
+  }
+}
+
+class BoletosList extends StatelessWidget {
+  final bool pagos;
+
+  const BoletosList({required this.pagos, Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // Simulando a lista de boletos pagos ou a pagar
+    final boletos = [
+      'Boleto 1',
+      'Boleto 2',
+      'Boleto 3',
+      'Boleto 4',
+      'Boleto 5',
+    ];
+
+    return ListView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: boletos.length,
+      itemBuilder: (context, index) {
+        final boleto = boletos[index];
+        return ListTile(
+          title: Text(boleto),
+          subtitle: Text(pagos ? 'Pago' : 'A pagar'),
+          trailing: Icon(pagos ? Icons.check_circle : Icons.pending),
+        );
+      },
     );
   }
 }

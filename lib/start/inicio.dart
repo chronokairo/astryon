@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:priorizza/start/cliente/login_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -59,7 +60,6 @@ class _InicioState extends State<Inicio> {
               ),
             ),
           ),
-        
           TextButton(
             onPressed: () {
               launchUrl('https://blog.priorizza.app' as Uri);
@@ -73,11 +73,9 @@ class _InicioState extends State<Inicio> {
           ),
           ElevatedButton(
             onPressed: () {
-              
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                    builder: (context) => const LoginScreen()),
+                MaterialPageRoute(builder: (context) => const LoginScreen()),
               );
             },
             style: ElevatedButton.styleFrom(
@@ -94,8 +92,8 @@ class _InicioState extends State<Inicio> {
           children: [
             Image.asset(
               'assets/logo.png', // Substitua pelo caminho da imagem do seu logo
-              width: 400,
-              height: 200,
+              width: 300,
+              height: 150,
             ),
             Center(
               child: Padding(
@@ -429,8 +427,8 @@ class _InicioState extends State<Inicio> {
           launchWhatsApp();
         },
         backgroundColor: const Color(0xFF25D366),
-        child: const Icon(
-          Icons.chat,
+        child: const FaIcon(
+          FontAwesomeIcons.whatsapp,
           color: Colors.white,
         ),
       ),
@@ -444,8 +442,8 @@ class _InicioState extends State<Inicio> {
     String whatsappUrl =
         'https://wa.me/$phoneNumber?text=${Uri.encodeFull(message)}';
 
-    if (await canLaunchUrl(whatsappUrl as Uri)) {
-      await launchUrl(whatsappUrl as Uri);
+    if (await canLaunch(whatsappUrl)) {
+      await launch(whatsappUrl);
     } else {
       throw 'Não foi possível abrir o WhatsApp.';
     }

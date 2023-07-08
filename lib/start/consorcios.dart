@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:priorizza/start/consorcios/carros.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'assembleias.dart';
 import 'cliente/login_screen.dart';
 import 'consorcios/motos.dart';
 import 'inicio.dart';
 
 class Consorcios extends StatefulWidget {
-  const Consorcios({super.key});
+  const Consorcios({Key? key});
 
   @override
   State<Consorcios> createState() {
@@ -21,7 +21,7 @@ class _ConsorciosPageState extends State<Consorcios>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 4, vsync: this);
   }
 
   @override
@@ -57,20 +57,6 @@ class _ConsorciosPageState extends State<Consorcios>
           ),
           TextButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Consorcios()),
-              );
-            },
-            child: const Text(
-              'Consórcios',
-              style: TextStyle(
-                color: Colors.white,
-              ),
-            ),
-          ),
-          TextButton(
-            onPressed: () {
               launchUrl('https://blog.priorizza.app' as Uri);
             },
             child: const Text(
@@ -95,12 +81,35 @@ class _ConsorciosPageState extends State<Consorcios>
           ),
         ],
       ),
-      body: TabBarView(
-        controller: _tabController,
-        children: const [
-          Bike(),
-          Bike(),
-          Bike(),
+      body: Column(
+        children: [
+          TabBar(
+            indicatorColor:
+                Color(0xFFD8B45E), // Define a cor desejada para o ícone
+            // Define a cor do indicador ativo
+            unselectedLabelColor:
+                Colors.grey, // Define a cor do texto das abas inativas
+            labelColor: Color(0xFFD8B45E), // Define a cor do texto da aba ativa
+
+            controller: _tabController,
+            tabs: const [
+              Tab(text: 'Imóveis'),
+              Tab(text: 'Autos'),
+              Tab(text: 'Bikes'),
+              Tab(text: 'Pesados'),
+            ],
+          ),
+          Expanded(
+            child: TabBarView(
+              controller: _tabController,
+              children: const [
+                Text('Imóveis'),
+                Autos(),
+                Text('Bikes'),
+                Text('Pesados'),
+              ],
+            ),
+          ),
         ],
       ),
     );

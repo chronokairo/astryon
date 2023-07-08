@@ -7,10 +7,9 @@ import '../inicio.dart';
 import 'extrato.dart';
 import 'meuconsorcio.dart';
 import 'ofertarlance.dart';
-import 'pagamentos.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({Key? key});
 
   @override
   State<HomeScreen> createState() {
@@ -22,11 +21,8 @@ class _HomeScreenState extends State<HomeScreen> {
   int _indiceAtual = 0;
   final List<Widget> _telas = [
     const ConsorcioPage(),
-    const PagamentosPage(),
     const ExtratoPage(),
     const OfertarLancePage(),
-    
-    
   ];
 
   @override
@@ -68,8 +64,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-
-        
           TextButton(
             onPressed: () {
               launchUrl('https://blog.priorizza.app' as Uri);
@@ -81,10 +75,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-
           ElevatedButton(
             onPressed: () {
-              
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -92,12 +84,11 @@ class _HomeScreenState extends State<HomeScreen> {
               );
             },
             style: ElevatedButton.styleFrom(
-              foregroundColor: Colors.white,
-              backgroundColor: const Color(0xFFD8B45E),
+              primary: const Color(0xFFD8B45E),
+              onPrimary: Colors.white,
             ),
             child: const Text('Assembleias'),
           ),
-          
         ],
       ),
       body: _telas[_indiceAtual],
@@ -107,13 +98,18 @@ class _HomeScreenState extends State<HomeScreen> {
         currentIndex: _indiceAtual,
         onTap: onTabTapped,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Início"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.payment), label: "Pagamentos"),
+            icon: Icon(Icons.payment),
+            label: "Pagamentos",
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.description), label: "Extrato"),
+            icon: Icon(Icons.description),
+            label: "Extrato",
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.gavel), label: "Ofertar um lance"),
+            icon: Icon(Icons.gavel),
+            label: "Ofertar um lance",
+          ),
         ],
       ),
     );
