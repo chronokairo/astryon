@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:priorizza/navbar/navbar.dart';
+import 'package:priorizza/start/cliente/navbar.dart';
 
 
 class LoginWith extends StatelessWidget {
@@ -75,35 +75,13 @@ class LoginWith extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   IconButton(
-                    onPressed: () {
-                      // Adicione ação para o botão de login com Facebook
-                    },
-                    icon: Image.asset(
-                      'assets/facebook_icon.png',
-                      width: 40,
-                      height: 40,
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {
-                      // Adicione ação para o botão de login com Twitter
-                    },
-                    icon: Image.asset(
-                      'assets/twitter_icon.png',
-                      width: 40,
-                      height: 40,
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {
-                      // Adicione ação para o botão de login com LinkedIn
-                    },
-                    icon: Image.asset(
-                      'assets/linkedin_icon.png',
-                      width: 40,
-                      height: 40,
-                    ),
-                  ),
+                        icon: const Icon(Icons.facebook),
+                        color: Colors.white,
+                        onPressed: () {
+                          // Ação desejada para o Facebook
+                        },
+                      ),
+                  
                 ],
               ),
             ],

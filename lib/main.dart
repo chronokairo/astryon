@@ -2,7 +2,7 @@ import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'package:priorizza/navbar/inicio.dart';
+import 'package:priorizza/start/inicio.dart';
 
 
 void main() {
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         title: 'Consórcio Priorizza',
               theme: ThemeData.dark(), // Adicionando o tema padrão do Flutter
 
-        home:  Inicio(),
+        home:  const Inicio(),
         
       ),
     );

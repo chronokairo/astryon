@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import '../sidemenu/notification.dart';
-import 'consultas.dart';
-import '../calendario/imovel.dart';
-import '../calendario/auto.dart';
-import '../calendario/pesado.dart';
+import 'assembleias/pesado.dart';
 
 
-import 'inicio.dart';
 
 class CalendarioAssembleia extends StatefulWidget {
   const CalendarioAssembleia({super.key});
@@ -18,10 +13,9 @@ class CalendarioAssembleia extends StatefulWidget {
 }
 
 class _CalendarioAssembleiaState extends State<CalendarioAssembleia> {
-  int _indiceAtual = 1;
+  int _indiceAtual = 0;
   final List<Widget> _telas = [
-      Imovel(),
-      Auto(),
+      
       Pesado(),    
   ];
 

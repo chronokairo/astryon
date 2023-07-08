@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:priorizza/navbar/navbar.dart';
-import 'package:priorizza/loginwith.dart';
-import 'package:priorizza/sidemenu/slider.dart';
+import 'package:priorizza/start/inicio.dart';
 
-
+import 'login_with.dart';
 
 void main() {
   runApp(const LoginScreen());
@@ -55,7 +53,7 @@ class LoginScreen extends StatelessWidget {
                  onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const MyHomePage()),
+                    MaterialPageRoute(builder: (context) => const Inicio()),
                   );
                 },
                 child: const Text(

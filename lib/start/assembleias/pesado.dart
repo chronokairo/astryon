@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Auto extends StatelessWidget {
+class Pesado extends StatelessWidget {
   final List<String> datasResultados = [
     '01/01/2023',
     '05/02/2023',
@@ -49,7 +49,7 @@ class Auto extends StatelessWidget {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        appBar: TabBar(
+        appBar: const TabBar(
             tabs: [
               Tab(text: 'Resultados'),
               Tab(text: 'Vencimento Boletos'),
@@ -65,8 +65,8 @@ class Auto extends StatelessWidget {
         body: TabBarView(
           children: [
             GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3, // Define a quantidade de colunas da grade
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 4, // Define a quantidade de colunas da grade
               ),
 
               itemCount: datasResultados.length,
@@ -78,8 +78,8 @@ class Auto extends StatelessWidget {
               },
             ),
             GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3, // Define a quantidade de colunas da grade
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 4, // Define a quantidade de colunas da grade
               ),
 
               itemCount: datasVencimentoBoletos.length,
@@ -91,8 +91,8 @@ class Auto extends StatelessWidget {
               },
             ),
             GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3, // Define a quantidade de colunas da grade
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 4, // Define a quantidade de colunas da grade
               ),
 
               itemCount: datasSorteio.length,
