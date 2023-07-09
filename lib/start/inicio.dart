@@ -86,7 +86,16 @@ class _InicioState extends State<Inicio> {
           ),
         ],
       ),
-      body: SingleChildScrollView(
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/background_image.png"), // Substitua pelo caminho da sua imagem de background
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: 
+      
+      SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -191,31 +200,45 @@ class _InicioState extends State<Inicio> {
               ),
             ),
           ),),
-        
-      
-                  SizedBox(
-                    width: 268.333,
-                    child: GestureDetector(
-                      onTap: () {
-                        // Adicione a ação desejada aqui
-                      },
-                      child: Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
+
+
+          SizedBox(
+            width: 268.333,
+            child: GestureDetector(
+              onTap: () {
+                // Adicione a ação desejada aqui
+              },
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Stack(
+                    children: [
+                      Positioned.fill(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage("assets/banner/autos.png"), // Substitua pelo caminho da sua imagem de background
+                              fit: BoxFit.cover,
+                            ),
+                          ),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Icon(
+                      ),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(
                                 Icons.directions_car,
                                 color: Colors.white,
                                 size: 80,
                               ),
-                              const SizedBox(height: 16),
-                              const Text(
-                                'Consórcio de Veículo',
+                          const SizedBox(height: 16),
+                          const Text(
+                                'Consórcio de Autos',
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
@@ -231,23 +254,174 @@ class _InicioState extends State<Inicio> {
                                 ),
                                 textAlign: TextAlign.center,
                               ),
-                              const SizedBox(height: 16),
-                              ElevatedButton(
-                                onPressed: () {
-                                  // Adicione a ação desejada aqui
-                                },
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: const Color(0xFFD8B45E),
-                                  minimumSize: const Size(double.infinity, 50),
-                                ),
-                                child: const Text('Conheça'),
-                              ),
-                            ],
+                          const SizedBox(height: 16),
+                          ElevatedButton(
+                            onPressed: () {
+                              // Adicione a ação desejada aqui
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0xFFD8B45E),
+                              minimumSize: const Size(double.infinity, 50),
+                            ),
+                            child: const Text('Veja as vantagens'),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),),
+
+          SizedBox(
+            width: 268.333,
+            child: GestureDetector(
+              onTap: () {
+                // Adicione a ação desejada aqui
+              },
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Stack(
+                    children: [
+                      Positioned.fill(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage("assets/banner/bike.png"), // Substitua pelo caminho da sua imagem de background
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(
+                                Icons.motorcycle,
+                                color: Colors.white,
+                                size: 80,
+                              ),
+                              const SizedBox(height: 16),
+                              const Text(
+                                'Consórcio Bike',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                              const SizedBox(height: 8),
+                              const Text(
+                                'De urbana a elétrica, sua nova bike é garantida sem juros e com planos a partir de R\$ 25 mil em até 70 meses.',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                          const SizedBox(height: 16),
+                          ElevatedButton(
+                            onPressed: () {
+                              // Adicione a ação desejada aqui
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0xFFD8B45E),
+                              minimumSize: const Size(double.infinity, 50),
+                            ),
+                            child: const Text('Veja as vantagens'),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
+                  ],
+                ),
+              ),
+            ),
+          ),),
+
+          SizedBox(
+            width: 268.333,
+            child: GestureDetector(
+              onTap: () {
+                // Adicione a ação desejada aqui
+              },
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Stack(
+                    children: [
+                      Positioned.fill(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage("assets/banner/pesado.png"), // Substitua pelo caminho da sua imagem de background
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      ),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                           const Icon(
+                                Icons.local_shipping,
+                                color: Colors.white,
+                                size: 80,
+                              ),
+                              const SizedBox(height: 16),
+                              const Text(
+                                'Consórcio de Pesados',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                              const SizedBox(height: 8),
+                              const Text(
+                                'Caminhões, ônibus, tratores com pagamento em até 150 meses. Crédito de R\$ 180 mil a R\$ 300 mil.',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                              const SizedBox(height: 16),
+                          ElevatedButton(
+                            onPressed: () {
+                              // Adicione a ação desejada aqui
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0xFFD8B45E),
+                              minimumSize: const Size(double.infinity, 50),
+                            ),
+                            child: const Text('Veja as vantagens'),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),),
+
+          
+        
+      
+                  
                   SizedBox(
                     width: 268.333,
                     child: GestureDetector(
@@ -439,7 +613,7 @@ class _InicioState extends State<Inicio> {
             // Adicione mais perguntas e respostas aqui...
           ],
         ),
-      ),
+      ),),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           launchWhatsApp();
