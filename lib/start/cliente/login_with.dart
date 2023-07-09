@@ -7,7 +7,14 @@ class LoginWith extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/background_image.png"), // Substitua pelo caminho da sua imagem de background
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Center(
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -63,7 +70,6 @@ class LoginWith extends StatelessWidget {
                   child: const Text(
                     'Entrar',
                     style: TextStyle(
-                     
                       fontSize: 16,
                     ),
                   ),
@@ -86,7 +92,7 @@ class LoginWith extends StatelessWidget {
             ),
           ),
         ),
+      ),
     );
   }
 }
-

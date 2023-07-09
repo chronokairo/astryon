@@ -37,7 +37,6 @@ dependencies:
   english_words: 
   provider:
   flutter_widget_from_html_core: 
-  fwfh_webview: 
   url_launcher:
   font_awesome_flutter:
   
@@ -67,7 +66,14 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
   - assets/logo.png
+  - assets/background_image.png
   - assets/banner.png
+  - assets/banner/autos.png
+  - assets/banner/bike.png
+  - assets/banner/casa.png
+  - assets/banner/pesado.png
+  - assets/banner/servico.png
+
   - assets/honda.png
   - assets/wallpaper.png
   - assets/honda/2.png
