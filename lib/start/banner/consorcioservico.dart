@@ -8,6 +8,8 @@ import '../faqfooter.dart';
 import '../inicio.dart';
 
 class ConsorcioServicosPage extends StatelessWidget {
+  const ConsorcioServicosPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -192,7 +192,7 @@ class _InicioState extends State<Inicio> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    ConsorcioCasaPage()),
+                                                    const ConsorcioCasaPage()),
                                           );
                                         },
                                         style: ElevatedButton.styleFrom(
@@ -263,7 +263,7 @@ class _InicioState extends State<Inicio> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    ConsorcioCarroPage()),
+                                                    const ConsorcioCarroPage()),
                                           );
                                         },
                                         style: ElevatedButton.styleFrom(
@@ -334,7 +334,7 @@ class _InicioState extends State<Inicio> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    ConsorcioMotoEletricaPage()),
+                                                    const ConsorcioMotoEletricaPage()),
                                           );
                                         },
                                         style: ElevatedButton.styleFrom(
@@ -405,7 +405,7 @@ class _InicioState extends State<Inicio> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    ConsorcioCaminhaoPage()),
+                                                    const ConsorcioCaminhaoPage()),
                                           );
                                         },
                                         style: ElevatedButton.styleFrom(
@@ -476,7 +476,7 @@ class _InicioState extends State<Inicio> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    ConsorcioServicosPage()),
+                                                    const ConsorcioServicosPage()),
                                           );
                                         },
                                         style: ElevatedButton.styleFrom(

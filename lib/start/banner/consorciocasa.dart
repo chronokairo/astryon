@@ -8,6 +8,8 @@ import '../consorcios.dart';
 import '../inicio.dart';
 
 class ConsorcioCasaPage extends StatelessWidget {
+  const ConsorcioCasaPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
