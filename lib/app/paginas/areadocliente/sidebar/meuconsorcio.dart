@@ -13,66 +13,68 @@ class ConsorcioPage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(height: 20),
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                Container(
-                  height: 30,
-                  width: 300,
-                  decoration: BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                ),
-                Container(
-                  height: 30,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    color: Colors.green,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                ),
-                const Positioned(
-                  top: 3,
-                  child: Text(
-                    '50%',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(height: 20),
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Container(
+                    height: 30,
+                    width: 300,
+                    decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.circular(15),
                     ),
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              'Meu Consórcio',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
+                  Container(
+                    height: 30,
+                    width: 150,
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                  const Positioned(
+                    top: 3,
+                    child: Text(
+                      '50%',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ),
-            const SizedBox(height: 40),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                _buildInfoItem('Grupo', '1234'),
-                _buildInfoItem('Cota', '567'),
-                _buildInfoItem('Sequência', '0'),
-              ],
-            ),
-            const SizedBox(height: 20),
-            _buildCard('Card 1'),
-            const SizedBox(height: 10),
-            _buildCard('Card 2'),
-            const SizedBox(height: 10),
-            _buildCard('Card 3'),
-          ],
+              const SizedBox(height: 20),
+              const Text(
+                'Meu Consórcio',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              const SizedBox(height: 40),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  _buildInfoItem('Grupo', '1234'),
+                  _buildInfoItem('Cota', '567'),
+                  _buildInfoItem('Sequência', '0'),
+                ],
+              ),
+              const SizedBox(height: 20),
+              _buildCard('Card 1'),
+              const SizedBox(height: 10),
+              _buildCard('Card 2'),
+              const SizedBox(height: 10),
+              _buildCard('Card 3'),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: Container(
@@ -137,7 +139,6 @@ class ConsorcioPage extends StatelessWidget {
     );
   }
 }
-
 
 class BoletosPage extends StatelessWidget {
   const BoletosPage({Key? key}) : super(key: key);

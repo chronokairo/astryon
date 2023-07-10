@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:priorizza/app/paginas/home/inicio.dart';
 import 'contemplacao.dart';
 import 'atendimento.dart';
-import '../../home/inicio.dart';
-import 'folha_ponto.dart';
 import 'simulacao_lance.dart';
 import 'simulador.dart';
+import 'extrato.dart';
+import 'meuconsorcio.dart';
+import 'ofertarlance.dart';
 
 class SideBar extends StatefulWidget {
   const SideBar({super.key});
-
 
   @override
   State<SideBar> createState() => _SideBarState();
@@ -23,8 +24,7 @@ class _SideBarState extends State<SideBar> {
 
     switch (selectedIndex) {
       case 0:
-        page = 
-         const Inicio();
+        page = const Inicio();
         break;
       case 1:
         page = const SimuladorConsorcioWidget();
@@ -38,12 +38,18 @@ class _SideBarState extends State<SideBar> {
       case 4:
         page = const SimulacaoLancesScreen();
         break;
-      
+
       case 5:
-        page = const PontoWidget();
+        page = const ConsorcioPage();
         break;
-        
-        
+        case 6:
+        page = const ExtratoPage();
+        break;
+      
+        case 7:
+        page = const OfertarLancePage();
+        break;
+       
 
       default:
         throw UnimplementedError('no widget for $selectedIndex');
@@ -55,12 +61,13 @@ class _SideBarState extends State<SideBar> {
           children: [
             SafeArea(
               child: NavigationRail(
-                  selectedLabelTextStyle: const TextStyle(
-      color: Color(0xFFD8B45E), // Cor do texto selecionado
-    ),
-                  
-                  backgroundColor: Colors.white,
-          selectedIconTheme: const IconThemeData(color: Color(0xFFD8B45E),  ),
+                selectedLabelTextStyle: const TextStyle(
+                  color: Color(0xFFD8B45E), // Cor do texto selecionado
+                ),
+                backgroundColor: const Color(0xFF121212),
+                selectedIconTheme: const IconThemeData(
+                  color: Color(0xFFD8B45E),
+                ),
                 extended: constraints.maxWidth >= 600,
                 destinations: const [
                   NavigationRailDestination(
@@ -83,15 +90,20 @@ class _SideBarState extends State<SideBar> {
                     icon: Icon(Icons.compare_arrows),
                     label: Text('Simulações de lances'),
                   ),
+                 
+                 
+                  NavigationRailDestination(
+                    icon: Icon(Icons.payment),
+                    label: Text('Pagamentos'),
+                  ),
                   NavigationRailDestination(
                     icon: Icon(Icons.description),
-                    label: Text('Acesso a documentos'),
+                    label: Text('Extrato'),
                   ),
                   NavigationRailDestination(
-                    icon: Icon(Icons.schedule),
-                    label: Text('Ponto'),
+                    icon: Icon(Icons.gavel),
+                    label: Text('Ofertar um lance'),
                   ),
-                 
                 ],
                 selectedIndex: selectedIndex,
                 onDestinationSelected: (value) {
@@ -109,6 +121,11 @@ class _SideBarState extends State<SideBar> {
           ],
         ),
       );
+    });
+  }
+
+  void onTabTapped(int index) {
+    setState(() {
     });
   }
 }
