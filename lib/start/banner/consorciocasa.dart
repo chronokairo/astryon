@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:priorizza/start/faqfooter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../cliente/login_screen.dart';
@@ -80,6 +81,7 @@ class ConsorcioCasaPage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
+        child: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -123,14 +125,10 @@ class ConsorcioCasaPage extends StatelessWidget {
             Text('3. Aguarde a contemplação por meio de sorteios ou lance'),
             Text('4. Utilize a carta de crédito para comprar a casa desejada'),
             SizedBox(height: 16),
-            Text(
-              'Entre em contato clicando no ícone do whatsapp abaixo para mais informações:',
-              style: TextStyle(fontSize: 16),
-            ),
-            
+            FaqFooter(),
           ],
         ),
-      ),
+      ),),
     floatingActionButton: FloatingActionButton(
         onPressed: () {
           launchWhatsApp();

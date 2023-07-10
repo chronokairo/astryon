@@ -9,6 +9,7 @@ import 'banner/consorciocasa.dart';
 import 'banner/consorciomoto.dart';
 import 'banner/consorciopesado.dart';
 import 'banner/consorcioservico.dart';
+import 'faqfooter.dart';
 
 class Inicio extends StatefulWidget {
   const Inicio({super.key});
@@ -499,76 +500,7 @@ class _InicioState extends State<Inicio> {
                 ),
               ),
 
-              Container(
-                color: const Color(0xFF121212),
-                padding: const EdgeInsets.symmetric(vertical: 24),
-                child: Column(
-                  children: [
-                    const QuestionAnswerTile(
-                      question: 'O que é um consórcio?',
-                      answer:
-                          'Um consórcio é uma modalidade de compra em grupo, onde os participantes contribuem mensalmente para formar uma poupança coletiva destinada à compra de um bem, como um carro ou uma casa.',
-                    ),
-                    const QuestionAnswerTile(
-                      question: 'Quais são as vantagens do consórcio?',
-                      answer:
-                          'Algumas vantagens do consórcio incluem: não pagar juros, ter prazos flexíveis, participar de sorteios para antecipar a contemplação, e poder usar o valor do crédito para comprar o bem desejado.',
-                    ),
-                    const QuestionAnswerTile(
-                      question: 'Como funciona a contemplação?',
-                      answer:
-                          'A contemplação no consórcio ocorre quando o participante é sorteado ou quando é realizado um lance vencedor. A contemplação permite que o participante utilize seu crédito para a compra do bem desejado.',
-                    ),
-                    const QuestionAnswerTile(
-                      question: 'Quais são as formas de contato?',
-                      answer:
-                          'Para obter mais informações sobre consórcios, entre em contato conosco através dos seguintes canais:\n\nTelefone: (92) 98508-0304\nE-mail: contato@priorizza.app\nBlog: blog.priorizza.app',
-                    ),
-                    SizedBox(
-                      height: 100,
-                      width: 400,
-                      child: Image.asset(
-                          'assets/logo.png'), // Substitua pelo caminho da imagem do logo
-                    ),
-                    const SizedBox(height: 12),
-                    const Text(
-                      'Antonio Victor Pimentel Pires LTDA',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                      ),
-                    ),
-                    const Text(
-                      'CNPJ: 41.414.474/0001-67',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                      ),
-                    ),
-                    const Text(
-                      'Autorizado pelo Banco Central Nº 3/00/223/88',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                      ),
-                    ),
-                    const SizedBox(height: 12),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        IconButton(
-                          icon: const Icon(Icons.facebook),
-                          color: Colors.white,
-                          onPressed: () {
-                            // Ação desejada para o Facebook
-                          },
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-
+              const FaqFooter(),
               // Adicione mais perguntas e respostas aqui...
             ],
           ),
@@ -599,29 +531,5 @@ class _InicioState extends State<Inicio> {
     } else {
       throw 'Não foi possível abrir o WhatsApp.';
     }
-  }
-}
-
-class QuestionAnswerTile extends StatelessWidget {
-  final String question;
-  final String answer;
-
-  const QuestionAnswerTile({
-    super.key,
-    required this.question,
-    required this.answer,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ExpansionTile(
-      title: Text(question),
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Text(answer),
-        ),
-      ],
-    );
   }
 }

@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../cliente/login_screen.dart';
 import '../consorcios.dart';
+import '../faqfooter.dart';
 import '../inicio.dart';
 
 class ConsorcioMotoEletricaPage extends StatelessWidget {
@@ -80,6 +81,7 @@ class ConsorcioMotoEletricaPage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
+        child: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,10 +129,12 @@ class ConsorcioMotoEletricaPage extends StatelessWidget {
               'Entre em contato clicando no ícone do whatsapp abaixo para mais informações:',
               style: TextStyle(fontSize: 16),
             ),
+            SizedBox(height: 16),
+              FaqFooter(),
         
           ],
         ),
-      ),
+      ),),
     floatingActionButton: FloatingActionButton(
         onPressed: () {
           launchWhatsApp();
