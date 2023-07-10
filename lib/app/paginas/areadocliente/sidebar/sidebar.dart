@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-
+import 'contemplacao.dart';
 import 'atendimento.dart';
-import '../assembleias/assembleias.dart';
-import '../navbar/navbar.dart';
-
+import '../../home/inicio.dart';
+import 'folha_ponto.dart';
+import 'simulacao_lance.dart';
+import 'simulador.dart';
 
 class SideBar extends StatefulWidget {
   const SideBar({super.key});
@@ -23,15 +24,24 @@ class _SideBarState extends State<SideBar> {
     switch (selectedIndex) {
       case 0:
         page = 
-         const HomeScreen();
+         const Inicio();
         break;
       case 1:
-        page = const CalendarioAssembleia();
+        page = const SimuladorConsorcioWidget();
         break;
       case 2:
+        page = const ContemplationScreen();
+        break;
+      case 3:
         page = const AtendimentoClienteScreen();
         break;
-    
+      case 4:
+        page = const SimulacaoLancesScreen();
+        break;
+      
+      case 5:
+        page = const PontoWidget();
+        break;
         
         
 
@@ -48,25 +58,38 @@ class _SideBarState extends State<SideBar> {
                   selectedLabelTextStyle: const TextStyle(
       color: Color(0xFFD8B45E), // Cor do texto selecionado
     ),
-    unselectedLabelTextStyle: const TextStyle(
-      color: Colors.white, // Cor do texto selecionado
-    ),
                   
+                  backgroundColor: Colors.white,
           selectedIconTheme: const IconThemeData(color: Color(0xFFD8B45E),  ),
-          unselectedIconTheme: const IconThemeData(color: Colors.white  ),
                 extended: constraints.maxWidth >= 600,
                 destinations: const [
                   NavigationRailDestination(
                     icon: Icon(Icons.home),
-                    label: Text('Página Inicial'),
+                    label: Text('Início'),
                   ),
                   NavigationRailDestination(
-                    icon: Icon(Icons.event),
-                    label: Text('Calendário de Assembleias'),
+                    icon: Icon(Icons.calculate),
+                    label: Text('Simulador'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.search),
+                    label: Text('Consulta de contemplação'),
                   ),
                   NavigationRailDestination(
                     icon: Icon(Icons.chat),
-                    label: Text('Canais de Atendimento'),
+                    label: Text('Atendimento ao cliente'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.compare_arrows),
+                    label: Text('Simulações de lances'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.description),
+                    label: Text('Acesso a documentos'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.schedule),
+                    label: Text('Ponto'),
                   ),
                  
                 ],

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:priorizza/app/paginas/areadocliente/sidebar/sidebar.dart';
-import '../navbar/navbar.dart';
 
 class LoginWith extends StatelessWidget {
   const LoginWith({super.key});
