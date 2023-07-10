@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:priorizza/start/consorcios/carros.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'cliente/login_screen.dart';
-import 'consorcios/motos.dart';
 import 'inicio.dart';
 
 class Consorcios extends StatefulWidget {
@@ -85,11 +84,11 @@ class _ConsorciosPageState extends State<Consorcios>
         children: [
           TabBar(
             indicatorColor:
-                Color(0xFFD8B45E), // Define a cor desejada para o ícone
+                const Color(0xFFD8B45E), // Define a cor desejada para o ícone
             // Define a cor do indicador ativo
             unselectedLabelColor:
                 Colors.grey, // Define a cor do texto das abas inativas
-            labelColor: Color(0xFFD8B45E), // Define a cor do texto da aba ativa
+            labelColor: const Color(0xFFD8B45E), // Define a cor do texto da aba ativa
 
             controller: _tabController,
             tabs: const [

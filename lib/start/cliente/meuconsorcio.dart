@@ -150,19 +150,19 @@ class BoletosPage extends StatelessWidget {
       ),
       body: ListView(
         padding: const EdgeInsets.all(16.0),
-        children: [
-          const Text(
+        children: const [
+          Text(
             'Boletos Pagos',
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 10),
+          SizedBox(height: 10),
           BoletosList(pagos: true),
-          const SizedBox(height: 20),
-          const Text(
+          SizedBox(height: 20),
+          Text(
             'Boletos a Pagar',
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 10),
+          SizedBox(height: 10),
           BoletosList(pagos: false),
         ],
       ),

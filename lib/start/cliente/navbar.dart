@@ -84,8 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
               );
             },
             style: ElevatedButton.styleFrom(
-              primary: const Color(0xFFD8B45E),
-              onPrimary: Colors.white,
+              foregroundColor: Colors.white, backgroundColor: const Color(0xFFD8B45E),
             ),
             child: const Text('Assembleias'),
           ),

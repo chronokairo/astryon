@@ -14,7 +14,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/background_image.png"), // Substitua pelo caminho da sua imagem de background
             fit: BoxFit.cover,
