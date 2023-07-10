@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:priorizza/start/cliente/navbar.dart';
+import '/start/cliente/navbar.dart';
 
 class LoginWith extends StatelessWidget {
   const LoginWith({Key? key});

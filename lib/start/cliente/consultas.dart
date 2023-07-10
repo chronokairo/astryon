@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:priorizza/start/inicio.dart';
+import '/start/inicio.dart';
 
 import '../atendimento.dart';
 import '../assembleias.dart';

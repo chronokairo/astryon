@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:priorizza/start/cliente/login_screen.dart';
+import '/start/cliente/login_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'consorcios.dart';
-import 'sobre/consorciocarro.dart';
-import 'sobre/consorciocasa.dart';
-import 'sobre/consorciomoto.dart';
-import 'sobre/consorciopesado.dart';
-import 'sobre/consorcioservico.dart';
+import 'banner/consorciocarro.dart';
+import 'banner/consorciocasa.dart';
+import 'banner/consorciomoto.dart';
+import 'banner/consorciopesado.dart';
+import 'banner/consorcioservico.dart';
 
 class Inicio extends StatefulWidget {
   const Inicio({super.key});
@@ -319,7 +319,7 @@ class _InicioState extends State<Inicio> {
                                       ),
                                       const SizedBox(height: 16),
                                       const Text(
-                                        'De urbana a elétrica, sua nova bike é garantida sem juros e com planos a partir de R\$ 25 mil em até 70 meses.',
+                                        'De urbana a elétrica, sua nova bike é garantida sem juros, planos a partir de R\$ 25 mil em até 70 meses.',
                                         style: TextStyle(
                                           fontSize: 14,
                                           color: Colors.white,

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:priorizza/oldercode/contemplacao.dart';
+import '/oldercode/contemplacao.dart';
 import '../start/atendimento.dart';
 import '../start/inicio.dart';
 import 'folha_ponto.dart';
 import 'simulacao_lance.dart';
 import 'simulador.dart';
 
-class Slider extends StatefulWidget {
-  const Slider({Key? key});
+class Slide extends StatefulWidget {
+  const Slide({Key? key});
 
   @override
   State<Slider> createState() => _MyHomePageState();

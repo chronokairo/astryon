@@ -2,17 +2,89 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../cliente/login_screen.dart';
+import '../consorcios.dart';
+import '../inicio.dart';
 
 class ConsorcioCarroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Consórcio de Carro'),
+        automaticallyImplyLeading: true, // Remover o botão de voltar
+        iconTheme: const IconThemeData(
+          color: Color(0xFFD8B45E), // Define a cor desejada para o ícone
+        ),
+        backgroundColor: const Color(0xFF121212),
+        elevation: 0,
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Inicio()),
+              );
+            },
+            child: const Text(
+              'Início',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Consorcios()),
+              );
+            },
+            child: const Text(
+              'Consórcios',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              launchUrl('https://blog.priorizza.app' as Uri);
+            },
+            child: const Text(
+              'Blog',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const LoginScreen()),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              foregroundColor: Colors.white,
+              backgroundColor: const Color(0xFFD8B45E),
+            ),
+            child: const Text('Área do Cliente'),
+          ),
+        ],
       ),
-      body: Padding(
+      body:
+       Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+                "assets/background_image.png"), // Substitua pelo caminho da sua imagem de background
+            fit: BoxFit.cover,
+          ),
+        ),
+        
         padding: const EdgeInsets.all(16.0),
         child: Column(
+          
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
             Text(
@@ -57,12 +129,10 @@ class ConsorcioCarroPage extends StatelessWidget {
             Text('4. Utilize a carta de crédito para comprar o carro desejado'),
             SizedBox(height: 16),
             Text(
-              'Entre em contato conosco para mais informações:',
+              'Entre em contato clicando no ícone do whatsapp abaixo para mais informações:',
               style: TextStyle(fontSize: 16),
             ),
-            SizedBox(height: 8),
-            Text('Telefone: (11) 1234-5678'),
-            Text('E-mail: contato@consorcio.com'),
+           
           ],
         ),
       ),

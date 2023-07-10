@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:priorizza/start/consorcios/carros.dart';
+import '/start/consorcios/carros.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'cliente/login_screen.dart';
 import 'inicio.dart';

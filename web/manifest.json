@@ -1,11 +1,11 @@
 {
-    "name": "priorizza",
-    "short_name": "priorizza",
+    "name": "Consórcio Priorizza",
+    "short_name": "Priorizza",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#121212",
+    "theme_color": "#121212",
+    "description": "Uma vida priorizzando você.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
