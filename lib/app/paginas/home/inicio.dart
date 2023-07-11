@@ -116,9 +116,9 @@ class InicioState extends State<Inicio> {
                       child: Container(
                         color: const Color(0x99000000),
                         padding: const EdgeInsets.all(16.0),
-                        child: Column(
+                        child: const Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
+                          children: [
                             Text(
                               'Torne seus sonhos realidade com a garantia de quem é líder no mercado.',
                               style: TextStyle(
@@ -526,7 +526,9 @@ class InicioState extends State<Inicio> {
     String whatsappUrl =
         'https://wa.me/$phoneNumber?text=${Uri.encodeFull(message)}';
 
+    // ignore: deprecated_member_use
     if (await canLaunch(whatsappUrl)) {
+      // ignore: deprecated_member_use
       await launch(whatsappUrl);
     } else {
       throw 'Não foi possível abrir o WhatsApp.';

@@ -83,61 +83,65 @@ class ConsorcioMotoEletricaPage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            Text(
-              'Consórcio de Moto Elétrica',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+        child: const SingleChildScrollView(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Consórcio de Moto Elétrica',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            SizedBox(height: 16),
-            Text(
-              'Um consórcio de moto elétrica é uma modalidade de compra coletiva de motocicletas movidas a energia elétrica. Nesse modelo, um grupo de pessoas se une para contribuir mensalmente com um valor estabelecido, e a cada mês um ou mais participantes são contemplados com a carta de crédito para aquisição da moto elétrica desejada.',
-              style: TextStyle(fontSize: 16),
-            ),
-            SizedBox(height: 16),
-            Text(
-              'Benefícios do Consórcio:',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+              SizedBox(height: 16),
+              Text(
+                'Um consórcio de moto elétrica é uma modalidade de compra coletiva de motocicletas movidas a energia elétrica. Nesse modelo, um grupo de pessoas se une para contribuir mensalmente com um valor estabelecido, e a cada mês um ou mais participantes são contemplados com a carta de crédito para aquisição da moto elétrica desejada.',
+                style: TextStyle(fontSize: 16),
               ),
-            ),
-            SizedBox(height: 8),
-            Text('- Possibilidade de adquirir uma moto elétrica sem pagar juros'),
-            Text('- Parcelas mais acessíveis em comparação a um financiamento'),
-            Text('- Contribuição para a preservação do meio ambiente'),
-            Text('- Economia em relação aos gastos com combustível'),
-            SizedBox(height: 16),
-            Text(
-              'Como funciona:',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+              SizedBox(height: 16),
+              Text(
+                'Benefícios do Consórcio:',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            SizedBox(height: 8),
-            Text('1. Escolha o valor do crédito e o prazo que deseja participar'),
-            Text('2. Pague as parcelas mensais'),
-            Text('3. Aguarde a contemplação por meio de sorteios ou lance'),
-            Text('4. Utilize a carta de crédito para comprar a moto elétrica desejada'),
-            SizedBox(height: 16),
-            Text(
-              'Entre em contato clicando no ícone do whatsapp abaixo para mais informações:',
-              style: TextStyle(fontSize: 16),
-            ),
-            SizedBox(height: 16),
+              SizedBox(height: 8),
+              Text(
+                  '- Possibilidade de adquirir uma moto elétrica sem pagar juros'),
+              Text(
+                  '- Parcelas mais acessíveis em comparação a um financiamento'),
+              Text('- Contribuição para a preservação do meio ambiente'),
+              Text('- Economia em relação aos gastos com combustível'),
+              SizedBox(height: 16),
+              Text(
+                'Como funciona:',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 8),
+              Text(
+                  '1. Escolha o valor do crédito e o prazo que deseja participar'),
+              Text('2. Pague as parcelas mensais'),
+              Text('3. Aguarde a contemplação por meio de sorteios ou lance'),
+              Text(
+                  '4. Utilize a carta de crédito para comprar a moto elétrica desejada'),
+              SizedBox(height: 16),
+              Text(
+                'Entre em contato clicando no ícone do whatsapp abaixo para mais informações:',
+                style: TextStyle(fontSize: 16),
+              ),
+              SizedBox(height: 16),
               FaqFooter(),
-        
-          ],
+            ],
+          ),
         ),
-      ),),
-    floatingActionButton: FloatingActionButton(
+      ),
+      floatingActionButton: FloatingActionButton(
         onPressed: () {
           launchWhatsApp();
         },
@@ -150,15 +154,16 @@ class ConsorcioMotoEletricaPage extends StatelessWidget {
     );
   }
 
-
-void launchWhatsApp() async {
+  void launchWhatsApp() async {
     String phoneNumber = '+5592985080304'; // Número de telefone do destinatário
     String message =
         'Olá, eu gostaria de saber mais!!'; // Mensagem a ser enviada
     String whatsappUrl =
         'https://wa.me/$phoneNumber?text=${Uri.encodeFull(message)}';
 
+    // ignore: deprecated_member_use
     if (await canLaunch(whatsappUrl)) {
+      // ignore: deprecated_member_use
       await launch(whatsappUrl);
     } else {
       throw 'Não foi possível abrir o WhatsApp.';

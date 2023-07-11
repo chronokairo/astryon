@@ -83,55 +83,60 @@ class ConsorcioCasaPage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            Text(
-              'Consórcio de Casa',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+        child: const SingleChildScrollView(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Consórcio de Casa',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            SizedBox(height: 16),
-            Text(
-              'O consórcio de casa é uma forma de adquirir um imóvel por meio da união de pessoas que têm o objetivo de comprar uma casa. Funciona como um autofinanciamento coletivo, onde os participantes contribuem mensalmente com uma quantia determinada, e a cada mês um ou mais membros são contemplados com a carta de crédito para adquirir sua casa própria.',
-              style: TextStyle(fontSize: 16),
-            ),
-            SizedBox(height: 16),
-            Text(
-              'Benefícios do Consórcio:',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+              SizedBox(height: 16),
+              Text(
+                'O consórcio de casa é uma forma de adquirir um imóvel por meio da união de pessoas que têm o objetivo de comprar uma casa. Funciona como um autofinanciamento coletivo, onde os participantes contribuem mensalmente com uma quantia determinada, e a cada mês um ou mais membros são contemplados com a carta de crédito para adquirir sua casa própria.',
+                style: TextStyle(fontSize: 16),
               ),
-            ),
-            SizedBox(height: 8),
-            Text('- Possibilidade de adquirir uma casa sem pagar juros'),
-            Text('- Parcelas mais acessíveis em comparação a um financiamento'),
-            Text('- Flexibilidade para escolher o valor do crédito e o prazo'),
-            Text('- Opção de antecipar a contemplação através de lances'),
-            SizedBox(height: 16),
-            Text(
-              'Como funciona:',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+              SizedBox(height: 16),
+              Text(
+                'Benefícios do Consórcio:',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            SizedBox(height: 8),
-            Text('1. Escolha o valor do crédito e o prazo que deseja participar'),
-            Text('2. Pague as parcelas mensais'),
-            Text('3. Aguarde a contemplação por meio de sorteios ou lance'),
-            Text('4. Utilize a carta de crédito para comprar a casa desejada'),
-            SizedBox(height: 16),
-            FaqFooter(),
-          ],
+              SizedBox(height: 8),
+              Text('- Possibilidade de adquirir uma casa sem pagar juros'),
+              Text(
+                  '- Parcelas mais acessíveis em comparação a um financiamento'),
+              Text(
+                  '- Flexibilidade para escolher o valor do crédito e o prazo'),
+              Text('- Opção de antecipar a contemplação através de lances'),
+              SizedBox(height: 16),
+              Text(
+                'Como funciona:',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 8),
+              Text(
+                  '1. Escolha o valor do crédito e o prazo que deseja participar'),
+              Text('2. Pague as parcelas mensais'),
+              Text('3. Aguarde a contemplação por meio de sorteios ou lance'),
+              Text(
+                  '4. Utilize a carta de crédito para comprar a casa desejada'),
+              SizedBox(height: 16),
+              FaqFooter(),
+            ],
+          ),
         ),
-      ),),
-    floatingActionButton: FloatingActionButton(
+      ),
+      floatingActionButton: FloatingActionButton(
         onPressed: () {
           launchWhatsApp();
         },
@@ -144,15 +149,16 @@ class ConsorcioCasaPage extends StatelessWidget {
     );
   }
 
-
-void launchWhatsApp() async {
+  void launchWhatsApp() async {
     String phoneNumber = '+5592985080304'; // Número de telefone do destinatário
     String message =
         'Olá, eu gostaria de saber mais!!'; // Mensagem a ser enviada
     String whatsappUrl =
         'https://wa.me/$phoneNumber?text=${Uri.encodeFull(message)}';
 
+    // ignore: deprecated_member_use
     if (await canLaunch(whatsappUrl)) {
+      // ignore: deprecated_member_use
       await launch(whatsappUrl);
     } else {
       throw 'Não foi possível abrir o WhatsApp.';

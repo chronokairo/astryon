@@ -83,11 +83,11 @@ class ConsorcioCarroPage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(16.0),
+        child: const SingleChildScrollView(
+          padding: EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               Text(
                 'Consórcio de Carro',
                 style: TextStyle(
@@ -161,7 +161,9 @@ class ConsorcioCarroPage extends StatelessWidget {
     String whatsappUrl =
         'https://wa.me/$phoneNumber?text=${Uri.encodeFull(message)}';
 
+    // ignore: deprecated_member_use
     if (await canLaunch(whatsappUrl)) {
+      // ignore: deprecated_member_use
       await launch(whatsappUrl);
     } else {
       throw 'Não foi possível abrir o WhatsApp.';
