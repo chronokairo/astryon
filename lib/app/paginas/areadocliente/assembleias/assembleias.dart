@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pesado.dart';
 
-
 class CalendarioAssembleia extends StatefulWidget {
   const CalendarioAssembleia({super.key});
 
@@ -14,14 +13,12 @@ class CalendarioAssembleia extends StatefulWidget {
 class _CalendarioAssembleiaState extends State<CalendarioAssembleia> {
   int _indiceAtual = 0;
   final List<Widget> _telas = [
-      
-      Pesado(),    
+    Pesado(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       
       body: _telas[_indiceAtual],
       bottomNavigationBar: BottomNavigationBar(
         unselectedItemColor: Colors.grey,
@@ -29,10 +26,12 @@ class _CalendarioAssembleiaState extends State<CalendarioAssembleia> {
         currentIndex: _indiceAtual,
         onTap: onTabTapped,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.looks_one), label: ("Semana 1")),
-          BottomNavigationBarItem(icon: Icon(Icons.looks_two), label: ("Semana 2")),
-          BottomNavigationBarItem(icon: Icon(Icons.looks_3), label: ("Semana 3")),
-          
+          BottomNavigationBarItem(
+              icon: Icon(Icons.looks_one), label: ("Semana 1")),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.looks_two), label: ("Semana 2")),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.looks_3), label: ("Semana 3")),
         ],
       ),
     );
