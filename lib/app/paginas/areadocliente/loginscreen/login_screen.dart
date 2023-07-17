@@ -38,7 +38,6 @@ class LoginScreen extends StatelessWidget {
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFFD8B45E),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
@@ -67,7 +66,6 @@ class LoginScreen extends StatelessWidget {
                 child: const Text(
                   'Não sou cliente Priorizza',
                   style: TextStyle(
-                    color: Colors.white,
                     fontSize: 16,
                   ),
                 ),

@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       create: (context) => MyAppState(),
       child:  MaterialApp(
         title: 'Consórcio Priorizza',
-              theme: ThemeData.dark(), // Adicionando o tema padrão do Flutter
+              theme: ThemeData.light(), // Adicionando o tema padrão do Flutter
 
         home:  const Inicio(),
         

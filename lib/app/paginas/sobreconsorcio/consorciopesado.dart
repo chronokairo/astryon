@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../areadocliente/loginscreen/login_screen.dart';
-import '../consorcios/consorcios.dart';
 import '../../widgets/faqfooter.dart';
-import '../home/inicio.dart';
 
 class ConsorcioCaminhaoPage extends StatelessWidget {
   const ConsorcioCaminhaoPage({super.key});
@@ -13,68 +10,7 @@ class ConsorcioCaminhaoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: true, // Remover o botão de voltar
-        iconTheme: const IconThemeData(
-          color: Color(0xFFD8B45E), // Define a cor desejada para o ícone
-        ),
-        backgroundColor: const Color(0xFF121212),
-        elevation: 0,
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Inicio()),
-              );
-            },
-            child: const Text(
-              'Início',
-              style: TextStyle(
-                color: Colors.white,
-              ),
-            ),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Consorcios()),
-              );
-            },
-            child: const Text(
-              'Consórcios',
-              style: TextStyle(
-                color: Colors.white,
-              ),
-            ),
-          ),
-          TextButton(
-            onPressed: () {
-              launchUrl('https://blog.priorizza.app' as Uri);
-            },
-            child: const Text(
-              'Blog',
-              style: TextStyle(
-                color: Colors.white,
-              ),
-            ),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const LoginScreen()),
-              );
-            },
-            style: ElevatedButton.styleFrom(
-              foregroundColor: Colors.white,
-              backgroundColor: const Color(0xFFD8B45E),
-            ),
-            child: const Text('Área do Cliente'),
-          ),
-        ],
-      ),
+      
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(

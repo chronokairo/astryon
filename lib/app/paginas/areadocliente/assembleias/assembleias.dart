@@ -21,8 +21,6 @@ class _CalendarioAssembleiaState extends State<CalendarioAssembleia> {
     return Scaffold(
       body: _telas[_indiceAtual],
       bottomNavigationBar: BottomNavigationBar(
-        unselectedItemColor: Colors.grey,
-        selectedItemColor: const Color(0xFFD8B45E),
         currentIndex: _indiceAtual,
         onTap: onTabTapped,
         items: const [

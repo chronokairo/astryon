@@ -33,7 +33,6 @@ class ConsorcioPage extends StatelessWidget {
                     height: 30,
                     width: 150,
                     decoration: BoxDecoration(
-                      color: Colors.green,
                       borderRadius: BorderRadius.circular(15),
                     ),
                   ),
@@ -42,7 +41,6 @@ class ConsorcioPage extends StatelessWidget {
                     child: Text(
                       '50%',
                       style: TextStyle(
-                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -55,7 +53,6 @@ class ConsorcioPage extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
                 ),
               ),
               const SizedBox(height: 40),
@@ -93,7 +90,6 @@ class ConsorcioPage extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
               ),
             ),
           ),
@@ -110,7 +106,6 @@ class ConsorcioPage extends StatelessWidget {
           style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
           ),
         ),
         const SizedBox(height: 8),
@@ -119,7 +114,6 @@ class ConsorcioPage extends StatelessWidget {
           style: const TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
           ),
         ),
       ],

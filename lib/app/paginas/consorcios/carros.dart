@@ -44,7 +44,6 @@ class Autos extends StatelessWidget {
                                   // Adicione a ação desejada aqui
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: const Color(0xFFD8B45E),
                                   minimumSize: const Size(double.infinity, 50),
                                 ),
                                 child: const Text('Simular'),
@@ -89,7 +88,6 @@ class Autos extends StatelessWidget {
                                   // Adicione a ação desejada aqui
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: const Color(0xFFD8B45E),
                                   minimumSize: const Size(double.infinity, 50),
                                 ),
                                 child: const Text('Simular'),
@@ -134,7 +132,6 @@ class Autos extends StatelessWidget {
                                   // Adicione a ação desejada aqui
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: const Color(0xFFD8B45E),
                                   minimumSize: const Size(double.infinity, 50),
                                 ),
                                 child: const Text('Simular'),
@@ -179,7 +176,6 @@ class Autos extends StatelessWidget {
                                   // Adicione a ação desejada aqui
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: const Color(0xFFD8B45E),
                                   minimumSize: const Size(double.infinity, 50),
                                 ),
                                 child: const Text('Simular'),
@@ -224,7 +220,6 @@ class Autos extends StatelessWidget {
                                   // Adicione a ação desejada aqui
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: const Color(0xFFD8B45E),
                                   minimumSize: const Size(double.infinity, 50),
                                 ),
                                 child: const Text('Simular'),

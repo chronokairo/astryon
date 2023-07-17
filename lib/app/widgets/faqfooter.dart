@@ -6,7 +6,6 @@ class FaqFooter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFF121212),
       padding: const EdgeInsets.symmetric(vertical: 24),
       child: Column(
         children: [
@@ -60,21 +59,18 @@ class FaqFooter extends StatelessWidget {
           const Text(
             'Antonio Victor Pimentel Pires LTDA',
             style: TextStyle(
-              color: Colors.white,
               fontSize: 14,
             ),
           ),
           const Text(
             'CNPJ: 41.414.474/0001-67',
             style: TextStyle(
-              color: Colors.white,
               fontSize: 14,
             ),
           ),
           const Text(
             'Autorizado pelo Banco Central Nº 3/00/223/88',
             style: TextStyle(
-              color: Colors.white,
               fontSize: 14,
             ),
           ),
@@ -84,7 +80,6 @@ class FaqFooter extends StatelessWidget {
             children: [
               IconButton(
                 icon: const Icon(Icons.facebook),
-                color: Colors.white,
                 onPressed: () {
                   // Ação desejada para o Facebook
                 },
@@ -112,7 +107,6 @@ class QuestionAnswerTile extends StatelessWidget {
       title: Text(
         question,
         style: const TextStyle(
-          color:  Colors.white, // Alterando a cor para dourado
         ),
       ),
       children: [

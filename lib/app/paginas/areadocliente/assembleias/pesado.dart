@@ -57,12 +57,8 @@ class Pesado extends StatelessWidget {
             Tab(text: 'Vencimento Boletos'),
             Tab(text: 'Sorteio'),
           ],
-          indicatorColor:
-              Color(0xFFD8B45E), // Define a cor desejada para o ícone
           // Define a cor do indicador ativo
-          unselectedLabelColor:
-              Colors.grey, // Define a cor do texto das abas inativas
-          labelColor: Color(0xFFD8B45E), // Define a cor do texto da aba ativa
+          // Define a cor do texto da aba ativa
         ),
         body: TabBarView(
           children: [

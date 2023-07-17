@@ -62,7 +62,6 @@ class LoginWith extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFD8B45E),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20.0),
                     ),
@@ -81,7 +80,6 @@ class LoginWith extends StatelessWidget {
                   children: [
                     IconButton(
                       icon: const Icon(Icons.facebook),
-                      color: Colors.white,
                       onPressed: () {
                         // Ação desejada para o Facebook
                       },

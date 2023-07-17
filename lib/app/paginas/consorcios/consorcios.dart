@@ -7,7 +7,6 @@ import '../home/inicio.dart';
 class Consorcios extends StatefulWidget {
   const Consorcios({super.key});
 
-
   @override
   State<Consorcios> createState() {
     return _ConsorciosPageState();
@@ -35,10 +34,7 @@ class _ConsorciosPageState extends State<Consorcios>
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false, // Remover o botão de voltar
-        iconTheme: const IconThemeData(
-          color: Color(0xFFD8B45E), // Define a cor desejada para o ícone
-        ),
-        backgroundColor: Colors.transparent,
+
         elevation: 0,
         actions: [
           TextButton(
@@ -50,9 +46,7 @@ class _ConsorciosPageState extends State<Consorcios>
             },
             child: const Text(
               'Início',
-              style: TextStyle(
-                color: Colors.white,
-              ),
+              style: TextStyle(),
             ),
           ),
           TextButton(
@@ -61,9 +55,7 @@ class _ConsorciosPageState extends State<Consorcios>
             },
             child: const Text(
               'Blog',
-              style: TextStyle(
-                color: Colors.white,
-              ),
+              style: TextStyle(),
             ),
           ),
           ElevatedButton(
@@ -73,10 +65,6 @@ class _ConsorciosPageState extends State<Consorcios>
                 MaterialPageRoute(builder: (context) => const LoginScreen()),
               );
             },
-            style: ElevatedButton.styleFrom(
-              foregroundColor: Colors.white,
-              backgroundColor: const Color(0xFFD8B45E),
-            ),
             child: const Text('Área do Cliente'),
           ),
         ],
@@ -84,12 +72,7 @@ class _ConsorciosPageState extends State<Consorcios>
       body: Column(
         children: [
           TabBar(
-            indicatorColor:
-                const Color(0xFFD8B45E), // Define a cor desejada para o ícone
-            // Define a cor do indicador ativo
-            unselectedLabelColor:
-                Colors.grey, // Define a cor do texto das abas inativas
-            labelColor: const Color(0xFFD8B45E), // Define a cor do texto da aba ativa
+            // Define a cor do texto da aba ativa
 
             controller: _tabController,
             tabs: const [
