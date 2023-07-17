@@ -101,9 +101,9 @@ TextButton(
                   ),
                   padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 ),
-              child: const Row(
+              child:  Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                children: const [
                   Icon(Icons.phone),
                   SizedBox(width: 8.0),
                   Text('Ligar para o Atendimento ao Cliente'),

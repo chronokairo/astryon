@@ -26,10 +26,10 @@ class LoginWith extends StatelessWidget {
                   height: 150,
                 ),
                 const SizedBox(height: 20),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 40),
+                 Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 40),
                   child: Column(
-                    children: [
+                    children: const [
                       TextField(
                         decoration: InputDecoration(
                           labelText: 'Login',

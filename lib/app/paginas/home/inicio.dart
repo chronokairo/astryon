@@ -116,9 +116,9 @@ class InicioState extends State<Inicio> {
                       child: Container(
                         color: const Color(0x99000000),
                         padding: const EdgeInsets.all(16.0),
-                        child: const Column(
+                        child:  Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
+                          children: const [
                             Text(
                               'Torne seus sonhos realidade com a garantia de quem é líder no mercado.',
                               style: TextStyle(

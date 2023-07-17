@@ -83,11 +83,11 @@ class ConsorcioCasaPage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: const SingleChildScrollView(
-          padding: EdgeInsets.all(16.0),
+        child:  SingleChildScrollView(
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+            children: const [
               Text(
                 'Consórcio de Casa',
                 style: TextStyle(
