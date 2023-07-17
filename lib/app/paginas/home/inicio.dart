@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../areadocliente/loginscreen/login_screen.dart';
+import 'package:priorizza/app/widgets/myappbar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../areadocliente/sidebar/sidebar.dart';
-import '../consorcios/consorcios.dart';
+
+import '../../widgets/faqfooter.dart';
 import '../sobreconsorcio/consorciocarro.dart';
 import '../sobreconsorcio/consorciocasa.dart';
 import '../sobreconsorcio/consorciomoto.dart';
 import '../sobreconsorcio/consorciopesado.dart';
 import '../sobreconsorcio/consorcioservico.dart';
-import '../../widgets/faqfooter.dart';
+
+
 
 class Inicio extends StatefulWidget {
   const Inicio({super.key});
@@ -31,43 +33,7 @@ class InicioState extends State<Inicio> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Inicio()),
-              );
-            },
-            child: const Text('Início'),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Consorcios()),
-              );
-            },
-            child: const Text('Consórcios'),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              launchUrl('https://blog.priorizza.app' as Uri);
-            },
-            child: const Text('Blog'),
-          ),
-           ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const LoginScreen()),
-              );
-            },
-            child: const Text('Área do Cliente'),
-          ),
-        ],
-      ),
+      appBar:  const MyAppBar(),
       drawer: const SideBar(),
       body: SingleChildScrollView(
         child: Column(

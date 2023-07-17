@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 
 import 'app/paginas/home/inicio.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -16,12 +15,25 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => MyAppState(),
-      child:  MaterialApp(
+      child: MaterialApp(
         title: 'Consórcio Priorizza',
-              theme: ThemeData.light(), // Adicionando o tema padrão do Flutter
+        theme: ThemeData(
+          primaryColor: Colors.blue,
+          scaffoldBackgroundColor: Colors.white,
+          cardColor: Colors.white,
+          dividerColor: Colors.grey,
+          textTheme: const TextTheme(
+            bodyLarge: TextStyle(
+              color: Colors.black,
+              fontSize: 16.0,
+            ),
+          ),
+          colorScheme: ColorScheme.fromSwatch()
+              .copyWith(secondary: Colors.green)
+              .copyWith(background: Colors.white),
+        ), // Adicionando o tema padrão do Flutter
 
-        home:  const Inicio(),
-        
+        home: const Inicio(),
       ),
     );
   }
