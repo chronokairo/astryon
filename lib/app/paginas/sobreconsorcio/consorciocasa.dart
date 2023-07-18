@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:priorizza/app/widgets/faqfooter.dart';
+import 'package:priorizza/app/widgets/faq.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../areadocliente/loginscreen/login_screen.dart';
@@ -131,7 +131,7 @@ class ConsorcioCasaPage extends StatelessWidget {
               Text(
                   '4. Utilize a carta de crédito para comprar a casa desejada'),
               SizedBox(height: 16),
-              FaqFooter(),
+              Faq(),
             ],
           ),
         ),

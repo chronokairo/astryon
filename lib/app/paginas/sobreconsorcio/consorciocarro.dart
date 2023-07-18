@@ -4,7 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../areadocliente/loginscreen/login_screen.dart';
 import '../consorcios/consorcios.dart';
-import '../../widgets/faqfooter.dart';
+import '../../widgets/faq.dart';
 import '../home/inicio.dart';
 
 class ConsorcioCarroPage extends StatelessWidget {
@@ -136,7 +136,7 @@ class ConsorcioCarroPage extends StatelessWidget {
                 style: TextStyle(fontSize: 16),
               ),
               SizedBox(height: 16),
-              FaqFooter(),
+              Faq(),
             ],
           ),
         ),

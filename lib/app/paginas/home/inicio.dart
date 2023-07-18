@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../areadocliente/loginscreen/login_screen.dart';
+import 'package:priorizza/app/widgets/myappbar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../consorcios/consorcios.dart';
+import '../../widgets/sidebar.dart';
 import '../sobreconsorcio/consorciocarro.dart';
 import '../sobreconsorcio/consorciocasa.dart';
 import '../sobreconsorcio/consorciomoto.dart';
 import '../sobreconsorcio/consorciopesado.dart';
 import '../sobreconsorcio/consorcioservico.dart';
-import '../../widgets/faqfooter.dart';
+import '../../widgets/faq.dart';
 
 class Inicio extends StatefulWidget {
   const Inicio({super.key});
@@ -30,68 +30,8 @@ class InicioState extends State<Inicio> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false, // Remover o botão de voltar
-        iconTheme: const IconThemeData(
-          color: Color(0xFFD8B45E), // Define a cor desejada para o ícone
-        ),
-        backgroundColor: const Color(0xFF121212),
-        elevation: 0,
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Inicio()),
-              );
-            },
-            child: const Text(
-              'Início',
-              style: TextStyle(
-                color: Colors.white,
-              ),
-            ),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Consorcios()),
-              );
-            },
-            child: const Text(
-              'Consórcios',
-              style: TextStyle(
-                color: Colors.white,
-              ),
-            ),
-          ),
-          TextButton(
-            onPressed: () {
-              launchUrl('https://blog.priorizza.app' as Uri);
-            },
-            child: const Text(
-              'Blog',
-              style: TextStyle(
-                color: Colors.white,
-              ),
-            ),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const LoginScreen()),
-              );
-            },
-            style: ElevatedButton.styleFrom(
-              foregroundColor: Colors.white,
-              backgroundColor: const Color(0xFFD8B45E),
-            ),
-            child: const Text('Área do Cliente'),
-          ),
-        ],
-      ),
+      appBar: const MyAppBar(),
+      drawer: const SideBar(),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -104,35 +44,17 @@ class InicioState extends State<Inicio> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Image.asset(
-                'assets/logo.png', // Substitua pelo caminho da imagem do seu logo
-                width: 300,
-                height: 150,
-              ),
-              Center(
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        color: const Color(0x99000000),
-                        padding: const EdgeInsets.all(16.0),
-                        child:  Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text(
-                              'Torne seus sonhos realidade com a garantia de quem é líder no mercado.',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.normal,
-                              ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
-                        ),
-                      ),
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Image.asset(
+                      'assets/logo.png', // Substitua pelo caminho da imagem do seu logo
+                      width: 300,
+                      height: 150,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
 
               SizedBox(
@@ -500,7 +422,38 @@ class InicioState extends State<Inicio> {
                 ),
               ),
 
-              const FaqFooter(),
+              // Adicionando espaçamento entre o logo e o texto
+              Center(
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: const Color(0x99000000),
+                          borderRadius: BorderRadius.circular(
+                              10), // Adicionando bordas arredondadas
+                        ),
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Text(
+                              'Torne seus sonhos realidade com a garantia de quem é líder no mercado.',
+                              style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white, // Ajustando a cor do texto
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              const Faq(),
               // Adicione mais perguntas e respostas aqui...
             ],
           ),
