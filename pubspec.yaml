@@ -39,6 +39,8 @@ dependencies:
   flutter_widget_from_html_core: 
   url_launcher:
   font_awesome_flutter:
+  carousel_slider: ^4.2.1
+  flutter_icons: ^1.1.0
   
 dev_dependencies:
   flutter_test:
@@ -65,23 +67,11 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
-  - assets/logo.png
-  - assets/background_image.png
-  - assets/banner.png
-  - assets/banner/autos.png
-  - assets/banner/bike.png
-  - assets/banner/casa.png
-  - assets/banner/pesado.png
-  - assets/banner/servico.png
-
-  - assets/honda.png
-  - assets/wallpaper.png
-  - assets/honda/2.png
-  - assets/honda/3.png
-  - assets/honda/4.png
-  - assets/honda/5.png
-  - assets/honda/6.png
-  - assets/honda/7.png
+  - assets/
+  - assets/banner/
+  - assets/cars/
+  - assets/house/
+  - assets/motorcycles/Honda/
 
 
 

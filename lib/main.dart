@@ -15,25 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => MyAppState(),
-      child: MaterialApp(
-        title: 'Consórcio Priorizza',
-        theme: ThemeData(
-          primaryColor: Colors.blue,
-          scaffoldBackgroundColor: Colors.white,
-          cardColor: Colors.white,
-          dividerColor: Colors.grey,
-          textTheme: const TextTheme(
-            bodyLarge: TextStyle(
-              color: Colors.black,
-              fontSize: 16.0,
-            ),
-          ),
-          colorScheme: ColorScheme.fromSwatch()
-              .copyWith(secondary: Colors.green)
-              .copyWith(background: Colors.white),
-        ), // Adicionando o tema padrão do Flutter
-
-        home: const Inicio(),
+      child: const MaterialApp(
+        home: Inicio(),
       ),
     );
   }

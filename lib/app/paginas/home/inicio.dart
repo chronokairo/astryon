@@ -3,16 +3,15 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:priorizza/app/widgets/myappbar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../areadocliente/sidebar/sidebar.dart';
-
-import '../../widgets/faqfooter.dart';
+import '../../widgets/contactbar.dart';
+import '../../widgets/sidebar.dart';
+import '../../widgets/slideimage.dart';
 import '../sobreconsorcio/consorciocarro.dart';
 import '../sobreconsorcio/consorciocasa.dart';
 import '../sobreconsorcio/consorciomoto.dart';
 import '../sobreconsorcio/consorciopesado.dart';
 import '../sobreconsorcio/consorcioservico.dart';
-
-
+import '../../widgets/faq.dart';
 
 class Inicio extends StatefulWidget {
   const Inicio({super.key});
@@ -33,359 +32,442 @@ class InicioState extends State<Inicio> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  const MyAppBar(),
       drawer: const SideBar(),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Center(
-              child: Row(
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+                "assets/background_image.png"), // Substitua pelo caminho da sua imagem de background
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              // Espaçamento de 10 pixels abaixo do CarouselSlider
+              const SizedBox(height: 10),
+              const MyAppBar(),
+              const SizedBox(height: 5),
+
+              Column(
                 children: [
-                  Expanded(
-                    child: Container(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Text(
-                            'Torne seus sonhos realidade com a garantia de quem é líder no mercado.',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.normal,
+                  const SizedBox(height: 10),
+                  CarouselSliderWidget(),
+                ],
+              ),
+              const SizedBox(height: 10),
+              Center(
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: const Color(0x99000000),
+                          borderRadius: BorderRadius.circular(
+                              10), // Adicionando bordas arredondadas
+                        ),
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Text(
+                              'Torne seus sonhos realidade \n com a garantia de quem é líder no mercado.',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white, // Ajustando a cor do texto
+                              ),
+                              textAlign: TextAlign.center,
                             ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-
-            SizedBox(
-              width: double.infinity,
-              height: 300,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  SizedBox(
-                    width: 268.333,
-                    child: GestureDetector(
-                      onTap: () {
-                        // Adicione a ação desejada aqui
-                      },
-                      child: Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Stack(
-                            children: [
-                              Positioned.fill(
-                                child: Container(
-                                  decoration: const BoxDecoration(),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    const Icon(
-                                      Icons.home,
-                                      size: 80,
-                                    ),
-                                    const SizedBox(height: 16),
-                                    const Text(
-                                      'Casa, apartamento e quitação de financiamento em até 200 meses. Crédito de R\$ 50 mil a R\$ 500 mil.',
-                                      style: TextStyle(
-                                        fontSize: 14,
+              const SizedBox(height: 10),
+              SizedBox(
+                width: double.infinity,
+                height: 300,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    SizedBox(
+                      width: 268.333,
+                      child: GestureDetector(
+                        onTap: () {
+                          // Adicione a ação desejada aqui
+                        },
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Stack(
+                              children: [
+                                Positioned.fill(
+                                  child: Container(
+                                    decoration: const BoxDecoration(
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                            "assets/banner/casa.png"), // Substitua pelo caminho da sua imagem de background
+                                        fit: BoxFit.cover,
                                       ),
-                                      textAlign: TextAlign.center,
                                     ),
-                                    const SizedBox(height: 16),
-                                    ElevatedButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const ConsorcioCasaPage()),
-                                        );
-                                      },
-                                      style: ElevatedButton.styleFrom(
-                                        minimumSize:
-                                            const Size(double.infinity, 50),
-                                      ),
-                                      child: const Text('Veja as vantagens'),
-                                    ),
-                                  ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                                Padding(
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      const Icon(
+                                        Icons.home,
+                                        color: Colors.white,
+                                        size: 80,
+                                      ),
+                                      const SizedBox(height: 16),
+                                      const Text(
+                                        'Casa, apartamento e quitação de financiamento em até 200 meses. Crédito de R\$ 50 mil a R\$ 500 mil.',
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                          color: Colors.white,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                      const SizedBox(height: 16),
+                                      ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const ConsorcioCasaPage()),
+                                          );
+                                        },
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor:
+                                              const Color(0x99000000),
+                                          minimumSize:
+                                              const Size(double.infinity, 50),
+                                        ),
+                                        child: const Text('Veja as vantagens'),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 268.333,
-                    child: GestureDetector(
-                      onTap: () {
-                        // Adicione a ação desejada aqui
-                      },
-                      child: Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Stack(
-                            children: [
-                              Positioned.fill(
-                                child: Container(
-                                  decoration: const BoxDecoration(),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    const Icon(
-                                      Icons.directions_car,
-                                      size: 80,
-                                    ),
-                                    const SizedBox(height: 16),
-                                    const Text(
-                                      'Carros, motos e náuticos com pagamento em até 70 meses. Crédito de R\$ 25mil a R\$ 70 mil.',
-                                      style: TextStyle(
-                                        fontSize: 14,
+                    SizedBox(
+                      width: 268.333,
+                      child: GestureDetector(
+                        onTap: () {
+                          // Adicione a ação desejada aqui
+                        },
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Stack(
+                              children: [
+                                Positioned.fill(
+                                  child: Container(
+                                    decoration: const BoxDecoration(
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                            "assets/banner/autos.png"), // Substitua pelo caminho da sua imagem de background
+                                        fit: BoxFit.cover,
                                       ),
-                                      textAlign: TextAlign.center,
                                     ),
-                                    const SizedBox(height: 16),
-                                    ElevatedButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const ConsorcioCarroPage()),
-                                        );
-                                      },
-                                      style: ElevatedButton.styleFrom(
-                                        minimumSize:
-                                            const Size(double.infinity, 50),
-                                      ),
-                                      child: const Text('Conheça'),
-                                    ),
-                                  ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                                Padding(
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      const Icon(
+                                        Icons.directions_car,
+                                        color: Colors.white,
+                                        size: 80,
+                                      ),
+                                      const SizedBox(height: 16),
+                                      const Text(
+                                        'Carros, motos e náuticos com pagamento em até 70 meses. Crédito de R\$ 25mil a R\$ 70 mil.',
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                          color: Colors.white,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                      const SizedBox(height: 16),
+                                      ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const ConsorcioCarroPage()),
+                                          );
+                                        },
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor:
+                                              const Color(0x99000000),
+                                          minimumSize:
+                                              const Size(double.infinity, 50),
+                                        ),
+                                        child: const Text('Conheça'),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 268.333,
-                    child: GestureDetector(
-                      onTap: () {
-                        // Adicione a ação desejada aqui
-                      },
-                      child: Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Stack(
-                            children: [
-                              Positioned.fill(
-                                child: Container(
-                                  decoration: const BoxDecoration(),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    const Icon(
-                                      Icons.motorcycle,
-                                      size: 80,
-                                    ),
-                                    const SizedBox(height: 16),
-                                    const Text(
-                                      'De urbana a elétrica, sua nova bike é garantida sem juros, planos a partir de R\$ 25 mil em até 70 meses.',
-                                      style: TextStyle(
-                                        fontSize: 14,
+                    SizedBox(
+                      width: 268.333,
+                      child: GestureDetector(
+                        onTap: () {
+                          // Adicione a ação desejada aqui
+                        },
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Stack(
+                              children: [
+                                Positioned.fill(
+                                  child: Container(
+                                    decoration: const BoxDecoration(
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                            "assets/banner/bike.png"), // Substitua pelo caminho da sua imagem de background
+                                        fit: BoxFit.cover,
                                       ),
-                                      textAlign: TextAlign.center,
                                     ),
-                                    const SizedBox(height: 16),
-                                    ElevatedButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const ConsorcioMotoEletricaPage()),
-                                        );
-                                      },
-                                      style: ElevatedButton.styleFrom(
-                                        minimumSize:
-                                            const Size(double.infinity, 50),
-                                      ),
-                                      child: const Text('Descubra'),
-                                    ),
-                                  ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                                Padding(
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      const Icon(
+                                        Icons.motorcycle,
+                                        color: Colors.white,
+                                        size: 80,
+                                      ),
+                                      const SizedBox(height: 16),
+                                      const Text(
+                                        'De urbana a elétrica, sua nova bike é garantida sem juros, planos a partir de R\$ 25 mil em até 70 meses.',
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                          color: Colors.white,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                      const SizedBox(height: 16),
+                                      ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const ConsorcioMotoEletricaPage()),
+                                          );
+                                        },
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor:
+                                              const Color(0x99000000),
+                                          minimumSize:
+                                              const Size(double.infinity, 50),
+                                        ),
+                                        child: const Text('Descubra'),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 268.333,
-                    child: GestureDetector(
-                      onTap: () {
-                        // Adicione a ação desejada aqui
-                      },
-                      child: Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Stack(
-                            children: [
-                              Positioned.fill(
-                                child: Container(),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    const Icon(
-                                      Icons.local_shipping,
-                                      size: 80,
-                                    ),
-                                    const SizedBox(height: 16),
-                                    const Text(
-                                      'Caminhões, ônibus, tratores com pagamento em até 150 meses. Crédito de R\$ 180 mil a R\$ 300 mil.',
-                                      style: TextStyle(
-                                        fontSize: 14,
+                    SizedBox(
+                      width: 268.333,
+                      child: GestureDetector(
+                        onTap: () {
+                          // Adicione a ação desejada aqui
+                        },
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Stack(
+                              children: [
+                                Positioned.fill(
+                                  child: Container(
+                                    decoration: const BoxDecoration(
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                            "assets/banner/pesado.png"), // Substitua pelo caminho da sua imagem de background
+                                        fit: BoxFit.cover,
                                       ),
-                                      textAlign: TextAlign.center,
                                     ),
-                                    const SizedBox(height: 16),
-                                    ElevatedButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const ConsorcioCaminhaoPage()),
-                                        );
-                                      },
-                                      style: ElevatedButton.styleFrom(
-                                        minimumSize:
-                                            const Size(double.infinity, 50),
-                                      ),
-                                      child: const Text('Saiba mais'),
-                                    ),
-                                  ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                                Padding(
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      const Icon(
+                                        Icons.local_shipping,
+                                        color: Colors.white,
+                                        size: 80,
+                                      ),
+                                      const SizedBox(height: 16),
+                                      const Text(
+                                        'Caminhões, ônibus, tratores com pagamento em até 150 meses. Crédito de R\$ 180 mil a R\$ 300 mil.',
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                          color: Colors.white,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                      const SizedBox(height: 16),
+                                      ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const ConsorcioCaminhaoPage()),
+                                          );
+                                        },
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor:
+                                              const Color(0x99000000),
+                                          minimumSize:
+                                              const Size(double.infinity, 50),
+                                        ),
+                                        child: const Text('Saiba mais'),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 268.333,
-                    child: GestureDetector(
-                      onTap: () {
-                        // Adicione a ação desejada aqui
-                      },
-                      child: Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Stack(
-                            children: [
-                              Positioned.fill(
-                                child: Container(),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    const Icon(
-                                      Icons.airplanemode_active,
-                                      size: 80,
-                                    ),
-                                    const SizedBox(height: 16),
-                                    const Text(
-                                      'Você pode contratar diversos tipos de serviços, com flexibilidade de pagamento.',
-                                      style: TextStyle(
-                                        fontSize: 14,
+                    SizedBox(
+                      width: 268.333,
+                      child: GestureDetector(
+                        onTap: () {
+                          // Adicione a ação desejada aqui
+                        },
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Stack(
+                              children: [
+                                Positioned.fill(
+                                  child: Container(
+                                    decoration: const BoxDecoration(
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                            "assets/banner/servico.png"), // Substitua pelo caminho da sua imagem de background
+                                        fit: BoxFit.cover,
                                       ),
-                                      textAlign: TextAlign.center,
                                     ),
-                                    const SizedBox(height: 16),
-                                    ElevatedButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const ConsorcioServicosPage()),
-                                        );
-                                      },
-                                      style: ElevatedButton.styleFrom(
-                                        minimumSize:
-                                            const Size(double.infinity, 50),
-                                      ),
-                                      child: const Text('Planeje agora'),
-                                    ),
-                                  ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                                Padding(
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      const Icon(
+                                        Icons.airplanemode_active,
+                                        color: Colors.white,
+                                        size: 80,
+                                      ),
+                                      const SizedBox(height: 16),
+                                      const Text(
+                                        'Você pode contratar diversos tipos de serviços, com flexibilidade de pagamento.',
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                          color: Colors.white,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                      const SizedBox(height: 16),
+                                      ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const ConsorcioServicosPage()),
+                                          );
+                                        },
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor:
+                                              const Color(0x99000000),
+                                          minimumSize:
+                                              const Size(double.infinity, 50),
+                                        ),
+                                        child: const Text('Planeje agora'),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
 
-            const FaqFooter(),
-            // Adicione mais perguntas e respostas aqui...
-          ],
+              // Adicionando espaçamento entre o logo e o texto
+
+              const Faq(),
+              // Adicione mais perguntas e respostas aqui...
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           launchWhatsApp();
         },
+        backgroundColor: const Color(0xFF25D366),
         child: const FaIcon(
           FontAwesomeIcons.whatsapp,
+          color: Colors.white,
         ),
       ),
     );
