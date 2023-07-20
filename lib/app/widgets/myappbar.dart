@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../paginas/areadocliente/loginscreen/login_screen.dart';
-import '../paginas/catalogo/catalogo.dart';
 import '../paginas/consorcios/consorcios.dart';
 import '../paginas/home/inicio.dart';
 import '../theme/appcolors.dart';
@@ -38,7 +37,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) =>  CatalogScreen()),
+              MaterialPageRoute(builder: (context) =>  const Consorcios()),
             );
           },
           child: const Text(
