@@ -429,7 +429,7 @@ class InicioState extends State<Inicio> {
                     Expanded(
                       child: Container(
                         decoration: BoxDecoration(
-                          color: const Color(0x99000000),
+                          color:  Colors.black,
                           borderRadius: BorderRadius.circular(
                               10), // Adicionando bordas arredondadas
                         ),
@@ -440,7 +440,7 @@ class InicioState extends State<Inicio> {
                             Text(
                               'Torne seus sonhos realidade com a garantia de quem é líder no mercado.',
                               style: TextStyle(
-                                fontSize: 20,
+                                fontSize: 15,
                                 color: Colors.white, // Ajustando a cor do texto
                               ),
                               textAlign: TextAlign.center,

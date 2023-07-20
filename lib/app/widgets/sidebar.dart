@@ -7,14 +7,16 @@ class SideBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: const Color(0x99000000), // Adicionando transparência ao Drawer
+        color: Colors.black, // Adicionando transparência ao Drawer
         child: ListView(
           children: [
             // Drawer items
             ListTile(
-              leading: const Icon(Icons.file_copy, color: Colors.white),
+              leading: const Icon(Icons.receipt_long,
+                  color:
+                      Colors.white), // Ícone representativo para emitir boleto
               title: const Text(
-                'Emita seu boleto',
+                'Emitir Boleto',
                 style: TextStyle(color: Colors.white),
               ),
               onTap: () {
@@ -22,9 +24,11 @@ class SideBar extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.attach_money, color: Colors.white),
+              leading: const Icon(Icons.monetization_on,
+                  color:
+                      Colors.white), // Ícone representativo para ofertar lance
               title: const Text(
-                'Oferte seu lance',
+                'Ofertar Lance',
                 style: TextStyle(color: Colors.white),
               ),
               onTap: () {
@@ -32,9 +36,11 @@ class SideBar extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.speaker_notes, color: Colors.white),
+              leading: const Icon(Icons.calendar_today,
+                  color: Colors
+                      .white), // Ícone representativo para verificar assembleia
               title: const Text(
-                'Verifique a assembleia',
+                'Verificar Assembleia',
                 style: TextStyle(color: Colors.white),
               ),
               onTap: () {
@@ -42,9 +48,11 @@ class SideBar extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.person, color: Colors.white),
+              leading: const Icon(Icons.person_outline,
+                  color: Colors
+                      .white), // Ícone representativo para atualizar dados pessoais
               title: const Text(
-                'Atualize seus dados pessoais',
+                'Atualizar Dados Pessoais',
                 style: TextStyle(color: Colors.white),
               ),
               onTap: () {
@@ -52,9 +60,11 @@ class SideBar extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.payments, color: Colors.white),
+              leading: const Icon(Icons.payment,
+                  color: Colors
+                      .white), // Ícone representativo para verificar pagamentos
               title: const Text(
-                'Verifique seus pagamentos',
+                'Verificar Pagamentos',
                 style: TextStyle(color: Colors.white),
               ),
               onTap: () {
@@ -62,9 +72,11 @@ class SideBar extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.settings, color: Colors.white),
+              leading: const Icon(Icons.settings,
+                  color: Colors
+                      .white), // Ícone representativo para verificar plano
               title: const Text(
-                'Verifique seu plano',
+                'Verificar Plano',
                 style: TextStyle(color: Colors.white),
               ),
               onTap: () {
