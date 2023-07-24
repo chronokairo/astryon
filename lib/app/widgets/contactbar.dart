@@ -28,7 +28,7 @@ class ContactBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ],
       ),
-      title: Row(children: const [
+      title: const Row(children: [
         Text(
           '(092) 98508-0304', // Substitua '123456789' pelo número de telefone desejado
           style: TextStyle(

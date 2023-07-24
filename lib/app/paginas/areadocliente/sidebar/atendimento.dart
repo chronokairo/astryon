@@ -98,9 +98,9 @@ class AtendimentoClienteScreen extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
               ),
-              child: Row(
+              child: const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   Icon(Icons.phone),
                   SizedBox(width: 8.0),
                   Text('Ligar para o Atendimento ao Cliente'),

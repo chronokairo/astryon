@@ -106,7 +106,7 @@ class SideBarState extends State<SideBar> {
                         _buildInfoRow(
                             Icons.phone, "Telefone", "($ddd) $celular"),
                         const SizedBox(height: 24),
-                        Container(
+                        SizedBox(
                           width: constraints.maxWidth,
                           child: _buildInfoGrid([
                             _buildInfoItem(Icons.check, "Contrato", contract),
@@ -119,9 +119,11 @@ class SideBarState extends State<SideBar> {
                             _buildInfoItem(
                                 Icons.star, "Status do Grupo", stGrupo),
                             _buildInfoItem(
-                                Icons.star, "Status da Cota", stCota),
+                                Icons.star, "Pagamento Atrasado", pa),
                             _buildInfoItem(
                                 Icons.star, "Contemplação", contemplacao),
+                                 _buildInfoItem(
+                                Icons.star,"Status da Cota", stCota),
                           ], constraints),
                         ),
                       ],
@@ -143,7 +145,7 @@ class SideBarState extends State<SideBar> {
         Icon(icon, color: Colors.blue),
         const SizedBox(width: 8),
         Text(
-          label + ": ",
+          "$label: ",
           style: const TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
@@ -192,7 +194,7 @@ class SideBarState extends State<SideBar> {
         Icon(icon, color: Colors.blue),
         const SizedBox(height: 8),
         Text(
-          label + ": ",
+          "$label: ",
           style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,

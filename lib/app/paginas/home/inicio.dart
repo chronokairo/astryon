@@ -61,9 +61,9 @@ class InicioState extends State<Inicio> {
                               10), // Adicionando bordas arredondadas
                         ),
                         padding: const EdgeInsets.all(16.0),
-                        child: Column(
+                        child: const Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
+                          children: [
                             Text(
                               'Torne seus sonhos realidade com a garantia de quem é líder no mercado.',
                               style: TextStyle(
