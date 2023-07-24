@@ -19,7 +19,7 @@ class SideBar extends StatefulWidget {
 }
 
 class SideBarState extends State<SideBar> {
-  int? selectedRow; // Track the selected row index
+  int? selectedRow; // Rastrear o índice da linha selecionada
 
   @override
   Widget build(BuildContext context) {
@@ -31,226 +31,179 @@ class SideBarState extends State<SideBar> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Main Page"),
+        title: const Text("Página Principal"),
       ),
-      body: ListView.builder(
-        itemCount: filteredRows.length,
-        itemBuilder: (context, index) {
-          List<dynamic> row = filteredRows[index];
-          String username = row[4].toString();
-          String email = row[8].toString();
-          String contract = row[0].toString(); // New Column: Contract
-          String group = row[1].toString(); // New Column: Group
-          String quota = row[2].toString(); // New Column: Quota
-          String sequence = row[3].toString(); // New Column: Sequence
-          String consorciado = row[5].toString(); // New Column: Consorciado
-          String documento = row[6].toString(); // New Column: Documento
-          String ddd = row[9].toString(); // New Column: DDD
-          String celular = row[10].toString(); // New Column: Celular
-          String adesao = row[11].toString(); // New Column: Adesao
-          String pa = row[12].toString(); // New Column: PA
-          String stGrupo = row[13].toString(); // New Column: St Grupo
-          String stCota = row[14].toString(); // New Column: St Cota
-          String contemplacao = row[15].toString(); // New Column: Contemplacao
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          return ListView.builder(
+            itemCount: filteredRows.length,
+            itemBuilder: (context, index) {
+              List<dynamic> row = filteredRows[index];
+              String username = row[4].toString();
+              String email = row[8].toString();
+              String contract = row[0].toString(); // Nova coluna: Contrato
+              String group = row[1].toString(); // Nova coluna: Grupo
+              String quota = row[2].toString(); // Nova coluna: Cota
+              String sequence = row[3].toString(); // Nova coluna: Sequência
+              String consorciado =
+                  row[9].toString(); // Nova coluna: Consorciado
+              String documento = row[5].toString(); // Nova coluna: Documento
+              String ddd = row[6].toString(); // Nova coluna: DDD
+              String celular = row[7].toString(); // Nova coluna: Celular
+              String adesao = row[19].toString(); // Nova coluna: Adesão
+              String pa = row[10].toString(); // Nova coluna: PA
+              String stGrupo =
+                  row[11].toString(); // Nova coluna: Status do Grupo
+              String stCota = row[12].toString(); // Nova coluna: Status da Cota
+              String contemplacao =
+                  row[13].toString(); // Nova coluna: Contemplação
 
-          return InkWell(
-            onTap: () {
-              setState(() {
-                selectedRow = index;
-              });
-            },
-            child: Card(
-              color: selectedRow == index ? Colors.grey[200] : Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
+              return InkWell(
+                onTap: () {
+                  setState(() {
+                    selectedRow = index;
+                  });
+                },
+                child: Card(
+                  color: selectedRow == index ? Colors.grey[200] : Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Icon(Icons.person, color: Colors.blue),
-                        SizedBox(width: 16),
-                        Expanded(
+                        Center(
                           child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+                              const Icon(Icons.person, color: Colors.blue, size: 50),
+                              const SizedBox(height: 8),
                               Text(
                                 username,
-                                style: TextStyle(
-                                  fontSize: 18,
+                                style: const TextStyle(
+                                  fontSize: 24,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              SizedBox(height: 4),
+                              const SizedBox(height: 4),
                               Text(
                                 email,
                                 style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: 18,
                                   color: Colors.grey[600],
                                 ),
                               ),
                             ],
                           ),
                         ),
-                      ],
-                    ),
-                    Divider(
-                      color: Colors.grey[400],
-                      thickness: 1.5,
-                      height: 24,
-                    ),
-                    Text(
-                      "Contract: $contract",
-                      style: TextStyle(fontSize: 14),
-                    ),
-                    SizedBox(height: 8),
-                    Text(
-                      "Group: $group",
-                      style: TextStyle(fontSize: 14),
-                    ),
-                    SizedBox(height: 8),
-                    Text(
-                      "Quota: $quota",
-                      style: TextStyle(fontSize: 14),
-                    ),
-                    SizedBox(height: 8),
-                    Text(
-                      "Sequence: $sequence",
-                      style: TextStyle(fontSize: 14),
-                    ),
-                    SizedBox(height: 8),
-                    Text(
-                      "Consorciado: $consorciado",
-                      style: TextStyle(fontSize: 14),
-                    ),
-                    SizedBox(height: 8),
-                    Text(
-                      "Documento: $documento",
-                      style: TextStyle(fontSize: 14),
-                    ),
-                    SizedBox(height: 16),
-                    Row(
-                      children: [
-                        Icon(Icons.phone, color: Colors.blue),
-                        SizedBox(width: 16),
-                        Text(
-                          "Phone:",
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
+                        const SizedBox(height: 24),
+                        Divider(
+                          color: Colors.grey[400],
+                          thickness: 1.5,
+                          height: 24,
                         ),
-                        SizedBox(width: 8),
-                        Text(
-                          "($ddd) $celular",
-                          style: TextStyle(fontSize: 16),
+                        const SizedBox(height: 8),
+                        _buildInfoRow(Icons.calendar_today, "Adesão", adesao),
+                        const SizedBox(height: 8),
+                        _buildInfoRow(
+                            Icons.phone, "Telefone", "($ddd) $celular"),
+                        const SizedBox(height: 24),
+                        Container(
+                          width: constraints.maxWidth,
+                          child: _buildInfoGrid([
+                            _buildInfoItem(Icons.check, "Contrato", contract),
+                            _buildInfoItem(Icons.check, "Grupo", group),
+                            _buildInfoItem(Icons.check, "Cota", quota),
+                            _buildInfoItem(Icons.check, "Sequência", sequence),
+                            _buildInfoItem(
+                                Icons.check, "Consorciado", consorciado),
+                            _buildInfoItem(Icons.check, "Documento", documento),
+                            _buildInfoItem(
+                                Icons.star, "Status do Grupo", stGrupo),
+                            _buildInfoItem(
+                                Icons.star, "Status da Cota", stCota),
+                            _buildInfoItem(
+                                Icons.star, "Contemplação", contemplacao),
+                          ], constraints),
                         ),
                       ],
                     ),
-                    SizedBox(height: 16),
-                    Row(
-                      children: [
-                        Icon(Icons.calendar_today, color: Colors.blue),
-                        SizedBox(width: 16),
-                        Text(
-                          "Adesão:",
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(width: 8),
-                        Text(
-                          adesao,
-                          style: TextStyle(fontSize: 16),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 16),
-                    Row(
-                      children: [
-                        Icon(Icons.check, color: Colors.blue),
-                        SizedBox(width: 16),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Status Grupo:",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(height: 4),
-                              Text(
-                                stGrupo,
-                                style: TextStyle(fontSize: 16),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 16),
-                    Row(
-                      children: [
-                        Icon(Icons.check, color: Colors.blue),
-                        SizedBox(width: 16),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Status Cota:",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(height: 4),
-                              Text(
-                                stCota,
-                                style: TextStyle(fontSize: 16),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 16),
-                    Row(
-                      children: [
-                        Icon(Icons.star, color: Colors.blue),
-                        SizedBox(width: 16),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Contemplação:",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(height: 4),
-                              Text(
-                                contemplacao,
-                                style: TextStyle(fontSize: 16),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+                  ),
                 ),
-              ),
-            ),
+              );
+            },
           );
         },
       ),
     );
+  }
+
+  Widget _buildInfoRow(IconData icon, String label, String value) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(icon, color: Colors.blue),
+        const SizedBox(width: 8),
+        Text(
+          label + ": ",
+          style: const TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const SizedBox(width: 8),
+        Text(
+          value,
+          style: const TextStyle(fontSize: 18),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildInfoGrid(List<Widget> children, BoxConstraints constraints) {
+    int crossAxisCount = constraints.maxWidth > 600 ? 5 : 2;
+    double itemWidth = constraints.maxWidth / crossAxisCount - 8;
+    return GridView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: crossAxisCount,
+        crossAxisSpacing: 8,
+        mainAxisSpacing: 8,
+      ),
+      itemCount: children.length,
+      itemBuilder: (context, index) {
+        return Container(
+          width: itemWidth,
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: Colors.grey[100],
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: children[index],
+        );
+      },
+    );
+  }
+
+  Widget _buildInfoItem(IconData icon, String label, String value) {
+    return Center(
+        child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Icon(icon, color: Colors.blue),
+        const SizedBox(height: 8),
+        Text(
+          label + ": ",
+          style: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const SizedBox(height: 4),
+        Text(
+          value,
+          style: const TextStyle(fontSize: 16),
+        ),
+      ],
+    ));
   }
 }
