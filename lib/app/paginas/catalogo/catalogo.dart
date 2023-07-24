@@ -92,88 +92,83 @@ class CatalogScreen extends StatelessWidget {
       crossAxisCount = 2;
     }
 
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Catalog App'),
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: crossAxisCount,
+        crossAxisSpacing: 8.0,
+        mainAxisSpacing: 8.0,
       ),
-      body: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: crossAxisCount,
-          crossAxisSpacing: 8.0,
-          mainAxisSpacing: 8.0,
-        ),
-        padding: const EdgeInsets.all(8.0),
-        itemCount: items.length,
-        itemBuilder: (context, index) {
-          return AspectRatio(
-            aspectRatio: 9 / 20, // Adjust the aspect ratio to your liking
-            child: Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Stack(
-                  children: [
-                    Positioned.fill(
-                      child: Image.asset(
-                        getItemImage(items[index]),
-                        fit: BoxFit.cover,
-                        alignment: Alignment.center,
-                      ),
+      padding: const EdgeInsets.all(8.0),
+      itemCount: items.length,
+      itemBuilder: (context, index) {
+        return AspectRatio(
+          aspectRatio: 9 / 20, // Adjust the aspect ratio to your liking
+          child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Stack(
+                children: [
+                  Positioned.fill(
+                    child: Image.asset(
+                      getItemImage(items[index]),
+                      fit: BoxFit.cover,
+                      alignment: Alignment.center,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            getItemIcon(items[index].type),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          getItemIcon(items[index].type),
+                          color: Colors.white,
+                          size: 20,
+                        ),
+                        const SizedBox(height: 16),
+                        Text(
+                          '${items[index].brand} - ${items[index].model}',
+                          style: const TextStyle(
+                            fontSize: 14,
                             color: Colors.white,
-                            size: 20,
                           ),
-                          const SizedBox(height: 16),
-                          Text(
-                            '${items[index].brand} - ${items[index].model}',
+                          textAlign: TextAlign.center,
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          'Price: \$${items[index].price.toString()}',
+                          style: const TextStyle(
+                            fontSize: 14,
+                            color: Colors.white,
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+                        ElevatedButton(
+                          onPressed: () {
+                            // Adicione a ação desejada aqui
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xFFD8B45E),
+                            minimumSize: const Size(double.infinity, 50),
+                          ),
+                          child: Text(
+                            'R\$${items[index].price.toString()}',
                             style: const TextStyle(
-                              fontSize: 14,
-                              color: Colors.white,
-                            ),
-                            textAlign: TextAlign.center,
+                                fontSize: 14, color: Colors.white),
                           ),
-                          const SizedBox(height: 8),
-                          Text(
-                            'Price: \$${items[index].price.toString()}',
-                            style: const TextStyle(
-                              fontSize: 14,
-                              color: Colors.white,
-                            ),
-                          ),
-                          const SizedBox(height: 16),
-                          ElevatedButton(
-                            onPressed: () {
-                              // Adicione a ação desejada aqui
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xFFD8B45E),
-                              minimumSize: const Size(double.infinity, 50),
-                            ),
-                            child: Text(
-                              'R\$${items[index].price.toString()}',
-                              style: const TextStyle(
-                                  fontSize: 14, color: Colors.white),
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 

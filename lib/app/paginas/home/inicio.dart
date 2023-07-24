@@ -4,7 +4,6 @@ import 'package:priorizza/app/widgets/myappbar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../widgets/card.dart';
-import '../../widgets/sidebar.dart';
 import '../../widgets/slideimage.dart';
 import '../../widgets/faq.dart';
 
@@ -27,7 +26,6 @@ class InicioState extends State<Inicio> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const SideBar(),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(

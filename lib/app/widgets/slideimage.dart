@@ -10,6 +10,8 @@ class CarouselSliderWidget extends StatelessWidget {
     'assets/banner/casa.png',
   ];
 
+  CarouselSliderWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return CarouselSlider.builder(

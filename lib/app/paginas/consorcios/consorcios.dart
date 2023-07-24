@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'carros.dart';
-import 'package:url_launcher/url_launcher.dart';
-import '../areadocliente/loginscreen/login_screen.dart';
-import '../home/inicio.dart';
+import 'package:priorizza/app/paginas/catalogo/catalogo.dart';
+import 'package:priorizza/app/widgets/myappbar.dart';
 
 class Consorcios extends StatefulWidget {
   const Consorcios({super.key});
@@ -32,68 +30,39 @@ class _ConsorciosPageState extends State<Consorcios>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false, // Remover o botão de voltar
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+                "assets/background_image.png"), // Substitua pelo caminho da sua imagem de background
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Column(
+          children: [
+            const MyAppBar(),
+            TabBar(
+              // Define a cor do texto da aba ativa
 
-        elevation: 0,
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Inicio()),
-              );
-            },
-            child: const Text(
-              'Início',
-              style: TextStyle(),
-            ),
-          ),
-          TextButton(
-            onPressed: () {
-              launchUrl('https://blog.priorizza.app' as Uri);
-            },
-            child: const Text(
-              'Blog',
-              style: TextStyle(),
-            ),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const LoginScreen()),
-              );
-            },
-            child: const Text('Área do Cliente'),
-          ),
-        ],
-      ),
-      body: Column(
-        children: [
-          TabBar(
-            // Define a cor do texto da aba ativa
-
-            controller: _tabController,
-            tabs: const [
-              Tab(text: 'Imóveis'),
-              Tab(text: 'Autos'),
-              Tab(text: 'Bikes'),
-              Tab(text: 'Pesados'),
-            ],
-          ),
-          Expanded(
-            child: TabBarView(
               controller: _tabController,
-              children: const [
-                Text('Imóveis'),
-                Autos(),
-                Text('Bikes'),
-                Text('Pesados'),
+              tabs: const [
+                Tab(text: 'Imóveis'),
+                Tab(text: 'Autos'),
+                Tab(text: 'Pesados'),
               ],
             ),
-          ),
-        ],
+            Expanded(
+              child: TabBarView(
+                controller: _tabController,
+                children: [
+                  CatalogScreen(),
+                  CatalogScreen(),
+                  CatalogScreen(),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
