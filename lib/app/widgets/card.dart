@@ -109,7 +109,7 @@ class CustomCardPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            height: 630,
+            height: 700,
             child: ListView(
               scrollDirection: Axis.vertical,
               children: [

@@ -9,7 +9,7 @@ class MyFooter extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 24),
       // Adicionando bordas arredondadas ao Container
       decoration: BoxDecoration(
-        color:  const Color(0x99000000),
+        color: Colors.black,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Column(

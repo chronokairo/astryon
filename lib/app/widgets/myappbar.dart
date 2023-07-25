@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+
 import '../paginas/areadocliente/loginscreen/login_screen.dart';
 import '../paginas/consorcios/consorcios.dart';
 import '../paginas/home/inicio.dart';
-import '../theme/appcolors.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const MyAppBar({Key? key}) : super(key: key);
+  const MyAppBar({super.key});
 
   @override
   Size get preferredSize => const Size.fromHeight(56.0);
@@ -14,8 +13,13 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.transparent,
-      elevation: 0,
+      backgroundColor: Color(0x99000000),
+      shape: ContinuousRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          bottom: Radius.circular(30.0), // Valor do raio para tornar a AppBar redonda
+        ),
+      ),
+      elevation: 8, // Adicionando uma sombra à AppBar
       actions: [
         TextButton(
           onPressed: () {
@@ -27,9 +31,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
           child: const Text(
             'Início',
             style: TextStyle(
-              color: AppColors.backgroundColor,
-              fontSize: 16, // Ajuste o tamanho da fonte conforme necessário
-              // Ajuste a espessura da fonte conforme necessário
+              color: Colors.white,
             ),
           ),
         ),
@@ -37,28 +39,13 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) =>  const Consorcios()),
+              MaterialPageRoute(builder: (context) => const Consorcios()),
             );
           },
           child: const Text(
             'Consórcios',
             style: TextStyle(
-              color: AppColors.backgroundColor,
-              fontSize: 16, // Ajuste o tamanho da fonte conforme necessário
-              // Ajuste a espessura da fonte conforme necessário
-            ),
-          ),
-        ),
-        TextButton(
-          onPressed: () {
-            launchUrl(Uri.parse('https://blog.priorizza.app'));
-          },
-          child: const Text(
-            'Blog',
-            style: TextStyle(
-              color: AppColors.backgroundColor,
-              fontSize: 16, // Ajuste o tamanho da fonte conforme necessário
-              // Ajuste a espessura da fonte conforme necessário
+              color: Colors.white,
             ),
           ),
         ),
@@ -71,32 +58,14 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
           },
           style: ElevatedButton.styleFrom(
             foregroundColor: Colors.white,
-            backgroundColor:
-                AppColors.primaryColor, // Altere a cor do texto do botão
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+            backgroundColor: const Color(0xFFD8B45E),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(48.0),
+              borderRadius: BorderRadius.circular(20.0), // Deixar o botão redondo
             ),
           ),
-          child: const Text(
-            'Área do Cliente',
-            style: TextStyle(
-              fontSize: 16, // Ajuste o tamanho da fonte conforme necessário
-             // Ajuste a espessura da fonte conforme necessário
-            ),
-          ),
+          child: const Text('Área do Cliente'),
         ),
       ],
     );
-  }
-}
-
-void launchUrl(Uri uri) async {
-  // ignore: deprecated_member_use
-  if (await canLaunch(uri.toString())) {
-    // ignore: deprecated_member_use
-    await launch(uri.toString());
-  } else {
-    throw 'Could not launch $uri';
   }
 }

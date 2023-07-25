@@ -73,7 +73,6 @@ class SideBarState extends State<SideBar> {
                         Center(
                           child: Column(
                             children: [
-                              const MyAppBar(),
                               const Icon(Icons.person,
                                   color: AppColors.primaryColor, size: 50),
                               const SizedBox(height: 8),
@@ -102,7 +101,8 @@ class SideBarState extends State<SideBar> {
                           height: 24,
                         ),
                         const SizedBox(height: 8),
-                        _buildInfoRow(Icons.calendar_today, "Adesão", adesao),
+                        _buildInfoRow(
+                            Icons.calendar_today, "Data de Adesão", adesao),
                         Divider(
                           color: Colors.grey[400],
                           thickness: 1.5,
@@ -110,15 +110,7 @@ class SideBarState extends State<SideBar> {
                         ),
                         const SizedBox(height: 8),
                         _buildInfoRow(
-                            Icons.phone, "Telefone", "($ddd) $celular"),
-                        Divider(
-                          color: Colors.grey[400],
-                          thickness: 1.5,
-                          height: 24,
-                        ),
-                        const SizedBox(height: 8),
-                        _buildInfoRow(
-                            Icons.phone, "Telefone", "($ddd) $celular"),
+                            Icons.phone, "Celular", "($ddd) $celular"),
                         Divider(
                           color: Colors.grey[400],
                           thickness: 1.5,

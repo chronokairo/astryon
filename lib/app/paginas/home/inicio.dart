@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:priorizza/app/widgets/myappbar.dart';
+import 'package:priorizza/app/widgets/mydrawer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../widgets/card.dart';
@@ -39,7 +40,6 @@ class InicioState extends State<Inicio> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // Espaçamento de 10 pixels abaixo do CarouselSlider
-              const SizedBox(height: 10),
               const MyAppBar(),
               const SizedBox(height: 5),
 
