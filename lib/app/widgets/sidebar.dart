@@ -103,78 +103,46 @@ class SideBarState extends State<SideBar> {
                         ),
                         const SizedBox(height: 8),
                         _buildInfoRow(Icons.calendar_today, "Adesão", adesao),
+                        Divider(
+                          color: Colors.grey[400],
+                          thickness: 1.5,
+                          height: 24,
+                        ),
                         const SizedBox(height: 8),
                         _buildInfoRow(
                             Icons.phone, "Telefone", "($ddd) $celular"),
+                        Divider(
+                          color: Colors.grey[400],
+                          thickness: 1.5,
+                          height: 24,
+                        ),
+                        const SizedBox(height: 8),
+                        _buildInfoRow(
+                            Icons.phone, "Telefone", "($ddd) $celular"),
+                        Divider(
+                          color: Colors.grey[400],
+                          thickness: 1.5,
+                          height: 24,
+                        ),
                         const SizedBox(height: 24),
                         SizedBox(
                           width: constraints.maxWidth,
                           child: _buildInfoGrid([
                             _buildInfoItem(Icons.check, "Contrato", contract),
-                            Divider(
-                              color: Colors.grey[400],
-                              thickness: 1.5,
-                              height: 24,
-                            ),
                             _buildInfoItem(Icons.check, "Grupo", group),
-                            Divider(
-                              color: Colors.grey[400],
-                              thickness: 1.5,
-                              height: 24,
-                            ),
                             _buildInfoItem(Icons.check, "Cota", quota),
-                            Divider(
-                              color: Colors.grey[400],
-                              thickness: 1.5,
-                              height: 24,
-                            ),
                             _buildInfoItem(Icons.check, "Sequência", sequence),
-                            Divider(
-                              color: Colors.grey[400],
-                              thickness: 1.5,
-                              height: 24,
-                            ),
                             _buildInfoItem(
                                 Icons.check, "Consorciado", consorciado),
-                            Divider(
-                              color: Colors.grey[400],
-                              thickness: 1.5,
-                              height: 24,
-                            ),
                             _buildInfoItem(Icons.check, "Documento", documento),
-                            Divider(
-                              color: Colors.grey[400],
-                              thickness: 1.5,
-                              height: 24,
-                            ),
                             _buildInfoItem(
                                 Icons.star, "Status do Grupo", stGrupo),
-                            Divider(
-                              color: Colors.grey[400],
-                              thickness: 1.5,
-                              height: 24,
-                            ),
                             _buildInfoItem(
                                 Icons.star, "Pagamento Atrasado", pa),
-                            Divider(
-                              color: Colors.grey[400],
-                              thickness: 1.5,
-                              height: 24,
-                            ),
                             _buildInfoItem(
                                 Icons.star, "Contemplação", contemplacao),
-                            Divider(
-                              color: Colors.grey[400],
-                              thickness: 1.5,
-                              height: 24,
-                            ),
                             _buildInfoItem(
                                 Icons.star, "Status da Cota", stCota),
-                            Divider(
-                              color: Colors.grey[400],
-                              thickness: 1.5,
-                              height: 24,
-                            ),
                           ], constraints),
                         ),
                       ],
@@ -213,7 +181,7 @@ class SideBarState extends State<SideBar> {
 
   Widget _buildInfoGrid(List<Widget> children, BoxConstraints constraints) {
     int crossAxisCount = constraints.maxWidth > 600 ? 6 : 2;
-    double itemWidth = constraints.maxWidth / crossAxisCount - 8;
+    double itemWidth = constraints.maxWidth / crossAxisCount - 4;
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
