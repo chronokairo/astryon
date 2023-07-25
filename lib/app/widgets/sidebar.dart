@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../paginas/areadocliente/loginscreen/userinfo.dart';
+import 'myappbar.dart';
 
 class SideBar extends StatefulWidget {
   final String column2;
@@ -30,9 +31,7 @@ class SideBarState extends State<SideBar> {
     }).toList();
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Página Principal"),
-      ),
+      appBar: const MyAppBar(),
       body: LayoutBuilder(
         builder: (context, constraints) {
           return ListView.builder(
@@ -74,7 +73,8 @@ class SideBarState extends State<SideBar> {
                         Center(
                           child: Column(
                             children: [
-                              const Icon(Icons.person, color: Colors.blue, size: 50),
+                              const Icon(Icons.person,
+                                  color: Colors.blue, size: 50),
                               const SizedBox(height: 8),
                               Text(
                                 username,
@@ -122,8 +122,8 @@ class SideBarState extends State<SideBar> {
                                 Icons.star, "Pagamento Atrasado", pa),
                             _buildInfoItem(
                                 Icons.star, "Contemplação", contemplacao),
-                                 _buildInfoItem(
-                                Icons.star,"Status da Cota", stCota),
+                            _buildInfoItem(
+                                Icons.star, "Status da Cota", stCota),
                           ], constraints),
                         ),
                       ],
