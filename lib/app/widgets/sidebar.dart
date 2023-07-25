@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../paginas/areadocliente/loginscreen/userinfo.dart';
+import '../theme/appcolors.dart';
 import 'myappbar.dart';
 
 class SideBar extends StatefulWidget {
@@ -31,7 +32,6 @@ class SideBarState extends State<SideBar> {
     }).toList();
 
     return Scaffold(
-      appBar: const MyAppBar(),
       body: LayoutBuilder(
         builder: (context, constraints) {
           return ListView.builder(
@@ -73,8 +73,9 @@ class SideBarState extends State<SideBar> {
                         Center(
                           child: Column(
                             children: [
+                              const MyAppBar(),
                               const Icon(Icons.person,
-                                  color: Colors.blue, size: 50),
+                                  color: AppColors.primaryColor, size: 50),
                               const SizedBox(height: 8),
                               Text(
                                 username,
@@ -110,20 +111,70 @@ class SideBarState extends State<SideBar> {
                           width: constraints.maxWidth,
                           child: _buildInfoGrid([
                             _buildInfoItem(Icons.check, "Contrato", contract),
+                            Divider(
+                              color: Colors.grey[400],
+                              thickness: 1.5,
+                              height: 24,
+                            ),
                             _buildInfoItem(Icons.check, "Grupo", group),
+                            Divider(
+                              color: Colors.grey[400],
+                              thickness: 1.5,
+                              height: 24,
+                            ),
                             _buildInfoItem(Icons.check, "Cota", quota),
+                            Divider(
+                              color: Colors.grey[400],
+                              thickness: 1.5,
+                              height: 24,
+                            ),
                             _buildInfoItem(Icons.check, "Sequência", sequence),
+                            Divider(
+                              color: Colors.grey[400],
+                              thickness: 1.5,
+                              height: 24,
+                            ),
                             _buildInfoItem(
                                 Icons.check, "Consorciado", consorciado),
+                            Divider(
+                              color: Colors.grey[400],
+                              thickness: 1.5,
+                              height: 24,
+                            ),
                             _buildInfoItem(Icons.check, "Documento", documento),
+                            Divider(
+                              color: Colors.grey[400],
+                              thickness: 1.5,
+                              height: 24,
+                            ),
                             _buildInfoItem(
                                 Icons.star, "Status do Grupo", stGrupo),
+                            Divider(
+                              color: Colors.grey[400],
+                              thickness: 1.5,
+                              height: 24,
+                            ),
                             _buildInfoItem(
                                 Icons.star, "Pagamento Atrasado", pa),
+                            Divider(
+                              color: Colors.grey[400],
+                              thickness: 1.5,
+                              height: 24,
+                            ),
                             _buildInfoItem(
                                 Icons.star, "Contemplação", contemplacao),
+                            Divider(
+                              color: Colors.grey[400],
+                              thickness: 1.5,
+                              height: 24,
+                            ),
                             _buildInfoItem(
                                 Icons.star, "Status da Cota", stCota),
+                            Divider(
+                              color: Colors.grey[400],
+                              thickness: 1.5,
+                              height: 24,
+                            ),
                           ], constraints),
                         ),
                       ],
@@ -142,7 +193,7 @@ class SideBarState extends State<SideBar> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Icon(icon, color: Colors.blue),
+        Icon(icon, color: AppColors.primaryColor),
         const SizedBox(width: 8),
         Text(
           "$label: ",
@@ -161,7 +212,7 @@ class SideBarState extends State<SideBar> {
   }
 
   Widget _buildInfoGrid(List<Widget> children, BoxConstraints constraints) {
-    int crossAxisCount = constraints.maxWidth > 600 ? 5 : 2;
+    int crossAxisCount = constraints.maxWidth > 600 ? 6 : 2;
     double itemWidth = constraints.maxWidth / crossAxisCount - 8;
     return GridView.builder(
       shrinkWrap: true,
@@ -191,7 +242,7 @@ class SideBarState extends State<SideBar> {
         child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Icon(icon, color: Colors.blue),
+        Icon(icon, color: AppColors.primaryColor),
         const SizedBox(height: 8),
         Text(
           "$label: ",
