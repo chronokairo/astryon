@@ -169,56 +169,57 @@ class CustomCardPage extends StatelessWidget {
               ],
             );
           } else {
-            return ListView(
-              shrinkWrap: true,
-              padding: const EdgeInsets.symmetric(vertical: 16),
-              children: [
-                buildCard(
-                  imagePath: "assets/banner/casa.png",
-                  title:
-                      'Casa, apartamento e quitação de financiamento em até 200 meses.',
-                  description: 'Descrição do card 1...',
-                  buttonText: 'Veja as vantagens',
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ConsorcioCasaPage(),
-                      ),
-                    );
-                  },
-                ),
-                buildCard(
-                  imagePath: "assets/banner/autos.png",
-                  title:
-                      'Carros, motos e náuticos com pagamento em até 70 meses.',
-                  description: 'Descrição do card 2...',
-                  buttonText: 'Conheça',
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ConsorcioCarroPage(),
-                      ),
-                    );
-                  },
-                ),
-                buildCard(
-                  imagePath: "assets/banner/pesado.png",
-                  title:
-                      'Caminhões, ônibus, tratores com pagamento em até 150 meses.',
-                  description: 'Descrição do card 3...',
-                  buttonText: 'Saiba mais',
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ConsorcioCaminhaoPage(),
-                      ),
-                    );
-                  },
-                ),
-              ],
+            return SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  buildCard(
+                    imagePath: "assets/banner/casa.png",
+                    title:
+                        'Casa, apartamento e quitação de financiamento em até 200 meses.',
+                    description: 'Descrição do card 1...',
+                    buttonText: 'Veja as vantagens',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ConsorcioCasaPage(),
+                        ),
+                      );
+                    },
+                  ),
+                  buildCard(
+                    imagePath: "assets/banner/autos.png",
+                    title:
+                        'Carros, motos e náuticos com pagamento em até 70 meses.',
+                    description: 'Descrição do card 2...',
+                    buttonText: 'Conheça',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ConsorcioCarroPage(),
+                        ),
+                      );
+                    },
+                  ),
+                  buildCard(
+                    imagePath: "assets/banner/pesado.png",
+                    title:
+                        'Caminhões, ônibus, tratores com pagamento em até 150 meses.',
+                    description: 'Descrição do card 3...',
+                    buttonText: 'Saiba mais',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ConsorcioCaminhaoPage(),
+                        ),
+                      );
+                    },
+                  ),
+                ],
+              ),
             );
           }
         },

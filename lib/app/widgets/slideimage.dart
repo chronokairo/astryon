@@ -5,9 +5,9 @@ import 'package:priorizza/app/paginas/consorcios/motos.dart';
 
 class CarouselSliderWidget extends StatelessWidget {
   final List<String> imagePaths = [
-    'assets/banner/autos.png',
-    'assets/banner/bike.png',
-    'assets/banner/casa.png',
+    'assets/banner/1.png',
+    'assets/banner/2.png',
+    'assets/banner/3.png',
   ];
 
   CarouselSliderWidget({super.key});
@@ -30,7 +30,7 @@ class CarouselSliderWidget extends StatelessWidget {
       },
       options: CarouselOptions(
         autoPlay: true,
-        aspectRatio: 25 / 9,
+        aspectRatio: 16 / 7,
         enlargeCenterPage: true,
       ),
     );
