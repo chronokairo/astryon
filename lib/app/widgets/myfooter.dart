@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyFooter extends StatelessWidget {
   const MyFooter({super.key});
@@ -9,7 +10,7 @@ class MyFooter extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 24),
       // Adicionando bordas arredondadas ao Container
       decoration: BoxDecoration(
-        color: Colors.black,
+        color: const Color(0x99000000),
         borderRadius: BorderRadius.circular(20),
       ),
       child: Column(
@@ -40,9 +41,7 @@ class MyFooter extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton.icon(
-                onPressed: () {
-                  // Ação desejada para o Facebook
-                },
+                onPressed: _launchFacebookURL,
                 icon: const Icon(
                   Icons.facebook,
                   color: Colors.white,
@@ -64,5 +63,17 @@ class MyFooter extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  // Função para abrir a URL do Facebook
+  _launchFacebookURL() async {
+    const url = 'https://www.facebook.com/consorciopriorizza'; // Substitua pela URL da sua página do Facebook
+    // ignore: deprecated_member_use
+    if (await canLaunch(url)) {
+      // ignore: deprecated_member_use
+      await launch(url);
+    } else {
+      throw 'Não foi possível abrir a URL: $url';
+    }
   }
 }

@@ -67,11 +67,11 @@ class MyDrawer2State extends State<MyDrawer2> {
             SafeArea(
               child: NavigationRail(
                 selectedLabelTextStyle: const TextStyle(
-                  color: Color(0xFFD8B45E),
+                  color: Colors.black,
                 ),
                 backgroundColor: const Color(0xFFFFFFFF),
                 selectedIconTheme: const IconThemeData(
-                  color: Color(0xFFD8B45E),
+                  color: Colors.black,
                 ),
                 extended: constraints.maxWidth >= 600,
                 destinations: const [

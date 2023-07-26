@@ -24,12 +24,11 @@ class LoginWithState extends State<LoginWith> {
         child: Container(
           decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/background_image.png"), // Substitua pelo caminho da sua imagem de background
+            image: AssetImage("assets/6.png"), // Substitua pelo caminho da sua imagem de background
             fit: BoxFit.cover,
           ),
         ),
           child: ListView(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
             children: [
               const MyAppBar(),
               const SizedBox(height: 20),
