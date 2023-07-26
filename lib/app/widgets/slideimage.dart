@@ -30,7 +30,7 @@ class CarouselSliderWidget extends StatelessWidget {
       },
       options: CarouselOptions(
         autoPlay: true,
-        aspectRatio: 23 / 9,
+        aspectRatio: 25 / 9,
         enlargeCenterPage: true,
       ),
     );

@@ -23,15 +23,11 @@ class LoginWithState extends State<LoginWith> {
       body: SafeArea(
         child: Container(
           decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Color(0xFFD8B45E), // Cor do topo do gradiente
-                Color.fromARGB(255, 150, 125, 66), // Cor do final do gradiente
-              ],
-            ),
+          image: DecorationImage(
+            image: AssetImage("assets/background_image.png"), // Substitua pelo caminho da sua imagem de background
+            fit: BoxFit.cover,
           ),
+        ),
           child: ListView(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
             children: [

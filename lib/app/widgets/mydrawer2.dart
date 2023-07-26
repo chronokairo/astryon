@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:priorizza/app/paginas/areadocliente/sidebar/atendimento.dart';
-import 'package:priorizza/app/paginas/areadocliente/sidebar/contemplacao.dart';
 import 'package:priorizza/app/paginas/areadocliente/sidebar/extrato.dart';
 import 'package:priorizza/app/paginas/areadocliente/sidebar/meuconsorcio.dart';
 import 'package:priorizza/app/paginas/areadocliente/sidebar/ofertarlance.dart';
@@ -8,6 +6,7 @@ import 'package:priorizza/app/paginas/areadocliente/sidebar/simulacao_lance.dart
 import 'package:priorizza/app/paginas/areadocliente/sidebar/simulador.dart';
 import 'package:priorizza/app/widgets/myappbar.dart';
 import 'package:priorizza/app/widgets/sidebar.dart';
+
 
 class MyDrawer2 extends StatefulWidget {
   final String column2;
@@ -41,33 +40,28 @@ class MyDrawer2State extends State<MyDrawer2> {
         );
         break;
       case 1:
-        page = const SimuladorConsorcioWidget();
+        page = const BoletoPage();
         break;
       case 2:
-        page = const ContemplationScreen();
+        page = const OfertarLancePage();
         break;
       case 3:
-        page = const AtendimentoClienteScreen();
+        page = const SimulacaoLancesScreen();
         break;
       case 4:
-        page = const SimulacaoLancesScreen();
+        page = const ExtratoPage();
         break;
       case 5:
         page = const ConsorcioPage();
         break;
-      case 6:
-        page = const ExtratoPage();
-        break;
-      case 7:
-        page = const OfertarLancePage();
-        break;
+
       default:
         throw UnimplementedError('no widget for $selectedIndex');
     }
 
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
-        appBar: MyAppBar(),
+        appBar: const MyAppBar(),
         body: Row(
           children: [
             SafeArea(
@@ -82,23 +76,28 @@ class MyDrawer2State extends State<MyDrawer2> {
                 extended: constraints.maxWidth >= 600,
                 destinations: const [
                   NavigationRailDestination(
-                    icon: Icon(Icons.person), // Updated icon for "Minhas informações"
+                    icon: Icon(
+                        Icons.person), // Updated icon for "Minhas informações"
                     label: Text('Minhas informações'),
                   ),
                   NavigationRailDestination(
-                    icon: Icon(Icons.receipt_long), // Updated icon for "Emitir Boleto"
+                    icon: Icon(
+                        Icons.receipt_long), // Updated icon for "Emitir Boleto"
                     label: Text('Emitir Boleto'),
                   ),
                   NavigationRailDestination(
-                    icon: Icon(Icons.trending_up), // Updated icon for "Ofertar Lance"
+                    icon: Icon(
+                        Icons.trending_up), // Updated icon for "Ofertar Lance"
                     label: Text('Ofertar Lance'),
                   ),
                   NavigationRailDestination(
-                    icon: Icon(Icons.event), // Updated icon for "Resultado de Assembleia"
+                    icon: Icon(Icons
+                        .event), // Updated icon for "Resultado de Assembleia"
                     label: Text('Resultado de Assembleia'),
                   ),
                   NavigationRailDestination(
-                    icon: Icon(Icons.payment), // Updated icon for "Meus Pagamentos"
+                    icon: Icon(
+                        Icons.payment), // Updated icon for "Meus Pagamentos"
                     label: Text('Meus Pagamentos'),
                   ),
                   NavigationRailDestination(

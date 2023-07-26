@@ -13,8 +13,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Color(0x99000000),
-      shape: ContinuousRectangleBorder(
+      backgroundColor: const Color(0x99000000),
+      shape: const ContinuousRectangleBorder(
         borderRadius: BorderRadius.vertical(
           bottom: Radius.circular(30.0), // Valor do raio para tornar a AppBar redonda
         ),
