@@ -119,7 +119,7 @@ class CustomCardPage extends StatelessWidget {
                   child: buildCard(
                     imagePath: "assets/banner/casa.png",
                     title:
-                        'Casa, apartamento e quitação de financiamento em até 200 meses.',
+              'Casa, apartamento e quitação de financiamento em até 200 meses. Crédito de R\$ 50 mil a R\$ 500 mil.',
                     description: 'Descrição do card 1...',
                     buttonText: 'Veja as vantagens',
                     onTap: () {
@@ -136,7 +136,24 @@ class CustomCardPage extends StatelessWidget {
                   child: buildCard(
                     imagePath: "assets/banner/autos.png",
                     title:
-                        'Carros, motos e náuticos com pagamento em até 70 meses.',
+              'Carros, motos e náuticos com pagamento em até 70 meses. Crédito de R\$ 25mil a R\$ 70 mil.',
+                    description: 'Descrição do card 2...',
+                    buttonText: 'Conheça',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ConsorcioCarroPage(),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                Expanded(
+                  child: buildCard(
+                    imagePath: "assets/banner/bike.png",
+                    title:
+              'De urbana a elétrica, sua nova bike é garantida sem juros e com planos a partir de R\$ 25 mil em até 70 meses.',
                     description: 'Descrição do card 2...',
                     buttonText: 'Conheça',
                     onTap: () {
@@ -152,6 +169,23 @@ class CustomCardPage extends StatelessWidget {
                 Expanded(
                   child: buildCard(
                     imagePath: "assets/banner/pesado.png",
+                    title:
+              'Caminhões, ônibus, tratores com pagamento em até 150 meses. Crédito de R\$ 180 mil a R\$ 300 mil.',
+                    description: 'Descrição do card 3...',
+                    buttonText: 'Saiba mais',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ConsorcioCaminhaoPage(),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                Expanded(
+                  child: buildCard(
+                    imagePath: "assets/banner/servico.png",
                     title:
                         'Caminhões, ônibus, tratores com pagamento em até 150 meses.',
                     description: 'Descrição do card 3...',
@@ -176,7 +210,7 @@ class CustomCardPage extends StatelessWidget {
                   buildCard(
                     imagePath: "assets/banner/casa.png",
                     title:
-                        'Casa, apartamento e quitação de financiamento em até 200 meses.',
+              'Casa, apartamento e quitação de financiamento em até 200 meses. Crédito de R\$ 50 mil a R\$ 500 mil.',
                     description: 'Descrição do card 1...',
                     buttonText: 'Veja as vantagens',
                     onTap: () {
@@ -191,7 +225,22 @@ class CustomCardPage extends StatelessWidget {
                   buildCard(
                     imagePath: "assets/banner/autos.png",
                     title:
-                        'Carros, motos e náuticos com pagamento em até 70 meses.',
+              'Carros, motos e náuticos com pagamento em até 70 meses. Crédito de R\$ 25mil a R\$ 70 mil.',
+                    description: 'Descrição do card 2...',
+                    buttonText: 'Conheça',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ConsorcioCarroPage(),
+                        ),
+                      );
+                    },
+                  ),
+                  buildCard(
+                    imagePath: "assets/banner/bike.png",
+                    title:
+              'De urbana a elétrica, sua nova bike é garantida sem juros e com planos a partir de R\$ 25 mil em até 70 meses.',
                     description: 'Descrição do card 2...',
                     buttonText: 'Conheça',
                     onTap: () {
@@ -206,7 +255,7 @@ class CustomCardPage extends StatelessWidget {
                   buildCard(
                     imagePath: "assets/banner/pesado.png",
                     title:
-                        'Caminhões, ônibus, tratores com pagamento em até 150 meses.',
+              'Caminhões, ônibus, tratores com pagamento em até 150 meses. Crédito de R\$ 180 mil a R\$ 300 mil.',
                     description: 'Descrição do card 3...',
                     buttonText: 'Saiba mais',
                     onTap: () {
@@ -214,6 +263,21 @@ class CustomCardPage extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) => const ConsorcioCaminhaoPage(),
+                        ),
+                      );
+                    },
+                  ),
+                  buildCard(
+                    imagePath: "assets/banner/servico.png",
+                    title:
+                        'Carros, motos e náuticos com pagamento em até 70 meses.',
+                    description: 'Descrição do card 2...',
+                    buttonText: 'Conheça',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ConsorcioCarroPage(),
                         ),
                       );
                     },
