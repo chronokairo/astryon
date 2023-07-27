@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../paginas/areadocliente/loginscreen/login_with.dart';
 import '../paginas/consorcios/consorcios.dart';
 import '../paginas/home/inicio.dart';
 
@@ -51,10 +50,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
         ElevatedButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const LoginWith()),
-            );
+            
           },
           style: ElevatedButton.styleFrom(
             foregroundColor: Colors.white,
