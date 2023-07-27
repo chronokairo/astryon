@@ -187,7 +187,7 @@ class CustomCardPage extends StatelessWidget {
                   child: buildCard(
                     imagePath: "assets/banner/servico.png",
                     title:
-'Conquiste o mundo com nosso consórcio de serviços e viagens! Planos flexíveis em até 150 meses. Créditos de R\$ 180 mil a R\$ 300 mil. Realize seus sonhos agora mesmo!' ,  
+'Conquiste o mundo com nosso consórcio de serviços e viagens! Planos flexíveis em até 150 meses. Créditos de R\$ 180 mil a R\$ 300 mil.' ,  
                     description: 'Descrição do card 3...',
                     buttonText: 'Saiba mais',
                     onTap: () {
@@ -270,7 +270,7 @@ class CustomCardPage extends StatelessWidget {
                   buildCard(
                     imagePath: "assets/banner/servico.png",
                     title:
-'Conquiste o mundo com nosso consórcio de serviços e viagens! Planos flexíveis em até 150 meses. Créditos de R\$ 180 mil a R\$ 300 mil. Realize seus sonhos agora mesmo!' ,  
+'Conquiste o mundo com nosso consórcio de serviços e viagens! Planos flexíveis em até 150 meses. Créditos de R\$ 180 mil a R\$ 300 mil.' ,  
                  description: 'Descrição do card 2...',
                     buttonText: 'Conheça',
                     onTap: () {
