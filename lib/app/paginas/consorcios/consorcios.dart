@@ -37,7 +37,7 @@ class _ConsorciosPageState extends State<Consorcios>
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
-                "assets/banner/wallpaper.png"), // Substitua pelo caminho da sua imagem de background
+                "assets/6.png"), // Substitua pelo caminho da sua imagem de background
             fit: BoxFit.cover,
           ),
         ),

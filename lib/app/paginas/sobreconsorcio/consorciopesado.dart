@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../widgets/faqfooter.dart';
+import '../../widgets/myappbar.dart';
 
 class ConsorcioCaminhaoPage extends StatelessWidget {
   const ConsorcioCaminhaoPage({super.key});
@@ -10,21 +11,20 @@ class ConsorcioCaminhaoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
-                "assets/background_image.png"), // Substitua pelo caminho da sua imagem de background
+                "assets/banner/wallpaper.png"), // Substitua pelo caminho da sua imagem de background
             fit: BoxFit.cover,
           ),
         ),
-        child: 
-         const SingleChildScrollView(
+        child: const SingleChildScrollView(
           padding: EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              MyAppBar(),
               Text(
                 'Consórcio de Caminhão',
                 style: TextStyle(

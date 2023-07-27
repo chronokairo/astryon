@@ -4,76 +4,10 @@ import 'package:flutter/material.dart';
 class CatalogScreen extends StatelessWidget {
   List<Item> items = [
     Item(
-      type: ItemType.motorcycle,
-      brand: 'Honda',
-      model: 'BIZ 110I',
-      price: '599,00',
-    ),
-    Item(
-      type: ItemType.motorcycle,
-      brand: 'Honda',
-      model: 'cb 300f twister cbs',
-      price: '599,00',
-    ),
-    Item(
-      type: ItemType.motorcycle,
-      brand: 'Honda',
-      model: 'cg 160 fan esdi',
-      price: '599,00',
-    ),
-    Item(
-      type: ItemType.motorcycle,
-      brand: 'Honda',
-      model: 'cg 160 start',
-      price: '599,00',
-    ),
-    Item(
-      type: ItemType.motorcycle,
-      brand: 'Honda',
-      model: 'cg 160 titan',
-      price: '599,00',
-    ),
-    Item(
-      type: ItemType.motorcycle,
-      brand: 'Honda',
-      model: 'POP 110I',
-      price: '599,00',
-    ),
-    Item(
       type: ItemType.car,
       brand: 'Toyota',
       model: 'Corolla',
       price: '60000',
-    ),
-    Item(
-      type: ItemType.motorcycle,
-      brand: 'Honda',
-      model: 'POP 110I',
-      price: '55000',
-    ),
-    Item(
-      type: ItemType.motorcycle,
-      brand: 'Harley-Davidson',
-      model: 'Sportster',
-      price: '20000',
-    ),
-    Item(
-      type: ItemType.motorcycle,
-      brand: 'BMW',
-      model: 'S1000RR',
-      price: '25000',
-    ),
-    Item(
-      type: ItemType.house,
-      brand: 'Modern Home',
-      model: '3BHK Villa',
-      price: '300000',
-    ),
-    Item(
-      type: ItemType.house,
-      brand: 'Traditional House',
-      model: '2BHK Bungalow',
-      price: '200000',
     ),
   ];
 

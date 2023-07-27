@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 // ignore: must_be_immutable
 class AutosScreen extends StatelessWidget {
@@ -90,7 +91,7 @@ class AutosScreen extends StatelessWidget {
                         const SizedBox(height: 80),
                         ElevatedButton(
                           onPressed: () {
-                            // Adicione a ação desejada aqui
+                            launchWhatsApp();
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0x99000000),
@@ -159,4 +160,19 @@ class Item {
       required this.brand,
       required this.model,
       required this.price});
+}
+
+void launchWhatsApp() async {
+  String phoneNumber = '+5592985080304'; // Número de telefone do destinatário
+  String message = 'Olá, eu gostaria de saber mais!!'; // Mensagem a ser enviada
+  String whatsappUrl =
+      'https://wa.me/$phoneNumber?text=${Uri.encodeFull(message)}';
+
+  // ignore: deprecated_member_use
+  if (await canLaunch(whatsappUrl)) {
+    // ignore: deprecated_member_use
+    await launch(whatsappUrl);
+  } else {
+    throw 'Não foi possível abrir o WhatsApp.';
+  }
 }

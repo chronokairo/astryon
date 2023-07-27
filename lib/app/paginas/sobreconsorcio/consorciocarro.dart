@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:priorizza/app/widgets/myappbar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../widgets/faqfooter.dart';
@@ -14,7 +15,7 @@ class ConsorcioCarroPage extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
-                "assets/background_image.png"), // Substitua pelo caminho da sua imagem de background
+                "assets/banner/wallpaper.png"), // Substitua pelo caminho da sua imagem de background
             fit: BoxFit.cover,
           ),
         ),
@@ -23,6 +24,7 @@ class ConsorcioCarroPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              MyAppBar(),
               Text(
                 'Consórcio de Carro',
                 style: TextStyle(
