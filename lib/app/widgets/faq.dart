@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:priorizza/app/theme/appcolors.dart';
 import 'package:priorizza/app/widgets/myfooter.dart';
 
 class Faq extends StatelessWidget {
@@ -57,7 +56,7 @@ class QuestionAnswerTile extends StatelessWidget {
         title: Text(
           question,
           style: const TextStyle(
-            color: AppColors.backgroundColor, // Cor primária do tema light
+            color: Colors.white, // Cor primária do tema light
             fontSize: 18,
             fontWeight: FontWeight.bold,
           ),
