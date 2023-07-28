@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:priorizza/app/paginas/consorcios/carros.dart';
-import 'package:priorizza/app/paginas/consorcios/motos.dart';
+
+import '../paginas/catalogo/autos.dart';
 
 class CarouselSliderWidget extends StatelessWidget {
   final List<String> imagePaths = [
@@ -39,20 +39,15 @@ class CarouselSliderWidget extends StatelessWidget {
   void _navigateToCorrespondingClass(BuildContext context, int index) {
     switch (index) {
       case 0:
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) =>
-                  const Bike()), // Substitua "Classe1" pela classe correspondente
-        );
+        launchWhatsApp();
         break;
       case 1:
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) =>
-                  const Autos()), // Substitua "Classe2" pela classe correspondente
-        );
+        launchWhatsApp();
+
+        break;
+      case 2:
+        launchWhatsApp();
+
         break;
       // Adicione outros cases conforme o número de imagens e classes correspondentes
       default:

@@ -19,8 +19,7 @@ class ConsorcioCarroPage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child:  const SingleChildScrollView(
-          padding: EdgeInsets.all(16.0),
+        child: const SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
