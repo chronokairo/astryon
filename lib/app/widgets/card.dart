@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../paginas/catalogo/autos.dart';
-import '../paginas/sobreconsorcio/consorciocarro.dart';
-import '../paginas/sobreconsorcio/consorciocasa.dart';
-import '../paginas/sobreconsorcio/consorciopesado.dart';
 
 class CustomCard extends StatelessWidget {
   final String imagePath;
