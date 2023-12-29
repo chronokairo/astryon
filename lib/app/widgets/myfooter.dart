@@ -9,7 +9,7 @@ class MyFooter extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 24),
       // Adicionando bordas arredondadas ao Container
       decoration: BoxDecoration(
-        color:  Colors.black,
+        color: Colors.black,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Column(
@@ -24,11 +24,11 @@ class MyFooter extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           const Text(
-            'Antonio Victor Pimentel Pires LTDA',
+            'Nome do Dono',
             style: TextStyle(fontSize: 16),
           ),
           const Text(
-            'CNPJ: 41.414.474/0001-67',
+            'CNPJ: ',
             style: TextStyle(fontSize: 14),
           ),
           const Text(

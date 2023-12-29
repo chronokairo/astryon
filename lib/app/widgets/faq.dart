@@ -8,8 +8,8 @@ class Faq extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 24),
-      child: Column(
-        children: const [
+      child: const Column(
+        children: [
           QuestionAnswerTile(
             question: 'O que é um consórcio?',
             answer:
