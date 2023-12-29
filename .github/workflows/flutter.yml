@@ -26,7 +26,7 @@ jobs:
               cd build/web
               git config --global init.defaultBranch gh-pages
               git init
-              git remote add origin https://${{secrets.PRIORIZZA}}@github.com/imperiousnery/priorizza.git
+              git remote add origin https://${{secrets.priorizza}}@github.com/imperiousnery/priorizza.git
               git checkout -b gh-pages
               git add --all
               git commit -m "update"
